@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStore } from '../context/StoreContext';
 import { STORE_CONTACT } from '../data/contactInfo';
-import { Store, PhoneCall, ArrowRight, MessageCircle } from 'lucide-react';
+import { Store, PhoneCall, ArrowRight, MessageCircle, Clock3 } from 'lucide-react';
 
 interface FooterProps {
   onOpenPolicy: (type: 'privacy' | 'terms' | 'refund') => void;
@@ -44,6 +44,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicy, onScrollToSection 
                 <div>
                   <p className="font-semibold text-white">Customer Support</p>
                   <a href={`tel:${STORE_CONTACT.phone2Raw}`} className="font-mono font-bold text-[#E0B64E] hover:underline">{STORE_CONTACT.phone2}</a>
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <Clock3 className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#E0B64E]" />
+                <div>
+                  <p className="font-semibold text-white">Support Hours</p>
+                  <p className="font-mono font-bold text-[#E0B64E]">{STORE_CONTACT.hours}</p>
                 </div>
               </div>
             </div>
