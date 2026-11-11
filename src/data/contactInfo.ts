@@ -10,7 +10,7 @@ export const STORE_CONTACT = {
   phone2Label: 'Helpline 2 (Customer Support)',
 
   email: 'support@sastakitchenbazar.pk',
-  hours: 'Mon - Sun: 9:00 AM - 10:00 PM',
+  hours: 'Mon - Sun: 09:00 - 22:00 (Pakistan Time)',
   address: 'Shop #14, Kitchen Wholesale Plaza, Shah Alam Market, Lahore & Bolton Market, Karachi',
   bankTitle: 'Sasta Kitchen Bazar',
   jazzCashEasyPaisa: '0307-0008988 / 0371-6053822',
