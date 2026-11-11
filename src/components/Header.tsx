@@ -52,6 +52,11 @@ export const Header: React.FC<HeaderProps> = ({
   // Show the Admin Panel button only to the signed-in admin account
   useEffect(() => {
     let active = true;
+    const openAdminLoginFromPrivateLink = () => {
+      if (window.location.hash === '#admin') setIsAdminOpen(true);
+    };
+    openAdminLoginFromPrivateLink();
+    window.addEventListener('hashchange', openAdminLoginFromPrivateLink);
     supabase.auth.getSession().then(({ data }) => {
       if (active) setIsAuthorizedAdmin(data.session?.user.email?.toLowerCase() === ADMIN_EMAIL);
     });
@@ -60,9 +65,10 @@ export const Header: React.FC<HeaderProps> = ({
     });
     return () => {
       active = false;
+      window.removeEventListener('hashchange', openAdminLoginFromPrivateLink);
       listener.subscription.unsubscribe();
     };
-  }, []);
+  }, [setIsAdminOpen]);
 
   // Close search suggestions on click outside
   useEffect(() => {
