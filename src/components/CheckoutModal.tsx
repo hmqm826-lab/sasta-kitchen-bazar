@@ -3,14 +3,11 @@ import { useStore } from '../context/StoreContext';
 import { STORE_CONTACT } from '../data/contactInfo';
 import {
   X,
-  ShieldCheck,
   Truck,
   PhoneCall,
   CheckCircle2,
   Lock,
-  CreditCard,
   Banknote,
-  Smartphone,
   AlertCircle,
 } from 'lucide-react';
 
@@ -42,10 +39,7 @@ export const CheckoutModal: React.FC = () => {
     cartSubtotal,
     shippingFee,
     cartTotal,
-    discountAmount,
-    couponCode,
     createOrder,
-    showToast,
   } = useStore();
 
   const [formData, setFormData] = useState({
@@ -56,7 +50,7 @@ export const CheckoutModal: React.FC = () => {
     customCity: '',
     address: '',
     notes: '',
-    paymentMethod: 'cod' as 'cod' | 'jazzcash' | 'easypaisa' | 'bank',
+    paymentMethod: 'cod' as const,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -98,8 +92,7 @@ export const CheckoutModal: React.FC = () => {
         items: cart.map((i) => ({ product: i.product, quantity: i.quantity })),
         subtotal: cartSubtotal,
         shippingFee,
-        discount: discountAmount,
-        couponCode: couponCode || undefined,
+        discount: 0,
         total: cartTotal,
         paymentMethod: formData.paymentMethod,
       });
@@ -133,7 +126,7 @@ export const CheckoutModal: React.FC = () => {
       (formData.notes ? `📝 Note: ${formData.notes}\n` : '') +
       `\n🛒 Ordered Items:\n${itemsText}\n\n` +
       `💵 Total Payable on Delivery: Rs. ${cartTotal.toLocaleString()}\n\n` +
-      `Please ship via TCS / Leopard Courier. Shukriya!`
+      `Please confirm my Cash on Delivery order. Shukriya!`
     );
 
     window.open(`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=${msg}`, '_blank');
@@ -149,8 +142,7 @@ export const CheckoutModal: React.FC = () => {
       items: cart.map((i) => ({ product: i.product, quantity: i.quantity })),
       subtotal: cartSubtotal,
       shippingFee,
-      discount: discountAmount,
-      couponCode: couponCode || undefined,
+      discount: 0,
       total: cartTotal,
       paymentMethod: 'cod',
     });
@@ -173,7 +165,7 @@ export const CheckoutModal: React.FC = () => {
                 Cash on Delivery Checkout
               </h2>
               <p className="text-xs text-stone-200">
-                Doorstep delivery across all cities in Pakistan
+                Pay in cash when your order arrives
               </p>
             </div>
           </div>
@@ -313,98 +305,20 @@ export const CheckoutModal: React.FC = () => {
             </div>
           </div>
 
-          {/* Section 2: Payment Method */}
-          <div className="pt-3 border-t border-stone-200">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#173D30] mb-3 flex items-center gap-2">
-              <span className="w-5 h-5 rounded-full bg-emerald-100 text-[#173D30] flex items-center justify-center text-[10px]">
-                2
-              </span>
+          {/* Section 2: COD payment */}
+          <div className="border-t border-stone-200 pt-3">
+            <h3 className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#65452F]">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#F0E9DA] text-[10px] text-[#65452F]">2</span>
               Payment Method
             </h3>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-              {/* Cash on Delivery */}
-              <label
-                className={`flex flex-col p-3 rounded-2xl border-2 cursor-pointer transition ${
-                  formData.paymentMethod === 'cod'
-                    ? 'border-[#173D30] bg-emerald-50/50'
-                    : 'border-stone-200 hover:border-stone-300 bg-white'
-                }`}
-              >
-                <div className="flex items-center justify-between mb-1">
-                  <Banknote className="w-4 h-4 text-emerald-800" />
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value="cod"
-                    checked={formData.paymentMethod === 'cod'}
-                    onChange={() => setFormData({ ...formData, paymentMethod: 'cod' })}
-                    className="text-[#173D30] focus:ring-[#173D30]"
-                  />
-                </div>
-                <span className="text-xs font-bold text-stone-800">Cash on Delivery</span>
-                <span className="text-[10px] text-stone-500">Pay cash to courier rider</span>
-              </label>
-
-              {/* JazzCash / EasyPaisa */}
-              <label
-                className={`flex flex-col p-3 rounded-2xl border-2 cursor-pointer transition ${
-                  formData.paymentMethod === 'jazzcash'
-                    ? 'border-[#173D30] bg-emerald-50/50'
-                    : 'border-stone-200 hover:border-stone-300 bg-white'
-                }`}
-              >
-                <div className="flex items-center justify-between mb-1">
-                  <Smartphone className="w-4 h-4 text-amber-600" />
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value="jazzcash"
-                    checked={formData.paymentMethod === 'jazzcash'}
-                    onChange={() => setFormData({ ...formData, paymentMethod: 'jazzcash' })}
-                    className="text-[#173D30] focus:ring-[#173D30]"
-                  />
-                </div>
-                <span className="text-xs font-bold text-stone-800">JazzCash / EasyPaisa</span>
-                <span className="text-[10px] text-stone-500">Fast online mobile transfer</span>
-              </label>
-
-              {/* Bank Transfer */}
-              <label
-                className={`flex flex-col p-3 rounded-2xl border-2 cursor-pointer transition ${
-                  formData.paymentMethod === 'bank'
-                    ? 'border-[#173D30] bg-emerald-50/50'
-                    : 'border-stone-200 hover:border-stone-300 bg-white'
-                }`}
-              >
-                <div className="flex items-center justify-between mb-1">
-                  <CreditCard className="w-4 h-4 text-blue-600" />
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value="bank"
-                    checked={formData.paymentMethod === 'bank'}
-                    onChange={() => setFormData({ ...formData, paymentMethod: 'bank' })}
-                    className="text-[#173D30] focus:ring-[#173D30]"
-                  />
-                </div>
-                <span className="text-xs font-bold text-stone-800">Direct Bank Transfer</span>
-                <span className="text-[10px] text-stone-500">Meezan / HBL / UBL</span>
-              </label>
-            </div>
-
-            {/* Note for JazzCash / EasyPaisa / Bank */}
-            {formData.paymentMethod !== 'cod' && (
-              <div className="mt-3 p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs text-amber-900 leading-relaxed">
-                <p className="font-bold mb-0.5">Payment Account Details:</p>
-                <p>• <b>JazzCash / EasyPaisa (Number 1):</b> {STORE_CONTACT.phone1} (Title: {STORE_CONTACT.bankTitle})</p>
-                <p>• <b>JazzCash / EasyPaisa (Number 2):</b> {STORE_CONTACT.phone2} (Title: {STORE_CONTACT.bankTitle})</p>
-                <p>• <b>Meezan Bank:</b> {STORE_CONTACT.meezanBank} (Title: {STORE_CONTACT.bankTitle})</p>
-                <p className="mt-1.5 text-[11px] text-stone-600">
-                  Please send screenshot of payment receipt on WhatsApp at <b>{STORE_CONTACT.phone1}</b> or <b>{STORE_CONTACT.phone2}</b> with your order ID.
-                </p>
+            <div className="flex items-center gap-3 rounded-2xl border-2 border-[#65452F]/30 bg-[#F7F3E9] p-4">
+              <Banknote className="h-6 w-6 flex-shrink-0 text-[#65452F]" />
+              <div>
+                <p className="text-sm font-extrabold text-stone-800">Cash on Delivery</p>
+                <p className="text-xs text-stone-600">Pay in cash when your order is delivered.</p>
               </div>
-            )}
+              <span className="ml-auto rounded-full bg-white px-3 py-1 text-[10px] font-bold text-[#65452F]">Selected</span>
+            </div>
           </div>
 
           {/* Section 3: Order Summary Table */}
@@ -418,20 +332,10 @@ export const CheckoutModal: React.FC = () => {
                 <span>Items Subtotal:</span>
                 <span className="font-semibold text-stone-800">Rs. {cartSubtotal.toLocaleString()}</span>
               </div>
-              {discountAmount > 0 && (
-                <div className="flex justify-between text-emerald-700 font-semibold">
-                  <span>Coupon Discount ({couponCode}):</span>
-                  <span>- Rs. {discountAmount.toLocaleString()}</span>
-                </div>
-              )}
               <div className="flex justify-between">
                 <span>Shipping / Courier Fee:</span>
                 <span className="font-semibold">
-                  {shippingFee === 0 ? (
-                    <span className="text-emerald-700 font-bold uppercase">FREE</span>
-                  ) : (
-                    `Rs. ${shippingFee}`
-                  )}
+{ `Rs. ${shippingFee.toLocaleString()}` }
                 </span>
               </div>
               <div className="flex justify-between text-base font-black text-stone-900 pt-2 border-t border-stone-200">
@@ -465,7 +369,7 @@ export const CheckoutModal: React.FC = () => {
 
             <div className="flex items-center justify-center gap-2 text-[11px] text-stone-500 pt-1">
               <Lock className="w-3.5 h-3.5 text-emerald-700" />
-              <span>100% Safe & Secure Checkout • Open parcel verification available</span>
+              <span>Payment is collected in cash at delivery.</span>
             </div>
           </div>
         </form>
