@@ -1,0 +1,6 @@
+{
+  "name": "Sasta Kitchen Bazar",
+  "description": "Har Ghar Ki Zaroorat, Ab Sasti Qeemat Par! Modern e-commerce store for affordable kitchen accessories, gadgets, and home essentials with Cash on Delivery across Pakistan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
