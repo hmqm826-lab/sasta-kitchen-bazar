@@ -7,11 +7,8 @@ import React, { useEffect, useState } from 'react';
 import { StoreProvider } from './context/StoreContext';
 import { Header } from './components/Header';
 import { HeroBanner } from './components/HeroBanner';
-import { SpecialOffers } from './components/SpecialOffers';
 import { ProductGrid } from './components/ProductGrid';
 import { WhyChooseUs } from './components/WhyChooseUs';
-import { CustomerReviews } from './components/CustomerReviews';
-import { Newsletter } from './components/Newsletter';
 import { Footer } from './components/Footer';
 import { ProductModal } from './components/ProductModal';
 import { CartDrawer } from './components/CartDrawer';
@@ -57,32 +54,16 @@ function StoreApp() {
       {/* Main Page Sections */}
       <main className="flex-1">
         {/* Section 4: Hero Banner */}
-        <HeroBanner
-          onShopNow={() => scrollToSection('products-catalog')}
-          onExploreDeals={() => scrollToSection('flash-deals')}
-        />
+        <HeroBanner onShopNow={() => scrollToSection('products-catalog')} />
 
-        {/* Section 7: Hot Deals & Flash Countdown */}
-        <SpecialOffers
-          onGrabDeal={() => scrollToSection('products-catalog')}
-        />
-
-        {/* Section 6 & 8: Products Catalog & Best Sellers */}
         <div id="best-sellers">
           <ProductGrid
-            sectionTitle="Our Best Selling Products"
-            sectionSubtitle="Top-rated kitchen problem-solvers and home organization essentials at the most affordable prices."
+            sectionTitle="Explore Kitchen & Home Essentials"
+            sectionSubtitle="Browse useful kitchen gadgets, accessories, storage solutions and everyday home essentials."
           />
         </div>
 
-        {/* Section 9: Why Choose Sasta Kitchen Bazar? */}
         <WhyChooseUs />
-
-        {/* Section 10: Customer Reviews & Ratings */}
-        <CustomerReviews />
-
-        {/* Section 11: Newsletter / VIP WhatsApp Club */}
-        <Newsletter />
       </main>
 
       {/* Section 12: Footer */}
