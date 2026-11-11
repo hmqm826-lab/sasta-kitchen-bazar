@@ -37,22 +37,37 @@ function StoreApp() {
     return 'light';
   });
 
-  // Use Pakistan Standard Time: light from 07:00 to 18:59, dark from 19:00 to 06:59.
+  // Automatic theme follows Pakistan Standard Time unless the visitor chooses manually.
   useEffect(() => {
-    const updateThemeByPakistanTime = () => {
+    const updateTheme = () => {
+      if (themePreference === 'light' || themePreference === 'dark') {
+        setActiveTheme(themePreference);
+        document.documentElement.setAttribute('data-theme', themePreference);
+        return;
+      }
       const parts = new Intl.DateTimeFormat('en-GB', {
         timeZone: 'Asia/Karachi',
         hour: '2-digit',
         hourCycle: 'h23',
       }).formatToParts(new Date());
       const hour = Number(parts.find((part) => part.type === 'hour')?.value ?? 0);
-      document.documentElement.setAttribute('data-theme', hour >= 7 && hour < 19 ? 'light' : 'dark');
+      const nextTheme = hour >= 7 && hour < 19 ? 'light' : 'dark';
+      setActiveTheme(nextTheme);
+      document.documentElement.setAttribute('data-theme', nextTheme);
     };
 
-    updateThemeByPakistanTime();
-    const interval = window.setInterval(updateThemeByPakistanTime, 60 * 1000);
+    updateTheme();
+    const interval = window.setInterval(updateTheme, 60 * 1000);
     return () => window.clearInterval(interval);
-  }, []);
+  }, [themePreference]);
+
+  const toggleTheme = () => {
+    const nextTheme = activeTheme === 'dark' ? 'light' : 'dark';
+    setThemePreference(nextTheme);
+    setActiveTheme(nextTheme);
+    window.localStorage.setItem('skb-theme-preference', nextTheme);
+    document.documentElement.setAttribute('data-theme', nextTheme);
+  };
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -62,6 +77,8 @@ function StoreApp() {
   return (
     <div className="min-h-screen flex flex-col bg-transparent text-inherit">
       <Header
+        theme={activeTheme}
+        onToggleTheme={toggleTheme}
         onOpenWishlist={() => setPolicyType('wishlist')}
         onOpenContact={() => setPolicyType('contact')}
         onScrollToSection={scrollToSection}
@@ -83,7 +100,6 @@ function StoreApp() {
         onScrollToSection={scrollToSection}
       />
 
-      {/* One-tap WhatsApp chat to the primary Sales & Orders helpline. */}
       <a
         href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=Assalam-o-Alaikum%20Sasta%20Kitchen%20Bazar%2C%20mujhe%20maloomat%20chahiye.`}
         target="_blank"
