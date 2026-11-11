@@ -54,7 +54,8 @@ interface StoreContextType {
   
   // Order & Admin
   createOrder: (orderData: Omit<Order, 'id' | 'createdAt' | 'status'>) => Order;
-  updateOrderStatus: (orderId: string, status: Order['status']) => void;\n  deleteOrder: (orderId: string) => void;
+  updateOrderStatus: (orderId: string, status: Order['status']) => void;
+  deleteOrder: (orderId: string) => void;
   addProduct: (product: Omit<Product, 'id'>) => void;
   updateProduct: (product: Product) => void;
   deleteProduct: (id: string) => void;
