@@ -31,7 +31,8 @@ export const AdminDashboard: React.FC = () => {
     addProduct,
     updateProduct,
     deleteProduct,
-    updateOrderStatus,\n    deleteOrder,
+    updateOrderStatus,
+    deleteOrder,
     resetDefaultData,
     showToast,
   } = useStore();
