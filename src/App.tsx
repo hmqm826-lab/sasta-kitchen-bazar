@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StoreProvider } from './context/StoreContext';
 import { Header } from './components/Header';
 import { HeroBanner } from './components/HeroBanner';
@@ -27,6 +27,17 @@ function StoreApp() {
   const [policyType, setPolicyType] = useState<'privacy' | 'terms' | 'refund' | 'contact' | 'wishlist' | null>(null);
   const [isWhatsAppPopupOpen, setIsWhatsAppPopupOpen] = useState(false);
 
+  // Automatically use a light theme during the day and a dark theme at night.
+  useEffect(() => {
+    const updateThemeByLocalTime = () => {
+      const hour = new Date().getHours();
+      document.documentElement.setAttribute('data-theme', hour >= 7 && hour < 19 ? 'light' : 'dark');
+    };
+    updateThemeByLocalTime();
+    const interval = window.setInterval(updateThemeByLocalTime, 60 * 1000);
+    return () => window.clearInterval(interval);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -35,7 +46,7 @@ function StoreApp() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F5F2EC] text-[#292929]">
+    <div className="min-h-screen flex flex-col bg-transparent text-inherit">
       {/* Site Header */}
       <Header
         onOpenWishlist={() => setPolicyType('wishlist')}
