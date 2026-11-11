@@ -7,7 +7,7 @@ export const STORE_CONTACT = {
   phone2: '0371-6053822',
   phone2Raw: '03716053822',
   phone2WhatsApp: '923716053822',
-  phone2Label: 'Helpline 2 (Support & Tracking)',
+  phone2Label: 'Helpline 2 (Customer Support)',
 
   email: 'support@sastakitchenbazar.pk',
   hours: 'Mon - Sun: 9:00 AM - 10:00 PM',
