@@ -18,7 +18,7 @@ import { ProductModal } from './components/ProductModal';
 import { CartDrawer } from './components/CartDrawer';
 import { CheckoutModal } from './components/CheckoutModal';
 import { OrderSuccessModal } from './components/OrderSuccessModal';
-import { AdminDashboard } from './components/AdminDashboard';
+import { AdminAccess } from './components/AdminAccess';
 import { PolicyModals } from './components/PolicyModals';
 import { ToastContainer } from './components/ToastContainer';
 import { STORE_CONTACT } from './data/contactInfo';
@@ -160,7 +160,7 @@ function StoreApp() {
       <CartDrawer />
       <CheckoutModal />
       <OrderSuccessModal />
-      <AdminDashboard />
+      <AdminAccess />
       <PolicyModals type={policyType} onClose={() => setPolicyType(null)} />
       <ToastContainer />
     </div>
