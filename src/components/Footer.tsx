@@ -1,19 +1,7 @@
 import React from 'react';
 import { useStore } from '../context/StoreContext';
 import { STORE_CONTACT } from '../data/contactInfo';
-import {
-  Store,
-  PhoneCall,
-  Mail,
-  MapPin,
-  Clock,
-  Heart,
-  Truck,
-  ShieldCheck,
-  Facebook,
-  Instagram,
-  ArrowRight,
-} from 'lucide-react';
+import { Store, PhoneCall, ArrowRight, MessageCircle } from 'lucide-react';
 
 interface FooterProps {
   onOpenPolicy: (type: 'privacy' | 'terms' | 'refund') => void;
@@ -29,256 +17,86 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicy, onScrollToSection 
   };
 
   return (
-    <footer className="bg-[#173D30] text-white pt-16 pb-8 border-t border-emerald-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-emerald-800/60">
-          {/* Brand Info (Col 1 & 2) */}
-          <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#F5A623] text-[#173D30] flex items-center justify-center font-bold shadow-md">
-                <Store className="w-6 h-6" />
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1">
-                  <span className="text-2xl font-black tracking-tight text-white font-heading">
-                    SASTA
-                  </span>
-                  <span className="text-2xl font-black tracking-tight text-[#F5A623] font-heading">
-                    KITCHEN
-                  </span>
-                  <span className="text-2xl font-bold tracking-tight text-stone-200 font-heading">
-                    BAZAR
-                  </span>
-                </div>
-                <span className="text-[11px] font-bold text-amber-200 tracking-wider uppercase -mt-1 font-urdu">
-                  ہر گھر کی ضرورت، اب سستی قیمت پر!
-                </span>
-              </div>
-            </div>
-
-            <p className="text-xs sm:text-sm text-stone-300 leading-relaxed max-w-sm">
-              Pakistan’s premier online destination for affordable kitchen gadgets, time-saving cooking accessories, and daily household organizers with 100% Cash on Delivery nationwide.
+    <footer className="border-t border-[#493020] bg-[#30271F] pb-8 pt-12 text-white sm:pt-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="grid grid-cols-1 gap-9 border-b border-white/15 pb-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="space-y-4 sm:col-span-2 lg:col-span-1">
+            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="inline-flex max-w-full items-center gap-2.5">
+              <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#E0B64E] text-[#30271F] shadow-md"><Store className="h-6 w-6" /></span>
+              <span className="min-w-0">
+                <span className="block font-heading text-base font-black leading-tight tracking-tight sm:text-xl">SASTA KITCHEN BAZAR</span>
+                <span className="mt-0.5 block text-[9px] font-semibold uppercase tracking-wider text-[#E0B64E] sm:text-[10px]">Har Ghar Ki Zaroorat</span>
+              </span>
+            </a>
+            <p className="max-w-sm text-xs leading-relaxed text-stone-300 sm:text-sm">
+              Explore useful kitchen gadgets, cooking accessories, storage solutions and everyday home essentials. Cash on Delivery is available across Pakistan.
             </p>
-
-            <div className="pt-2 flex flex-col gap-2 text-xs text-stone-200">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#F5A623] flex-shrink-0" />
-                <span>Warehouse Hub: Shah Alam Market, Lahore & Bolton Market, Karachi</span>
+            <div className="flex flex-col gap-3 text-xs text-stone-200">
+              <div className="flex items-start gap-2">
+                <PhoneCall className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#E0B64E]" />
+                <div>
+                  <p className="font-semibold text-white">Sales & Orders</p>
+                  <a href={`tel:${STORE_CONTACT.phone1Raw}`} className="font-mono font-bold text-[#E0B64E] hover:underline">{STORE_CONTACT.phone1}</a>
+                </div>
               </div>
               <div className="flex items-start gap-2">
-                <PhoneCall className="w-4 h-4 text-[#F5A623] flex-shrink-0 mt-0.5" />
+                <MessageCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#E0B64E]" />
                 <div>
-                  <p className="font-semibold text-white">WhatsApp & Calling Helplines:</p>
-                  <p className="text-amber-200 font-mono font-bold text-xs">
-                    <a href={`tel:${STORE_CONTACT.phone1Raw}`} className="hover:underline">{STORE_CONTACT.phone1}</a>
-                    <span className="mx-1.5 text-stone-400">|</span>
-                    <a href={`tel:${STORE_CONTACT.phone2Raw}`} className="hover:underline">{STORE_CONTACT.phone2}</a>
-                  </p>
-                  <p className="text-[11px] text-stone-400">{STORE_CONTACT.hours}</p>
+                  <p className="font-semibold text-white">Customer Support</p>
+                  <a href={`tel:${STORE_CONTACT.phone2Raw}`} className="font-mono font-bold text-[#E0B64E] hover:underline">{STORE_CONTACT.phone2}</a>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#F5A623] flex-shrink-0" />
-                <span>Email: {STORE_CONTACT.email}</span>
-              </div>
             </div>
-
-            {/* Social Links */}
-            <div className="flex items-center gap-3 pt-2">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#F5A623] hover:text-[#173D30] flex items-center justify-center transition"
-                title="Facebook"
-              >
-                <Facebook className="w-4 h-4" />
+            <div className="flex flex-wrap gap-2 pt-1">
+              <a href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=Assalam-o-Alaikum%20Sasta%20Kitchen%20Bazar`} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-emerald-600 px-3 py-2 text-xs font-bold text-white transition hover:bg-emerald-700">
+                <MessageCircle className="h-4 w-4" /> WhatsApp Sales
               </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#F5A623] hover:text-[#173D30] flex items-center justify-center transition"
-                title="Instagram"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=Assalam-o-Alaikum%20Sasta%20Kitchen%20Bazar`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center transition"
-                title={`WhatsApp Chat (${STORE_CONTACT.phone1})`}
-              >
-                <PhoneCall className="w-4 h-4" />
-              </a>
-              <a
-                href={`https://wa.me/${STORE_CONTACT.phone2WhatsApp}?text=Assalam-o-Alaikum%20Sasta%20Kitchen%20Bazar`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-[#173D30] hover:bg-[#235846] text-white border border-emerald-600 flex items-center justify-center transition"
-                title={`WhatsApp Chat (${STORE_CONTACT.phone2})`}
-              >
-                <PhoneCall className="w-4 h-4 text-[#F5A623]" />
+              <a href={`https://wa.me/${STORE_CONTACT.phone2WhatsApp}?text=Assalam-o-Alaikum%20Sasta%20Kitchen%20Bazar`} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-white/20 px-3 py-2 text-xs font-bold text-white transition hover:bg-white/10">
+                <MessageCircle className="h-4 w-4" /> WhatsApp Support
               </a>
             </div>
           </div>
 
-          {/* Quick Links (Col 3) */}
           <div className="space-y-3">
-            <h3 className="font-extrabold text-sm uppercase tracking-wider text-[#F5A623]">
-              Quick Links
-            </h3>
-            <ul className="space-y-2 text-xs text-stone-300">
-              <li>
-                <button
-                  onClick={() => onScrollToSection('hero')}
-                  className="hover:text-white transition flex items-center gap-1.5"
-                >
-                  <ArrowRight className="w-3 h-3 text-[#F5A623]" />
-                  <span>Home Page</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onScrollToSection('products-catalog')}
-                  className="hover:text-white transition flex items-center gap-1.5"
-                >
-                  <ArrowRight className="w-3 h-3 text-[#F5A623]" />
-                  <span>Shop All Products</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onScrollToSection('best-sellers')}
-                  className="hover:text-white transition flex items-center gap-1.5"
-                >
-                  <ArrowRight className="w-3 h-3 text-[#F5A623]" />
-                  <span>Our Best Sellers</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onScrollToSection('flash-deals')}
-                  className="hover:text-white transition flex items-center gap-1.5"
-                >
-                  <ArrowRight className="w-3 h-3 text-[#F5A623]" />
-                  <span>Hot Deals & Discounts</span>
-                </button>
-              </li>
-              <li>
-                <a
-                  href={`https://wa.me/${STORE_CONTACT.phone2WhatsApp}?text=Assalam-o-Alaikum%2C%20mujhe%20apna%20order%20track%20karna%20hai`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition flex items-center gap-1.5 text-amber-200 font-semibold"
-                >
-                  <Truck className="w-3 h-3" />
-                  <span>Track Courier Order (TCS)</span>
-                </a>
-              </li>
+            <h3 className="text-sm font-extrabold uppercase tracking-wider text-[#E0B64E]">Quick Links</h3>
+            <ul className="space-y-3 text-xs text-stone-300">
+              <li><button onClick={() => onScrollToSection('hero')} className="inline-flex items-center gap-2 transition hover:text-white"><ArrowRight className="h-3 w-3 text-[#E0B64E]" /> Home</button></li>
+              <li><button onClick={() => onScrollToSection('products-catalog')} className="inline-flex items-center gap-2 transition hover:text-white"><ArrowRight className="h-3 w-3 text-[#E0B64E]" /> Shop All Products</button></li>
+              <li><button onClick={() => onScrollToSection('best-sellers')} className="inline-flex items-center gap-2 transition hover:text-white"><ArrowRight className="h-3 w-3 text-[#E0B64E]" /> Featured Products</button></li>
             </ul>
           </div>
 
-          {/* Top Categories (Col 4) */}
           <div className="space-y-3">
-            <h3 className="font-extrabold text-sm uppercase tracking-wider text-[#F5A623]">
-              Popular Categories
-            </h3>
-            <ul className="space-y-2 text-xs text-stone-300">
-              {categories.slice(0, 6).map((c) => (
-                <li key={c.id}>
-                  <button
-                    onClick={() => handleCategoryClick(c.name)}
-                    className="hover:text-white transition text-left"
-                  >
-                    {c.name}
-                  </button>
+            <h3 className="text-sm font-extrabold uppercase tracking-wider text-[#E0B64E]">Shop Categories</h3>
+            <ul className="space-y-3 text-xs text-stone-300">
+              {categories.slice(0, 8).map((category) => (
+                <li key={category.id}>
+                  <button onClick={() => handleCategoryClick(category.name)} className="text-left transition hover:text-white">{category.name}</button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Trust & Policies (Col 5) */}
           <div className="space-y-3">
-            <h3 className="font-extrabold text-sm uppercase tracking-wider text-[#F5A623]">
-              Customer Care & Policies
-            </h3>
-            <ul className="space-y-2 text-xs text-stone-300">
-              <li>
-                <button
-                  onClick={() => onOpenPolicy('refund')}
-                  className="hover:text-white transition text-left"
-                >
-                  7-Day Return & Refund Policy
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onOpenPolicy('terms')}
-                  className="hover:text-white transition text-left"
-                >
-                  Terms & Conditions (COD)
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onOpenPolicy('privacy')}
-                  className="hover:text-white transition text-left"
-                >
-                  Privacy & Data Security
-                </button>
-              </li>
-              <li>
-                <a
-                  href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=Assalam-o-Alaikum%2C%20mujhe%20parcel%20ke%20baray%20mein%20issue%20report%20karna%20hai`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition text-left block text-emerald-300 font-semibold"
-                >
-                  Report a Parcel Damage / Issue
-                </a>
-              </li>
+            <h3 className="text-sm font-extrabold uppercase tracking-wider text-[#E0B64E]">Customer Information</h3>
+            <ul className="space-y-3 text-xs text-stone-300">
+              <li><button onClick={() => onOpenPolicy('refund')} className="text-left transition hover:text-white">Returns & Refunds</button></li>
+              <li><button onClick={() => onOpenPolicy('terms')} className="text-left transition hover:text-white">Terms & Conditions</button></li>
+              <li><button onClick={() => onOpenPolicy('privacy')} className="text-left transition hover:text-white">Privacy Policy</button></li>
             </ul>
-
             <div className="pt-2">
-              <span className="block text-[11px] font-bold uppercase text-stone-400 mb-1.5">
-                Accepted Payment Options:
-              </span>
-              <div className="flex flex-wrap gap-1.5 text-[10px] font-bold">
-                <span className="px-2 py-0.5 rounded bg-black/30 border border-white/10 text-amber-200">
-                  Cash on Delivery (COD)
-                </span>
-                <span className="px-2 py-0.5 rounded bg-black/30 border border-white/10 text-white">
-                  JazzCash
-                </span>
-                <span className="px-2 py-0.5 rounded bg-black/30 border border-white/10 text-white">
-                  EasyPaisa
-                </span>
-                <span className="px-2 py-0.5 rounded bg-black/30 border border-white/10 text-white">
-                  Meezan Bank
-                </span>
-              </div>
+              <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-wide text-stone-400">Payment Method</span>
+              <span className="inline-flex rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-[11px] font-bold text-[#E0B64E]">Cash on Delivery (COD)</span>
             </div>
           </div>
         </div>
 
-        {/* Bottom Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
-          <p>© {new Date().getFullYear()} Sasta Kitchen Bazar. All rights reserved. Quality Products • Affordable Prices • Happy Homes.</p>
-          <div className="flex items-center gap-4 text-[11px]">
-            <button onClick={() => onOpenPolicy('privacy')} className="hover:text-white transition">
-              Privacy Policy
-            </button>
-            <span>•</span>
-            <button onClick={() => onOpenPolicy('terms')} className="hover:text-white transition">
-              Terms of Service
-            </button>
-            <span>•</span>
-            <button onClick={() => onOpenPolicy('refund')} className="hover:text-white transition">
-              Return Policy
-            </button>
+        <div className="flex flex-col items-center justify-between gap-3 pt-7 text-center text-[11px] text-stone-400 sm:flex-row sm:text-left">
+          <p>© {new Date().getFullYear()} Sasta Kitchen Bazar. All rights reserved.</p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <button onClick={() => onOpenPolicy('privacy')} className="transition hover:text-white">Privacy</button>
+            <button onClick={() => onOpenPolicy('terms')} className="transition hover:text-white">Terms</button>
+            <button onClick={() => onOpenPolicy('refund')} className="transition hover:text-white">Returns</button>
           </div>
         </div>
       </div>
