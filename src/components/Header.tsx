@@ -13,19 +13,25 @@ import {
   Sparkles,
   LayoutDashboard,
   Store,
-  ChevronDown
+  ChevronDown,
+  Sun,
+  Moon
 } from 'lucide-react';
 
 interface HeaderProps {
   onOpenWishlist: () => void;
   onOpenContact: () => void;
   onScrollToSection: (sectionId: string) => void;
+  theme: 'light' | 'dark';
+  onToggleTheme: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   onOpenWishlist,
   onOpenContact,
   onScrollToSection,
+  theme,
+  onToggleTheme,
 }) => {
   const {
     cart,
