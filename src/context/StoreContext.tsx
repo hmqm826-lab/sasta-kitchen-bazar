@@ -66,74 +66,14 @@ const StoreContext = createContext<StoreContextType | undefined>(undefined);
 const FREE_SHIPPING_THRESHOLD = 2999;
 const STANDARD_SHIPPING_FEE = 199;
 
-const SAMPLE_ORDERS: Order[] = [
-  {
-    id: 'SKB-92841',
-    customerName: 'Kashif Mehmood',
-    customerPhone: '03001234567',
-    customerEmail: 'kashif@gmail.com',
-    city: 'Lahore',
-    address: 'House 142, Street 7, Cavalry Ground, Cantt',
-    notes: 'Please deliver after 2 PM',
-    items: [
-      { product: INITIAL_PRODUCTS[0], quantity: 1 },
-      { product: INITIAL_PRODUCTS[3], quantity: 1 },
-    ],
-    subtotal: 2398,
-    shippingFee: 199,
-    discount: 240,
-    couponCode: 'SASTA10',
-    total: 2357,
-    paymentMethod: 'cod',
-    status: 'Delivered',
-    createdAt: '2026-11-09T14:30:00Z',
-  },
-  {
-    id: 'SKB-92842',
-    customerName: 'Samina Tariq',
-    customerPhone: '03219876543',
-    customerEmail: 'samina@yahoo.com',
-    city: 'Karachi',
-    address: 'Flat 402, Al-Razi Heights, Block 13-D, Gulshan-e-Iqbal',
-    items: [
-      { product: INITIAL_PRODUCTS[6], quantity: 1 },
-      { product: INITIAL_PRODUCTS[1], quantity: 1 },
-    ],
-    subtotal: 3648,
-    shippingFee: 0,
-    discount: 0,
-    total: 3648,
-    paymentMethod: 'cod',
-    status: 'Shipped',
-    createdAt: '2026-11-10T10:15:00Z',
-  },
-  {
-    id: 'SKB-92843',
-    customerName: 'Bilal Ahmed',
-    customerPhone: '03335551234',
-    customerEmail: 'bilal.ahmed@live.com',
-    city: 'Islamabad',
-    address: 'House 18, Street 45, Sector F-8/2',
-    items: [
-      { product: INITIAL_PRODUCTS[7], quantity: 2 },
-    ],
-    subtotal: 3700,
-    shippingFee: 0,
-    discount: 370,
-    couponCode: 'SASTA10',
-    total: 3330,
-    paymentMethod: 'jazzcash',
-    status: 'Pending',
-    createdAt: '2026-11-11T08:45:00Z',
-  },
-];
+const SAMPLE_ORDERS: Order[] = [];
 
 export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Load products from localStorage or initial
   const [products, setProducts] = useState<Product[]>(() => {
     try {
       const saved = localStorage.getItem('skb_products_v1');
-      if (saved) return JSON.parse(saved);
+      if (saved) return JSON.parse(saved).filter((p: Product) => !/^skb-(0[1-9]|1[0-6])$/.test(p.id));
     } catch (e) {
       console.error(e);
     }
@@ -166,7 +106,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [orders, setOrders] = useState<Order[]>(() => {
     try {
       const saved = localStorage.getItem('skb_orders_v1');
-      if (saved) return JSON.parse(saved);
+      if (saved) return JSON.parse(saved).filter((o: Order) => !['SKB-92841', 'SKB-92842', 'SKB-92843'].includes(o.id));
     } catch (e) {
       console.error(e);
     }
