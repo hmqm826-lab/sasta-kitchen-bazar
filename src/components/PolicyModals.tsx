@@ -1,4 +1,4 @@
-import { X, ShieldCheck, FileText, PhoneCall, MessageSquare } from 'lucide-react';
+import { X, ShieldCheck, RefreshCw, FileText, PhoneCall, MessageSquare } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 import { STORE_CONTACT } from '../data/contactInfo';
 
@@ -33,7 +33,7 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, onClose }) => {
               {type === 'refund' && 'Returns & Refunds'}
               {type === 'privacy' && 'Privacy Policy & Data Security'}
               {type === 'terms' && 'Terms & Conditions of Service'}
-              {type === 'contact' && 'Contact Us & Courier Tracking'}
+              {type === 'contact' && 'Contact Us'}
               {type === 'wishlist' && `My Wishlist (${wishlistProducts.length} Saved)`}
             </h3>
           </div>
@@ -94,7 +94,7 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, onClose }) => {
               <div className="p-4 bg-emerald-50 rounded-2xl border border-emerald-200">
                 <p className="font-bold text-[#173D30] text-sm mb-1">Official WhatsApp & Phone Helpline</p>
                 <p className="text-xs text-stone-600 mb-3">
-                  Aap in dono numbers par WhatsApp message ya call kar ke order book, track ya product ki inquiry kar sakte hain:
+                  Aap in numbers par WhatsApp message ya call kar ke order ya product ke baray mein maloomat le sakte hain:
                 </p>
 
                 {/* Number 1 */}
@@ -131,7 +131,7 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, onClose }) => {
                 <div className="bg-white p-3 rounded-xl border border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div>
                     <span className="text-[10px] font-bold text-emerald-800 uppercase tracking-wider block">
-                      Helpline 2 (Customer Support & Tracking)
+                      Helpline 2 (Customer Support)
                     </span>
                     <span className="text-base font-black text-stone-900 font-mono">
                       {STORE_CONTACT.phone2}
