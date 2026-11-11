@@ -7,7 +7,6 @@ import React, { useState } from 'react';
 import { StoreProvider } from './context/StoreContext';
 import { Header } from './components/Header';
 import { HeroBanner } from './components/HeroBanner';
-import { CategoryGrid } from './components/CategoryGrid';
 import { SpecialOffers } from './components/SpecialOffers';
 import { ProductGrid } from './components/ProductGrid';
 import { WhyChooseUs } from './components/WhyChooseUs';
@@ -36,7 +35,7 @@ function StoreApp() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8F9FA] text-[#292929]">
+    <div className="min-h-screen flex flex-col bg-[#F5F2EC] text-[#292929]">
       {/* Site Header */}
       <Header
         onOpenWishlist={() => setPolicyType('wishlist')}
@@ -50,11 +49,6 @@ function StoreApp() {
         <HeroBanner
           onShopNow={() => scrollToSection('products-catalog')}
           onExploreDeals={() => scrollToSection('flash-deals')}
-        />
-
-        {/* Section 5: Shop by 10 Categories */}
-        <CategoryGrid
-          onCategorySelected={() => scrollToSection('products-catalog')}
         />
 
         {/* Section 7: Hot Deals & Flash Countdown */}
