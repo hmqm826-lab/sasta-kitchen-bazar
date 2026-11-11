@@ -31,7 +31,7 @@ export const AdminDashboard: React.FC = () => {
     addProduct,
     updateProduct,
     deleteProduct,
-    updateOrderStatus,
+    updateOrderStatus,\n    deleteOrder,
     resetDefaultData,
     showToast,
   } = useStore();
@@ -251,15 +251,6 @@ export const AdminDashboard: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <button
-              onClick={resetDefaultData}
-              className="hidden sm:flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-800/80 hover:bg-emerald-800 text-xs font-semibold text-emerald-200 transition"
-              title="Reset products and sample orders"
-            >
-              <RefreshCcw className="w-3.5 h-3.5" />
-              <span>Reset Demo Data</span>
-            </button>
-
             <button
               onClick={() => setIsAdminOpen(false)}
               className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition"
