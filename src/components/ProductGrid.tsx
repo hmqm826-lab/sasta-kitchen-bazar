@@ -3,12 +3,9 @@ import { useStore } from '../context/StoreContext';
 import { ProductCard } from './ProductCard';
 import {
   Sparkles,
-  Flame,
   ArrowUpDown,
   Filter,
-  Check,
   Tag,
-  Search,
   PackageX,
 } from 'lucide-react';
 
@@ -30,7 +27,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
     setSearchQuery,
   } = useStore();
 
-  const [activeTab, setActiveTab] = useState<'all' | 'bestsellers' | 'new' | 'deals' | 'under1000'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'bestsellers' | 'new' | 'under1000'>('all');
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'discount'>('featured');
   const [inStockOnly, setInStockOnly] = useState<boolean>(false);
 
@@ -45,7 +42,6 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
       // Tab filter
       if (activeTab === 'bestsellers' && !p.isBestSeller) return false;
       if (activeTab === 'new' && !p.isNewArrival) return false;
-      if (activeTab === 'deals' && !p.isHotDeal) return false;
       if (activeTab === 'under1000' && p.price > 1000) return false;
 
       // In stock only filter
@@ -67,7 +63,6 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
     }).sort((a, b) => {
       if (sortBy === 'price-asc') return a.price - b.price;
       if (sortBy === 'price-desc') return b.price - a.price;
-      if (sortBy === 'discount') return b.discountPercentage - a.discountPercentage;
       return 0; // featured default
     });
   }, [products, activeCategory, activeTab, inStockOnly, searchQuery, sortBy]);
@@ -80,7 +75,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
           <div>
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#173D30] mb-1">
               <span className="w-6 h-0.5 bg-[#F5A623]"></span>
-              Sasti & Meaari Range
+              Explore the Collection
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#173D30] tracking-tight font-heading">
               {activeCategory !== 'all' ? activeCategory : sectionTitle}
@@ -122,18 +117,6 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
           </button>
 
           <button
-            onClick={() => setActiveTab('deals')}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
-              activeTab === 'deals'
-                ? 'bg-[#173D30] text-white shadow-sm'
-                : 'bg-white text-stone-700 hover:bg-stone-100 border border-stone-200'
-            }`}
-          >
-            <Flame className="w-3.5 h-3.5 text-orange-500" />
-            Hot Deals
-          </button>
-
-          <button
             onClick={() => setActiveTab('new')}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition cursor-pointer ${
               activeTab === 'new'
@@ -153,7 +136,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
             }`}
           >
             <Tag className="w-3.5 h-3.5 text-emerald-600" />
-            Under Rs. 1,000 (Sasti Bachat)
+            Under Rs. 1,000
           </button>
         </div>
 
@@ -167,7 +150,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
               onChange={(e) => setActiveCategory(e.target.value)}
               className="bg-stone-50 border border-stone-200 text-xs font-semibold text-stone-800 rounded-xl px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#173D30]"
             >
-              <option value="all">All Categories (10 Collections)</option>
+              <option value="all">All Categories</option>
               {categories.map((c) => (
                 <option key={c.id} value={c.name}>
                   {c.name}
@@ -199,7 +182,6 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
               <option value="featured">Featured & Popular</option>
               <option value="price-asc">Price: Low to High</option>
               <option value="price-desc">Price: High to Low</option>
-              <option value="discount">Biggest Discount</option>
             </select>
           </div>
         </div>
