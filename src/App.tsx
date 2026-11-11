@@ -101,7 +101,7 @@ function StoreApp() {
       />
 
       <a
-        href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=Assalam-o-Alaikum%20Sasta%20Kitchen%20Bazar%2C%20mujhe%20maloomat%20chahiye.`}
+        href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=${encodeURIComponent("🏠 سستا کچن بازار میں خوش آمدید! 🏠")}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Chat with Sasta Kitchen Bazar on WhatsApp at ${STORE_CONTACT.phone1}`}
