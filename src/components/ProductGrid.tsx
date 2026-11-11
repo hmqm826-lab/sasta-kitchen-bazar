@@ -4,7 +4,6 @@ import { ProductCard } from './ProductCard';
 import {
   Sparkles,
   ArrowUpDown,
-  Filter,
   Tag,
   PackageX,
 } from 'lucide-react';
@@ -28,7 +27,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
   } = useStore();
 
   const [activeTab, setActiveTab] = useState<'all' | 'bestsellers' | 'new' | 'under1000'>('all');
-  const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'discount'>('featured');
+  const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc'>('featured');
   const [inStockOnly, setInStockOnly] = useState<boolean>(false);
 
   // Filter and sort products
