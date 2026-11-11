@@ -1,4 +1,4 @@
-import { X, ShieldCheck, RefreshCw, FileText, PhoneCall, Mail, MapPin, MessageSquare } from 'lucide-react';
+import { X, ShieldCheck, FileText, PhoneCall, MessageSquare } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 import { STORE_CONTACT } from '../data/contactInfo';
 
@@ -30,7 +30,7 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, onClose }) => {
             {type === 'wishlist' && <span className="text-lg">❤️</span>}
 
             <h3 className="font-black text-base font-heading">
-              {type === 'refund' && '7-Day Easy Return & Refund Policy'}
+              {type === 'refund' && 'Returns & Refunds'}
               {type === 'privacy' && 'Privacy Policy & Data Security'}
               {type === 'terms' && 'Terms & Conditions of Service'}
               {type === 'contact' && 'Contact Us & Courier Tracking'}
@@ -50,50 +50,41 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, onClose }) => {
         <div className="p-5 sm:p-6 overflow-y-auto text-xs sm:text-sm text-stone-700 space-y-4 leading-relaxed">
           {type === 'refund' && (
             <>
-              <p className="font-bold text-stone-900">Our Customer Satisfaction Guarantee:</p>
+              <p className="font-bold text-stone-900">Need help with an order?</p>
               <p>
-                At <b>Sasta Kitchen Bazar</b>, we strive to ensure you receive 100% genuine and fully functioning kitchen accessories and home gadgets.
+                If an item arrives damaged, defective or different from the item you ordered, contact our support team and share your order ID with clear photos or a short video.
               </p>
-              <h4 className="font-bold text-[#173D30]">1. Eligibility for Return / Replacement:</h4>
-              <ul className="list-disc list-inside space-y-1 text-stone-600">
-                <li>Defective, malfunctioning, or broken item received upon parcel arrival.</li>
-                <li>Incorrect item or color dispatched compared to your invoice order.</li>
-                <li>Claim must be initiated within <b>7 days</b> of courier delivery.</li>
-              </ul>
-              <h4 className="font-bold text-[#173D30]">2. Simple Return Process:</h4>
               <p>
-                1. Take a short 10-second unboxing video or clear photo of the defective item.
-                <br />
-                2. WhatsApp our customer care at <b>{STORE_CONTACT.phone1}</b> or <b>{STORE_CONTACT.phone2}</b> with your Order ID.
-                <br />
-                3. Our courier rider will deliver your replacement or process your JazzCash/EasyPaisa refund within 3 business days.
+                Our team will review the details and explain the available next steps for your request. Return, replacement or refund arrangements are confirmed individually through customer support.
               </p>
+              <div className="rounded-xl border border-stone-200 bg-stone-50 p-3">
+                <p className="font-bold text-[#65452F]">Contact support</p>
+                <p className="mt-1">WhatsApp or call {STORE_CONTACT.phone1} or {STORE_CONTACT.phone2}.</p>
+              </div>
             </>
           )}
 
           {type === 'terms' && (
             <>
-              <p className="font-bold text-stone-900">Cash on Delivery & Shopping Guidelines:</p>
-              <p>
-                By placing an order on Sasta Kitchen Bazar, you agree to these standard terms:
-              </p>
+              <p className="font-bold text-stone-900">Cash on Delivery & Order Terms</p>
               <ul className="list-disc list-inside space-y-1.5 text-stone-600">
-                <li><b>Order Confirmation:</b> A verification phone call or WhatsApp message is sent prior to courier dispatch. Orders without valid phone numbers cannot be shipped.</li>
-                <li><b>Courier Delivery:</b> Standard shipping takes 2 to 4 working days via TCS, Leopard, or Trax Courier across Pakistan.</li>
-                <li><b>Payment:</b> Cash is to be handed to the rider at your delivery address. Riders cannot open sealed parcels before payment due to courier policies, but your order is protected by our 7-Day Exchange Policy.</li>
-                <li><b>Pricing:</b> All product prices are quoted in Pakistani Rupees (PKR) and include local sales taxes.</li>
+                <li>Payment is accepted in cash when the order is delivered.</li>
+                <li>Product prices are shown in Pakistani Rupees (PKR).</li>
+                <li>Delivery charges, where applicable, are shown in the cart and checkout summary.</li>
+                <li>Please provide a correct phone number, city and complete delivery address when placing an order.</li>
+                <li>For order changes or questions, contact customer support using the phone numbers on this page.</li>
               </ul>
             </>
           )}
 
           {type === 'privacy' && (
             <>
-              <p className="font-bold text-stone-900">Your Privacy is Fully Protected:</p>
+              <p className="font-bold text-stone-900">How order information is used</p>
               <p>
-                We only collect necessary delivery details (Your Name, Phone Number, City, and Postal Address) exclusively for courier parcel fulfillment.
+                Information you enter at checkout, such as your name, phone number, city and delivery address, is used to prepare and follow up on your order.
               </p>
               <p>
-                We <b>never sell, rent, or share</b> your contact details with external third-party advertisers. All order history and customer details are stored securely.
+                Please provide only the details needed to complete your purchase. For questions about your order information, contact us directly on either support number.
               </p>
             </>
           )}
@@ -167,19 +158,8 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, onClose }) => {
                 </div>
               </div>
 
-              <div className="space-y-2 text-xs bg-stone-50 p-3.5 rounded-2xl border border-stone-200">
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-[#173D30] flex-shrink-0 mt-0.5" />
-                  <span><b>Wholesale Hub:</b> {STORE_CONTACT.address}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-[#173D30] flex-shrink-0" />
-                  <span><b>Support Email:</b> {STORE_CONTACT.email}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-4 h-4 flex items-center justify-center font-bold text-[#173D30]">⏰</span>
-                  <span><b>Timings:</b> {STORE_CONTACT.hours}</span>
-                </div>
+              <div className="rounded-2xl border border-stone-200 bg-stone-50 p-3.5 text-xs text-stone-700">
+                <p className="font-semibold">For order enquiries, please contact either helpline above by phone or WhatsApp.</p>
               </div>
             </div>
           )}
