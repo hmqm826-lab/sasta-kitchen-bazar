@@ -20,8 +20,22 @@ import { ToastContainer } from './components/ToastContainer';
 import { STORE_CONTACT } from './data/contactInfo';
 import { MessageCircle } from 'lucide-react';
 
+type ThemePreference = 'auto' | 'light' | 'dark';
+
 function StoreApp() {
   const [policyType, setPolicyType] = useState<'privacy' | 'terms' | 'refund' | 'contact' | 'wishlist' | null>(null);
+  const [themePreference, setThemePreference] = useState<ThemePreference>(() => {
+    if (typeof window === 'undefined') return 'auto';
+    const saved = window.localStorage.getItem('skb-theme-preference');
+    return saved === 'light' || saved === 'dark' ? saved : 'auto';
+  });
+  const [activeTheme, setActiveTheme] = useState<'light' | 'dark'>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = window.localStorage.getItem('skb-theme-preference');
+      if (saved === 'light' || saved === 'dark') return saved;
+    }
+    return 'light';
+  });
 
   // Use Pakistan Standard Time: light from 07:00 to 18:59, dark from 19:00 to 06:59.
   useEffect(() => {
