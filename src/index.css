@@ -49,97 +49,70 @@ html[data-theme="dark"] {
   --ink: #F2EBDD;
   --muted: #C0B29D;
   --line: #514434;
-  --brand-brown: #D3B17A;
-  --brand-mustard: #E0B64E;
-  --color-brand-green: #D3B17A;
-  --color-brand-green-dark: #B18A50;
-  --color-brand-green-light: #E0C28C;
-  --color-brand-orange: #E0B64E;
-  --color-brand-orange-dark: #C99B35;
-  --color-brand-dark: #F2EBDD;
-  --color-cream: #24201B;
 }
 
+/* Dark mode changes only the main content's neutral surfaces.
+   Header, colorful brand borders, banners, and footer retain their original colors. */
 html[data-theme="dark"] body,
 html[data-theme="dark"] #root,
 html[data-theme="dark"] main,
-html[data-theme="dark"] main section,
 html[data-theme="dark"] #products-catalog {
-  background-color: var(--page-bg) !important;
+  background-color: var(--page-bg);
   color: var(--ink);
 }
 
-html[data-theme="dark"] header,
-html[data-theme="dark"] [class~="bg-white"],
-html[data-theme="dark"] [class*="bg-white/"],
-html[data-theme="dark"] [class*="bg-stone-50"],
-html[data-theme="dark"] [class*="bg-stone-100"],
-html[data-theme="dark"] [class*="bg-stone-200"],
-html[data-theme="dark"] [class*="bg-[#FAF8F5]"],
-html[data-theme="dark"] [class*="bg-[#F5F2EC]"],
-html[data-theme="dark"] [class*="bg-[#F8F9FA]"] {
+html[data-theme="dark"] main [class~="bg-white"],
+html[data-theme="dark"] main [class*="bg-white/"],
+html[data-theme="dark"] main [class*="bg-stone-50"],
+html[data-theme="dark"] main [class*="bg-stone-100"],
+html[data-theme="dark"] main [class*="bg-stone-200"],
+html[data-theme="dark"] main [class*="bg-[#FAF8F5]"],
+html[data-theme="dark"] main [class*="bg-[#F5F2EC]"],
+html[data-theme="dark"] main [class*="bg-[#F8F9FA]"],
+html[data-theme="dark"] main [class*="bg-[#FFFEFA]"],
+html[data-theme="dark"] main [class*="bg-[#F7F3E9]"] {
   background-color: var(--surface) !important;
   background-image: none !important;
 }
 
-html[data-theme="dark"] [class*="text-stone-900"],
-html[data-theme="dark"] [class*="text-stone-800"],
-html[data-theme="dark"] [class*="text-stone-700"],
-html[data-theme="dark"] [class*="text-stone-600"],
-html[data-theme="dark"] [class*="text-[#292929]"] {
+html[data-theme="dark"] main [class*="text-stone-900"],
+html[data-theme="dark"] main [class*="text-stone-800"],
+html[data-theme="dark"] main [class*="text-stone-700"],
+html[data-theme="dark"] main [class*="text-stone-600"],
+html[data-theme="dark"] main [class*="text-[#292929]"] {
   color: var(--ink) !important;
 }
 
-html[data-theme="dark"] [class*="text-stone-500"],
-html[data-theme="dark"] [class*="text-stone-400"],
-html[data-theme="dark"] [class*="text-stone-300"] {
+html[data-theme="dark"] main [class*="text-stone-500"],
+html[data-theme="dark"] main [class*="text-stone-400"],
+html[data-theme="dark"] main [class*="text-stone-300"] {
   color: var(--muted) !important;
 }
 
-html[data-theme="dark"] [class*="border-stone-"],
-html[data-theme="dark"] [class*="border-white/"] {
+html[data-theme="dark"] main [class*="border-stone-"],
+html[data-theme="dark"] main [class*="border-white/"] {
   border-color: var(--line) !important;
 }
 
-html[data-theme="dark"] [class*="text-[#173D30]"] { color: var(--brand-brown) !important; }
-html[data-theme="dark"] [class*="text-[#F5A623]"] { color: var(--brand-mustard) !important; }
-html[data-theme="dark"] [class*="bg-[#173D30]"] { background-color: #493A2A !important; }
-html[data-theme="dark"] [class*="bg-[#235846]"] { background-color: #5A4630 !important; }
-html[data-theme="dark"] [class*="bg-[#F5A623]"] { background-color: #A9822F !important; }
-html[data-theme="dark"] [class*="border-[#173D30]"] { border-color: #A98B5C !important; }
-
-html[data-theme="dark"] input,
-html[data-theme="dark"] select,
-html[data-theme="dark"] textarea {
+html[data-theme="dark"] main input,
+html[data-theme="dark"] main select,
+html[data-theme="dark"] main textarea {
   background-color: #302920 !important;
   color: var(--ink) !important;
   border-color: var(--line) !important;
 }
-html[data-theme="dark"] input::placeholder,
-html[data-theme="dark"] textarea::placeholder { color: #B8AA94 !important; }
+html[data-theme="dark"] main input::placeholder,
+html[data-theme="dark"] main textarea::placeholder { color: #B8AA94 !important; }
 
-html[data-theme="dark"] section[class*="from-stone-"],
-html[data-theme="dark"] section[class*="via-emerald-"] {
-  background-image: none !important;
-}
-
-/* Theme-aware panels for product cards, menus, modals and search results. */
-html[data-theme="dark"] [class*="bg-emerald-50"],
-html[data-theme="dark"] [class*="bg-amber-50"],
-html[data-theme="dark"] [class*="bg-orange-50"],
-html[data-theme="dark"] [class*="bg-yellow-50"],
-html[data-theme="dark"] [class*="bg-[#FFFEFA]"],
-html[data-theme="dark"] [class*="bg-[#F7F3E9]"] {
+/* Neutral pastel panels become dark; branded green, yellow and orange remain untouched. */
+html[data-theme="dark"] main [class*="bg-emerald-50"],
+html[data-theme="dark"] main [class*="bg-amber-50"],
+html[data-theme="dark"] main [class*="bg-orange-50"],
+html[data-theme="dark"] main [class*="bg-yellow-50"] {
   background-color: var(--surface-soft) !important;
 }
-html[data-theme="dark"] [class*="text-emerald-"],
-html[data-theme="dark"] [class*="text-amber-"],
-html[data-theme="dark"] [class*="text-orange-"] {
-  color: var(--brand-brown) !important;
-}
-html[data-theme="dark"] [class*="border-emerald-"],
-html[data-theme="dark"] [class*="border-amber-"] {
-  border-color: var(--line) !important;
+html[data-theme="dark"] main [class*="text-stone-"] {
+  color: var(--muted);
 }
 
 * { transition-property: background-color, border-color, color; transition-duration: .2s; }
