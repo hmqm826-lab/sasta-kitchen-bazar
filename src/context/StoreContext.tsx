@@ -327,7 +327,12 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     return newOrder;
   };
 
-  const deleteOrder = (orderId: string) => {\n    setOrders((prev) => prev.filter((o) => o.id !== orderId));\n    showToast('Order Deleted', `Order #${orderId} removed.`, 'warning');\n  };\n\n  const updateOrderStatus = (orderId: string, status: Order['status']) => {
+  const deleteOrder = (orderId: string) => {
+    setOrders((prev) => prev.filter((o) => o.id !== orderId));
+    showToast('Order Deleted', `Order #${orderId} removed.`, 'warning');
+  };
+
+  const updateOrderStatus = (orderId: string, status: Order['status']) => {
     setOrders((prev) =>
       prev.map((o) => (o.id === orderId ? { ...o, status } : o))
     );
