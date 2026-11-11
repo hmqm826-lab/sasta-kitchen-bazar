@@ -3,14 +3,11 @@ import { useStore } from '../context/StoreContext';
 import { STORE_CONTACT } from '../data/contactInfo';
 import {
   X,
-  Star,
   ShoppingCart,
   Zap,
   PhoneCall,
   CheckCircle,
   Truck,
-  ShieldCheck,
-  RefreshCw,
   Heart,
   Share2,
 } from 'lucide-react';
@@ -82,9 +79,6 @@ export const ProductModal: React.FC = () => {
                 alt={selectedProduct.name}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute top-3 left-3 bg-rose-600 text-white font-extrabold text-xs px-2.5 py-1 rounded-md shadow">
-                Save {selectedProduct.discountPercentage}%
-              </div>
             </div>
 
             {/* Gallery Thumbnails */}
@@ -131,60 +125,34 @@ export const ProductModal: React.FC = () => {
                 </p>
               )}
 
-              {/* Rating & Wishlist */}
-              <div className="flex items-center justify-between pb-4 border-b border-stone-100 mb-4">
-                <div className="flex items-center gap-2">
-                  <div className="flex items-center text-amber-400">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-4 h-4 ${
-                          i < Math.floor(selectedProduct.rating)
-                            ? 'fill-amber-400 text-amber-400'
-                            : 'text-stone-300'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <span className="text-xs font-bold text-stone-700">
-                    {selectedProduct.rating} ({selectedProduct.reviewCount} customer reviews)
-                  </span>
-                </div>
-
+              <div className="mb-4 flex items-center justify-between border-b border-stone-100 pb-4">
+                <span className="text-xs font-semibold text-stone-500">Product details</span>
                 <div className="flex items-center gap-1">
                   <button
                     onClick={() => toggleWishlist(selectedProduct.id)}
-                    className={`p-2 rounded-full border transition ${
-                      isFavorite
-                        ? 'bg-rose-50 border-rose-200 text-rose-600'
-                        : 'border-stone-200 text-stone-600 hover:bg-stone-50'
+                    className={`rounded-full border p-2 transition ${
+                      isFavorite ? 'border-rose-200 bg-rose-50 text-rose-600' : 'border-stone-200 text-stone-600 hover:bg-stone-50'
                     }`}
-                    title="Add to Wishlist"
+                    title={isFavorite ? 'Remove from Wishlist' : 'Add to Wishlist'}
+                    aria-label={isFavorite ? 'Remove from Wishlist' : 'Add to Wishlist'}
                   >
-                    <Heart className={`w-4 h-4 ${isFavorite ? 'fill-rose-600' : ''}`} />
+                    <Heart className={`h-4 w-4 ${isFavorite ? 'fill-rose-600' : ''}`} />
                   </button>
                   <button
                     onClick={handleShare}
-                    className="p-2 rounded-full border border-stone-200 text-stone-600 hover:bg-stone-50 transition"
+                    className="rounded-full border border-stone-200 p-2 text-stone-600 transition hover:bg-stone-50"
                     title="Share product"
+                    aria-label="Share product"
                   >
-                    <Share2 className="w-4 h-4" />
+                    <Share2 className="h-4 w-4" />
                   </button>
                 </div>
               </div>
 
               {/* Price Display */}
-              <div className="flex items-baseline gap-3 mb-4">
-                <span className="text-3xl font-black text-[#173D30]">
+              <div className="mb-4">
+                <span className="text-3xl font-black text-[#65452F]">
                   Rs. {selectedProduct.price.toLocaleString()}
-                </span>
-                {selectedProduct.originalPrice > selectedProduct.price && (
-                  <span className="text-base text-stone-400 line-through">
-                    Rs. {selectedProduct.originalPrice.toLocaleString()}
-                  </span>
-                )}
-                <span className="text-xs font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">
-                  Save Rs. {(selectedProduct.originalPrice - selectedProduct.price).toLocaleString()}
                 </span>
               </div>
 
@@ -211,7 +179,7 @@ export const ProductModal: React.FC = () => {
               )}
 
               {/* Quantity Selector */}
-              <div className="flex items-center gap-4 mb-6">
+              <div className="mb-6 flex flex-wrap items-center gap-3 sm:gap-4">
                 <span className="text-xs font-bold text-stone-700">Quantity:</span>
                 <div className="flex items-center border border-stone-300 rounded-xl bg-white overflow-hidden shadow-xs">
                   <button
@@ -238,13 +206,13 @@ export const ProductModal: React.FC = () => {
 
             {/* Action Buttons */}
             <div className="space-y-2.5 pt-4 border-t border-stone-200">
-              <div className="grid grid-cols-2 gap-2.5">
+              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                 <button
                   onClick={() => {
                     addToCart(selectedProduct, quantity);
                     closeProductModal();
                   }}
-                  className="py-3 px-4 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-900 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition cursor-pointer"
+                  className="flex min-h-11 items-center justify-center gap-2 rounded-xl bg-stone-100 px-3 py-3 text-xs font-bold text-stone-900 transition hover:bg-stone-200 cursor-pointer sm:px-4 sm:text-sm"
                 >
                   <ShoppingCart className="w-4 h-4 text-[#173D30]" />
                   <span>Add to Cart</span>
@@ -252,7 +220,7 @@ export const ProductModal: React.FC = () => {
 
                 <button
                   onClick={() => buyNow(selectedProduct)}
-                  className="py-3 px-4 rounded-xl bg-[#F5A623] hover:bg-[#e09315] text-[#173D30] font-black text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2 cursor-pointer"
+                  className="flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#C69A35] px-3 py-3 text-xs font-black text-[#30271F] shadow-md transition hover:bg-[#A77B20] cursor-pointer sm:px-4 sm:text-sm"
                 >
                   <Zap className="w-4 h-4 fill-[#173D30]" />
                   <span>Buy Now (COD)</span>
@@ -268,17 +236,9 @@ export const ProductModal: React.FC = () => {
                 <span>Order Directly on WhatsApp</span>
               </button>
 
-              {/* Trust Indicators */}
-              <div className="grid grid-cols-3 gap-2 pt-2 text-center text-[10px] text-stone-500 font-medium">
-                <span className="flex items-center justify-center gap-1">
-                  <Truck className="w-3.5 h-3.5 text-emerald-700" /> Cash on Delivery
-                </span>
-                <span className="flex items-center justify-center gap-1">
-                  <RefreshCw className="w-3.5 h-3.5 text-emerald-700" /> 7-Day Exchange
-                </span>
-                <span className="flex items-center justify-center gap-1">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" /> Verified Quality
-                </span>
+              <div className="flex items-center justify-center gap-2 pt-2 text-xs font-semibold text-stone-500">
+                <Truck className="h-4 w-4 text-[#65452F]" />
+                Cash on Delivery available
               </div>
             </div>
           </div>
