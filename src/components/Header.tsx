@@ -265,7 +265,17 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Right Action Icons */}
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-1 sm:gap-3">
+            {/* Visitor-controlled light/dark theme switch */}
+            <button
+              onClick={onToggleTheme}
+              className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-stone-200 bg-stone-100 px-2.5 py-2 text-xs font-semibold text-stone-700 transition hover:bg-stone-200 sm:px-3"
+              title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+              aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+            >
+              {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              <span className="hidden sm:inline">{theme === 'dark' ? 'Light' : 'Dark'}</span>
+            </button>
             {/* Wishlist Button */}
             <button
               onClick={onOpenWishlist}
