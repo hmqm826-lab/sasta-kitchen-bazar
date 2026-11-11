@@ -467,6 +467,15 @@ export const AdminDashboard: React.FC = () => {
                             >
                               <PhoneCall className="w-4 h-4" />
                             </button>
+                            <button
+                              onClick={() => {
+                                if (confirm(`Delete order #${order.id}?`)) deleteOrder(order.id);
+                              }}
+                              className="p-1.5 bg-rose-100 hover:bg-rose-200 text-rose-700 rounded-lg transition"
+                              title="Delete order"
+                            >
+                              <Trash2 className="w-4 h-4" />
+                            </button>
                           </td>
                         </tr>
                       ))
@@ -656,7 +665,7 @@ export const AdminDashboard: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-stone-100">
-                  {orders.map((o) => (
+                  {orders.length > 0 ? orders.map((o) => (
                     <tr key={o.id} className="hover:bg-stone-50">
                       <td className="p-3 font-bold text-stone-900">{o.customerName}</td>
                       <td className="p-3 text-emerald-800 font-semibold">{o.customerPhone}</td>
@@ -672,7 +681,9 @@ export const AdminDashboard: React.FC = () => {
                         </button>
                       </td>
                     </tr>
-                  ))}
+                  )) : (
+                    <tr><td colSpan={5} className="p-8 text-center text-stone-500">Abhi koi customer order nahi hai. Asli orders yahan nazar aayenge.</td></tr>
+                  )}
                 </tbody>
               </table>
             </div>
