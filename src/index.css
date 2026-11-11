@@ -74,6 +74,7 @@ html[data-theme="dark"] [class~="bg-white"],
 html[data-theme="dark"] [class*="bg-white/"],
 html[data-theme="dark"] [class*="bg-stone-50"],
 html[data-theme="dark"] [class*="bg-stone-100"],
+html[data-theme="dark"] [class*="bg-stone-200"],
 html[data-theme="dark"] [class*="bg-[#FAF8F5]"],
 html[data-theme="dark"] [class*="bg-[#F5F2EC]"],
 html[data-theme="dark"] [class*="bg-[#F8F9FA]"] {
@@ -106,6 +107,7 @@ html[data-theme="dark"] [class*="bg-[#173D30]"] { background-color: #493A2A !imp
 html[data-theme="dark"] [class*="bg-[#235846]"] { background-color: #5A4630 !important; }
 html[data-theme="dark"] [class*="bg-[#F5A623]"] { background-color: #A9822F !important; }
 html[data-theme="dark"] [class*="border-[#173D30]"] { border-color: #A98B5C !important; }
+
 html[data-theme="dark"] input,
 html[data-theme="dark"] select,
 html[data-theme="dark"] textarea {
@@ -121,6 +123,25 @@ html[data-theme="dark"] section[class*="via-emerald-"] {
   background-image: none !important;
 }
 
+/* Theme-aware panels for product cards, menus, modals and search results. */
+html[data-theme="dark"] [class*="bg-emerald-50"],
+html[data-theme="dark"] [class*="bg-amber-50"],
+html[data-theme="dark"] [class*="bg-orange-50"],
+html[data-theme="dark"] [class*="bg-yellow-50"],
+html[data-theme="dark"] [class*="bg-[#FFFEFA]"],
+html[data-theme="dark"] [class*="bg-[#F7F3E9]"] {
+  background-color: var(--surface-soft) !important;
+}
+html[data-theme="dark"] [class*="text-emerald-"],
+html[data-theme="dark"] [class*="text-amber-"],
+html[data-theme="dark"] [class*="text-orange-"] {
+  color: var(--brand-brown) !important;
+}
+html[data-theme="dark"] [class*="border-emerald-"],
+html[data-theme="dark"] [class*="border-amber-"] {
+  border-color: var(--line) !important;
+}
+
 * { transition-property: background-color, border-color, color; transition-duration: .2s; }
 
 /* Custom scrollbar */
@@ -128,7 +149,6 @@ html[data-theme="dark"] section[class*="via-emerald-"] {
 ::-webkit-scrollbar-track { background: var(--surface-soft); }
 ::-webkit-scrollbar-thumb { background: var(--brand-brown); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--brand-mustard); }
-
 
 /* Consistent, accessible controls across mobile and desktop */
 button, a { -webkit-tap-highlight-color: transparent; }
