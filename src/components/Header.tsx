@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useStore } from '../context/StoreContext';
 import { STORE_CONTACT } from '../data/contactInfo';
+import { supabase, ADMIN_EMAIL } from '../lib/supabase';
 import {
   Search,
   ShoppingCart,
@@ -43,9 +44,25 @@ export const Header: React.FC<HeaderProps> = ({
   } = useStore();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isAuthorizedAdmin, setIsAuthorizedAdmin] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
+
+  // Show the Admin Panel button only to the signed-in admin account
+  useEffect(() => {
+    let active = true;
+    supabase.auth.getSession().then(({ data }) => {
+      if (active) setIsAuthorizedAdmin(data.session?.user.email?.toLowerCase() === ADMIN_EMAIL);
+    });
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (active) setIsAuthorizedAdmin(session?.user.email?.toLowerCase() === ADMIN_EMAIL);
+    });
+    return () => {
+      active = false;
+      listener.subscription.unsubscribe();
+    };
+  }, []);
 
   // Close search suggestions on click outside
   useEffect(() => {
@@ -294,19 +311,21 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
             </button>
 
-            {/* Store Admin Portal Switcher */}
-            <button
-              onClick={() => setIsAdminOpen(!isAdminOpen)}
-              className={`p-2 sm:px-3 sm:py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors border ${
-                isAdminOpen
-                  ? 'bg-amber-100 text-amber-900 border-amber-300'
-                  : 'bg-stone-50 hover:bg-stone-100 text-stone-700 border-stone-200'
-              }`}
-              title="Admin Dashboard (Manage products & orders)"
-            >
-              <LayoutDashboard className="w-4 h-4 text-emerald-800" />
-              <span className="hidden md:inline">Admin Panel</span>
-            </button>
+            {/* Store Admin Portal Switcher - visible only to the authenticated admin */}
+            {isAuthorizedAdmin && (
+              <button
+                onClick={() => setIsAdminOpen(!isAdminOpen)}
+                className={`p-2 sm:px-3 sm:py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors border ${
+                  isAdminOpen
+                    ? 'bg-amber-100 text-amber-900 border-amber-300'
+                    : 'bg-stone-50 hover:bg-stone-100 text-stone-700 border-stone-200'
+                }`}
+                title="Admin Dashboard (Manage products & orders)"
+              >
+                <LayoutDashboard className="w-4 h-4 text-emerald-800" />
+                <span className="hidden md:inline">Admin Panel</span>
+              </button>
+            )}
           </div>
         </div>
 
