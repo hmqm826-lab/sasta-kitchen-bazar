@@ -128,3 +128,13 @@ html[data-theme="dark"] section[class*="via-emerald-"] {
 ::-webkit-scrollbar-track { background: var(--surface-soft); }
 ::-webkit-scrollbar-thumb { background: var(--brand-brown); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--brand-mustard); }
+
+
+/* Consistent, accessible controls across mobile and desktop */
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--brand-mustard);
+  outline-offset: 2px;
+}
+button:disabled { cursor: not-allowed; }
+img { max-width: 100%; }
