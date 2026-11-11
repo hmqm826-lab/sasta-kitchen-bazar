@@ -1,4 +1,5 @@
 name: Deploy Sasta Kitchen Bazar
+# Re-trigger deployment after Actions startup issue.
 
 on:
   push:
