@@ -54,7 +54,7 @@ interface StoreContextType {
   
   // Order & Admin
   createOrder: (orderData: Omit<Order, 'id' | 'createdAt' | 'status'>) => Order;
-  updateOrderStatus: (orderId: string, status: Order['status']) => void;
+  updateOrderStatus: (orderId: string, status: Order['status']) => void;\n  deleteOrder: (orderId: string) => void;
   addProduct: (product: Omit<Product, 'id'>) => void;
   updateProduct: (product: Product) => void;
   deleteProduct: (id: string) => void;
@@ -326,7 +326,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     return newOrder;
   };
 
-  const updateOrderStatus = (orderId: string, status: Order['status']) => {
+  const deleteOrder = (orderId: string) => {\n    setOrders((prev) => prev.filter((o) => o.id !== orderId));\n    showToast('Order Deleted', `Order #${orderId} removed.`, 'warning');\n  };\n\n  const updateOrderStatus = (orderId: string, status: Order['status']) => {
     setOrders((prev) =>
       prev.map((o) => (o.id === orderId ? { ...o, status } : o))
     );
@@ -404,7 +404,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         cartTotal,
         freeShippingThreshold: FREE_SHIPPING_THRESHOLD,
         createOrder,
-        updateOrderStatus,
+        updateOrderStatus,\n        deleteOrder,
         addProduct,
         updateProduct,
         deleteProduct,
