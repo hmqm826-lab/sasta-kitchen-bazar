@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStore } from '../context/StoreContext';
-import { STORE_CONTACT } from '../data/contactInfo';
+import { STORE_CONTACT, WHATSAPP_WELCOME_MESSAGE } from '../data/contactInfo';
 import { Store, PhoneCall, ArrowRight, MessageCircle, Clock3 } from 'lucide-react';
 
 interface FooterProps {
@@ -55,10 +55,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicy, onScrollToSection 
               </div>
             </div>
             <div className="flex flex-wrap gap-2 pt-1">
-              <a href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=Assalam-o-Alaikum%20Sasta%20Kitchen%20Bazar`} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-emerald-600 px-3 py-2 text-xs font-bold text-white transition hover:bg-emerald-700">
+              <a href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-emerald-600 px-3 py-2 text-xs font-bold text-white transition hover:bg-emerald-700">
                 <MessageCircle className="h-4 w-4" /> WhatsApp Sales
               </a>
-              <a href={`https://wa.me/${STORE_CONTACT.phone2WhatsApp}?text=Assalam-o-Alaikum%20Sasta%20Kitchen%20Bazar`} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-white/20 px-3 py-2 text-xs font-bold text-white transition hover:bg-white/10">
+              <a href={`https://wa.me/${STORE_CONTACT.phone2WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-white/20 px-3 py-2 text-xs font-bold text-white transition hover:bg-white/10">
                 <MessageCircle className="h-4 w-4" /> WhatsApp Support
               </a>
             </div>
