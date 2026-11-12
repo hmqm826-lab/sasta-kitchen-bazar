@@ -29,7 +29,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicy, onScrollToSection 
               </span>
             </a>
             <p className="max-w-sm text-xs leading-relaxed text-stone-300 sm:text-sm">
-              Explore useful kitchen gadgets, cooking accessories, storage solutions and everyday home essentials. Cash on Delivery is available across Pakistan.
+              Explore useful kitchen gadgets, cooking accessories, storage solutions and everyday home essentials. Cash on Delivery is available All Over Pakistan.
             </p>
             <div className="flex flex-col gap-3 text-xs text-stone-200">
               <div className="flex items-start gap-2">
