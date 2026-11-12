@@ -17,7 +17,7 @@ import { OrderSuccessModal } from './components/OrderSuccessModal';
 import { AdminAccess } from './components/AdminAccess';
 import { PolicyModals } from './components/PolicyModals';
 import { ToastContainer } from './components/ToastContainer';
-import { STORE_CONTACT } from './data/contactInfo';
+import { STORE_CONTACT, WHATSAPP_WELCOME_MESSAGE } from './data/contactInfo';
 import { MessageCircle } from 'lucide-react';
 
 type ThemePreference = 'auto' | 'light' | 'dark';
@@ -101,7 +101,7 @@ function StoreApp() {
       />
 
       <a
-        href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=${encodeURIComponent("🏠 سستا کچن بازار میں خوش آمدید! 🏠")}`}
+        href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Chat with Sasta Kitchen Bazar on WhatsApp at ${STORE_CONTACT.phone1}`}
