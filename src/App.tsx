@@ -85,7 +85,10 @@ function StoreApp() {
       />
 
       <main className="flex-1">
-        <HeroBanner onShopNow={() => scrollToSection('products-catalog')} />
+        <HeroBanner
+          onShopNow={() => scrollToSection('products-catalog')}
+          onOpenTerms={() => setPolicyType('terms')}
+        />
         <div id="best-sellers">
           <ProductGrid
             sectionTitle="Explore Kitchen & Home Essentials"
@@ -101,15 +104,15 @@ function StoreApp() {
       />
 
       <a
-        href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`}
+        href={`https://wa.me/${STORE_CONTACT.phone2WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Chat with Sasta Kitchen Bazar on WhatsApp at ${STORE_CONTACT.phone1}`}
-        title={`Chat on WhatsApp: ${STORE_CONTACT.phone1}`}
+        aria-label={`Chat with customer support on WhatsApp at ${STORE_CONTACT.phone2}`}
+        title={`Online customer support: ${STORE_CONTACT.phone2}`}
         className="fixed bottom-5 left-5 z-50 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#16A34A] px-4 py-3 text-sm font-bold text-white shadow-xl transition hover:scale-105 hover:bg-[#15803D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-400"
       >
         <MessageCircle className="h-5 w-5" />
-        <span>WhatsApp Chat</span>
+        <span>Online Support Chat</span>
       </a>
 
       <ProductModal />
