@@ -133,51 +133,83 @@ button:disabled { cursor: not-allowed; }
 img { max-width: 100%; }
 
 
-/* Accessible theme surfaces: keep all branded header/footer colors intact. */
-:root {
-  --page-bg: #FFFFFF;
-  --surface: #FFFFFF;
-  --surface-soft: #F7F3E9;
-  --ink: #30271F;
-  --muted: #786B5D;
-  --line: #DED2BF;
-}
+/* Sasta Kitchen Bazar theme rules: preserve brand colors; invert neutral page surfaces only. */
 html[data-theme="light"] body,
 html[data-theme="light"] main {
   background-color: #FFFFFF;
-  color: #30271F;
+  color: #493020;
 }
-html[data-theme="dark"] main {
+
+/* The main logo/header strip stays brown in both themes; announcement bar stays unchanged. */
+header {
+  background-color: #65452F !important;
+  border-bottom-color: #826044 !important;
+}
+header > div:nth-of-type(2) {
+  background-color: #65452F !important;
+  color: #F7E8D2 !important;
+}
+header > div:nth-of-type(2) [class*="text-stone-"],
+header > div:nth-of-type(2) [class*="text-[#173D30]"],
+header > div:nth-of-type(2) [class*="text-[#292929]"] {
+  color: #F3DEC1 !important;
+}
+header > div:nth-of-type(2) [class*="bg-stone-"],
+header > div:nth-of-type(2) [class~="bg-white"] {
+  background-color: #79583E !important;
+}
+header > div:nth-of-type(2) input {
+  background-color: #F7F3E9 !important;
+  color: #30271F !important;
+}
+header > div:nth-of-type(2) [class*="text-[#F5A623]"],
+header > div:nth-of-type(2) [class*="text-[#E0B64E]"] {
+  color: #F4D18A !important;
+}
+
+/* Dark mode: only neutral white/cream/gray backgrounds become dark.
+   Colored brand banners, buttons, badges, icons and the header announcement strip are untouched. */
+html[data-theme="dark"] body,
+html[data-theme="dark"] #root,
+html[data-theme="dark"] main,
+html[data-theme="dark"] main section,
+html[data-theme="dark"] main section#products-catalog {
   background-color: #171512;
-  color: #F5F1E8;
+  color: #F3E8D7;
 }
-html[data-theme="dark"] main section#hero {
-  background: #171512 !important;
-}
-html[data-theme="dark"] main section#hero [class*="bg-white"],
-html[data-theme="dark"] main section#hero [class*="bg-[#F7F3E9]"],
-html[data-theme="dark"] main section#hero [class*="bg-[#F0E9DA]"],
-html[data-theme="dark"] main section#hero [class*="bg-[#FAF8F5]"],
-html[data-theme="dark"] main section:not(#hero) [class*="bg-white"],
-html[data-theme="dark"] main section:not(#hero) [class*="bg-[#FFFEFA]"],
-html[data-theme="dark"] main section:not(#hero) [class*="bg-[#FAF8F5]"] {
-  background-color: #24201B !important;
+html[data-theme="dark"] main [class~="bg-white"],
+html[data-theme="dark"] main [class*="bg-white/"],
+html[data-theme="dark"] main [class*="bg-stone-50"],
+html[data-theme="dark"] main [class*="bg-stone-100"],
+html[data-theme="dark"] main [class*="bg-stone-200"],
+html[data-theme="dark"] main [class*="bg-[#FAF8F5]"],
+html[data-theme="dark"] main [class*="bg-[#F5F2EC]"],
+html[data-theme="dark"] main [class*="bg-[#F8F9FA]"],
+html[data-theme="dark"] main [class*="bg-[#FFFEFA]"],
+html[data-theme="dark"] main [class*="bg-[#F7F3E9]"],
+html[data-theme="dark"] main [class*="bg-[#F0E9DA]"] {
+  background-color: #211D18 !important;
   background-image: none !important;
+}
+html[data-theme="dark"] main [class*="text-stone-900"],
+html[data-theme="dark"] main [class*="text-stone-800"],
+html[data-theme="dark"] main [class*="text-stone-700"],
+html[data-theme="dark"] main [class*="text-stone-600"],
+html[data-theme="dark"] main [class*="text-[#292929]"] {
+  color: #E8D9C5 !important;
 }
 html[data-theme="dark"] main h1,
 html[data-theme="dark"] main h2,
 html[data-theme="dark"] main h3,
-html[data-theme="dark"] main [class*="text-stone-900"],
-html[data-theme="dark"] main [class*="text-stone-800"],
-html[data-theme="dark"] main [class*="text-stone-700"],
 html[data-theme="dark"] main [class*="text-[#493020]"],
-html[data-theme="dark"] main [class*="text-[#30271F]"] {
-  color: #F5F1E8 !important;
+html[data-theme="dark"] main [class*="text-[#65452F]"],
+html[data-theme="dark"] main [class*="text-[#173D30]"] {
+  color: #D8B88F !important;
 }
-html[data-theme="dark"] main [class*="text-stone-600"],
 html[data-theme="dark"] main [class*="text-stone-500"],
-html[data-theme="dark"] main [class*="text-stone-400"] {
-  color: #C8BDAA !important;
+html[data-theme="dark"] main [class*="text-stone-400"],
+html[data-theme="dark"] main [class*="text-stone-300"] {
+  color: #C8B9A5 !important;
 }
 html[data-theme="dark"] main [class*="border-stone-"] {
   border-color: #514638 !important;
@@ -185,17 +217,34 @@ html[data-theme="dark"] main [class*="border-stone-"] {
 html[data-theme="dark"] main input,
 html[data-theme="dark"] main select,
 html[data-theme="dark"] main textarea {
-  background-color: #302B24 !important;
-  color: #FFFFFF !important;
+  background-color: #302920 !important;
+  color: #F3E8D7 !important;
   border-color: #655743 !important;
 }
 html[data-theme="dark"] main input::placeholder,
 html[data-theme="dark"] main textarea::placeholder {
-  color: #C8BDAA !important;
+  color: #C8B9A5 !important;
 }
-/* Mustard/yellow brand surfaces use dark lettering for clear contrast. */
-main [class*="bg-[#C69A35]"],
-main [class*="bg-[#F5A623]"],
-main [class*="bg-[#E0B64E]"] {
-  color: #30271F !important;
+
+/* Pastel status chips retain their meaning and readable foregrounds. */
+html[data-theme="dark"] main [class*="bg-emerald-50"] {
+  background-color: #17412F !important;
+  color: #D8F5E5 !important;
+}
+html[data-theme="dark"] main [class*="bg-rose-50"] {
+  background-color: #51252A !important;
+  color: #FFE3E5 !important;
+}
+html[data-theme="dark"] main [class*="bg-amber-50"],
+html[data-theme="dark"] main [class*="bg-orange-50"],
+html[data-theme="dark"] main [class*="bg-yellow-50"] {
+  background-color: #45351D !important;
+  color: #FFE8B8 !important;
+}
+
+/* Keep light-theme headings in the original warm brown family. */
+html[data-theme="light"] main h1,
+html[data-theme="light"] main h2,
+html[data-theme="light"] main h3 {
+  color: #65452F;
 }
