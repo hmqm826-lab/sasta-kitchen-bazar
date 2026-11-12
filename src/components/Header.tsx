@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useStore } from '../context/StoreContext';
-import { STORE_CONTACT } from '../data/contactInfo';
+import { STORE_CONTACT, WHATSAPP_WELCOME_MESSAGE } from '../data/contactInfo';
 import { supabase, ADMIN_EMAIL } from '../lib/supabase';
 import {
   Search,
@@ -131,7 +131,7 @@ export const Header: React.FC<HeaderProps> = ({
               <PhoneCall className="w-3.5 h-3.5 text-[#F5A623]" />
               <span className="text-stone-300">Helpline:</span>
               <a
-                href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=Assalam-o-Alaikum%20Sasta%20Kitchen%20Bazar`}
+                href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#F5A623] transition-colors font-bold text-white underline decoration-[#F5A623]/40"
@@ -140,7 +140,7 @@ export const Header: React.FC<HeaderProps> = ({
               </a>
               <span className="text-stone-500">|</span>
               <a
-                href={`https://wa.me/${STORE_CONTACT.phone2WhatsApp}?text=Assalam-o-Alaikum%20Sasta%20Kitchen%20Bazar`}
+                href={`https://wa.me/${STORE_CONTACT.phone2WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#F5A623] transition-colors font-bold text-white underline decoration-[#F5A623]/40"
@@ -527,7 +527,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
             <div className="grid grid-cols-2 gap-2">
               <a
-                href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=Assalam-o-Alaikum%20Sasta%20Kitchen%20Bazar`}
+                href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-2.5 px-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] rounded-xl flex items-center justify-center gap-1.5 shadow"
@@ -536,7 +536,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <span>{STORE_CONTACT.phone1}</span>
               </a>
               <a
-                href={`https://wa.me/${STORE_CONTACT.phone2WhatsApp}?text=Assalam-o-Alaikum%20Sasta%20Kitchen%20Bazar`}
+                href={`https://wa.me/${STORE_CONTACT.phone2WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="py-2.5 px-2 bg-[#173D30] hover:bg-[#235846] text-white font-bold text-[11px] rounded-xl flex items-center justify-center gap-1.5 shadow"
