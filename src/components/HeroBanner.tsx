@@ -31,7 +31,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow, onOpenTerms }
           </h2>
 
           <p className="mb-7 max-w-xl text-sm leading-relaxed text-stone-600 sm:text-base">
-            Explore practical kitchen gadgets, cooking accessories, storage solutions and everyday home essentials — with Cash on Delivery across Pakistan.
+            Explore practical kitchen gadgets, cooking accessories, storage solutions and everyday home essentials — with Cash on Delivery All Over Pakistan.
           </p>
 
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
