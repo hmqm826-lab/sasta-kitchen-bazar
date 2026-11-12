@@ -16,3 +16,5 @@ export const STORE_CONTACT = {
   jazzCashEasyPaisa: '0307-0008988 / 0371-6053822',
   meezanBank: '0102-0105891234',
 };
+
+export const WHATSAPP_WELCOME_MESSAGE = '🏠 سستا کچن بازار میں خوش آمدید! 🏠';
