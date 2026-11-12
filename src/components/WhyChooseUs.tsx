@@ -25,7 +25,7 @@ export const WhyChooseUs: React.FC = () => {
     },
     {
       icon: <Truck className="h-6 w-6 text-[#65452F]" />,
-      title: 'Delivery Across Pakistan',
+      title: 'Delivery All Over Pakistan',
       description: 'Enter your complete delivery address at checkout so your order can be arranged for delivery.',
     },
   ];
