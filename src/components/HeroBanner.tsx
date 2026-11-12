@@ -1,13 +1,13 @@
 import React from 'react';
 import { ArrowRight, Headphones, MessageCircle, PackageCheck, ShoppingBag, Truck } from 'lucide-react';
-import { STORE_CONTACT } from '../data/contactInfo';
+import { STORE_CONTACT, WHATSAPP_WELCOME_MESSAGE } from '../data/contactInfo';
 
 interface HeroBannerProps {
   onShopNow: () => void;
 }
 
 export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow }) => {
-  const whatsappMessage = encodeURIComponent('Assalam-o-Alaikum Sasta Kitchen Bazar! I have a question about your products.');
+  const whatsappMessage = encodeURIComponent(WHATSAPP_WELCOME_MESSAGE);
 
   return (
     <section id="hero" className="relative overflow-hidden bg-gradient-to-br from-[#F7F3E9] via-white to-[#F0E9DA] py-8 sm:py-14 lg:py-16">
