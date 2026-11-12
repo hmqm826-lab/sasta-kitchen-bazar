@@ -4,9 +4,10 @@ import { STORE_CONTACT, WHATSAPP_WELCOME_MESSAGE } from '../data/contactInfo';
 
 interface HeroBannerProps {
   onShopNow: () => void;
+  onOpenTerms: () => void;
 }
 
-export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow }) => {
+export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow, onOpenTerms }) => {
   const whatsappMessage = encodeURIComponent(WHATSAPP_WELCOME_MESSAGE);
 
   return (
@@ -84,18 +85,37 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow }) => {
       </div>
 
       <div className="relative mx-auto mt-14 grid max-w-7xl grid-cols-1 gap-3 px-4 sm:mt-16 sm:grid-cols-3 sm:px-6">
-        <div className="flex items-center gap-3 rounded-2xl border border-stone-200/80 bg-white/85 p-4 shadow-sm">
-          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#F0E9DA] text-[#65452F]"><Truck className="h-5 w-5" /></span>
-          <span><span className="block text-sm font-extrabold text-stone-800">Cash on Delivery</span><span className="text-xs text-stone-500">Across Pakistan</span></span>
-        </div>
-        <div className="flex items-center gap-3 rounded-2xl border border-stone-200/80 bg-white/85 p-4 shadow-sm">
-          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#F0E9DA] text-[#65452F]"><ShoppingBag className="h-5 w-5" /></span>
-          <span><span className="block text-sm font-extrabold text-stone-800">Kitchen & Home</span><span className="text-xs text-stone-500">Useful everyday products</span></span>
-        </div>
-        <div className="flex items-center gap-3 rounded-2xl border border-stone-200/80 bg-white/85 p-4 shadow-sm">
-          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#F0E9DA] text-[#65452F]"><Headphones className="h-5 w-5" /></span>
-          <span><span className="block text-sm font-extrabold text-stone-800">Customer Support</span><span className="text-xs text-stone-500">Contact us on WhatsApp</span></span>
-        </div>
+        <button
+          type="button"
+          onClick={onOpenTerms}
+          className="group flex w-full items-center gap-3 rounded-2xl border border-stone-200/80 bg-white/85 p-4 text-left shadow-sm transition hover:-translate-y-1 hover:border-[#65452F]/40 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C69A35]"
+          aria-label="View Cash on Delivery payment information"
+        >
+          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#F0E9DA] text-[#65452F] transition group-hover:bg-[#E7D8BC]"><Truck className="h-5 w-5" /></span>
+          <span><span className="block text-sm font-extrabold text-stone-800">Cash on Delivery</span><span className="text-xs text-stone-500">Tap to view payment details</span></span>
+          <ArrowRight className="ml-auto h-4 w-4 flex-shrink-0 text-[#C69A35] transition group-hover:translate-x-1" />
+        </button>
+        <button
+          type="button"
+          onClick={onShopNow}
+          className="group flex w-full items-center gap-3 rounded-2xl border border-stone-200/80 bg-white/85 p-4 text-left shadow-sm transition hover:-translate-y-1 hover:border-[#65452F]/40 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C69A35]"
+          aria-label="Browse kitchen and home products"
+        >
+          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#F0E9DA] text-[#65452F] transition group-hover:bg-[#E7D8BC]"><ShoppingBag className="h-5 w-5" /></span>
+          <span><span className="block text-sm font-extrabold text-stone-800">Kitchen & Home</span><span className="text-xs text-stone-500">Tap to browse products</span></span>
+          <ArrowRight className="ml-auto h-4 w-4 flex-shrink-0 text-[#C69A35] transition group-hover:translate-x-1" />
+        </button>
+        <a
+          href={`https://wa.me/${STORE_CONTACT.phone2WhatsApp}?text=${whatsappMessage}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex w-full items-center gap-3 rounded-2xl border border-stone-200/80 bg-white/85 p-4 text-left shadow-sm transition hover:-translate-y-1 hover:border-emerald-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+          aria-label={`Chat with customer support on WhatsApp at ${STORE_CONTACT.phone2}`}
+        >
+          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#F0E9DA] text-[#65452F] transition group-hover:bg-[#E7D8BC]"><Headphones className="h-5 w-5" /></span>
+          <span><span className="block text-sm font-extrabold text-stone-800">Customer Support</span><span className="text-xs text-stone-500">Tap to chat on WhatsApp</span></span>
+          <ArrowRight className="ml-auto h-4 w-4 flex-shrink-0 text-emerald-600 transition group-hover:translate-x-1" />
+        </a>
       </div>
     </section>
   );
