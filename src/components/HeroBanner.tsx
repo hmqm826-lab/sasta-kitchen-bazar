@@ -21,11 +21,11 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow }) => {
             Everyday Kitchen & Home Essentials
           </span>
 
-          <h1 className="mb-4 font-heading text-4xl font-black leading-[1.05] tracking-tight text-[#493020] sm:text-5xl lg:text-6xl">
+          <h1 className="mb-5 font-heading text-5xl font-black leading-[1.02] tracking-[-0.045em] text-[#493020] sm:text-6xl lg:text-7xl drop-shadow-sm">
             Sasta Kitchen <span className="text-[#C69A35]">Bazar</span>
           </h1>
 
-          <h2 className="mb-3 max-w-xl font-heading text-xl font-bold leading-snug text-[#493020] sm:text-2xl">
+          <h2 className="mb-4 max-w-xl font-heading text-2xl font-extrabold leading-snug text-[#493020] sm:text-3xl">
             Useful finds for your kitchen and home.
           </h2>
 
