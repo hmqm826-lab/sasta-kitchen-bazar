@@ -180,13 +180,13 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
               <div className="flex flex-col min-w-0">
                 <div className="flex items-center gap-x-0.5 sm:gap-1 whitespace-nowrap leading-none">
-                  <span className="text-[11px] sm:text-2xl font-black tracking-tight text-[#173D30] font-heading">
+                  <span className="text-[12px] sm:text-[27px] lg:text-[30px] font-black tracking-[-0.045em] text-[#173D30] font-heading drop-shadow-sm">
                     SASTA
                   </span>
-                  <span className="text-[11px] sm:text-2xl font-black tracking-tight text-[#F5A623] font-heading">
+                  <span className="text-[12px] sm:text-[27px] lg:text-[30px] font-black tracking-[-0.045em] text-[#F5A623] font-heading drop-shadow-sm">
                     KITCHEN
                   </span>
-                  <span className="text-[11px] sm:text-2xl font-bold tracking-tight text-[#292929] font-heading">
+                  <span className="text-[12px] sm:text-[27px] lg:text-[30px] font-black tracking-[-0.045em] text-[#292929] font-heading drop-shadow-sm">
                     BAZAR
                   </span>
                 </div>
