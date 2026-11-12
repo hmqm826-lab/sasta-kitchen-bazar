@@ -131,3 +131,71 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 }
 button:disabled { cursor: not-allowed; }
 img { max-width: 100%; }
+
+
+/* Accessible theme surfaces: keep all branded header/footer colors intact. */
+:root {
+  --page-bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-soft: #F7F3E9;
+  --ink: #30271F;
+  --muted: #786B5D;
+  --line: #DED2BF;
+}
+html[data-theme="light"] body,
+html[data-theme="light"] main {
+  background-color: #FFFFFF;
+  color: #30271F;
+}
+html[data-theme="dark"] main {
+  background-color: #171512;
+  color: #F5F1E8;
+}
+html[data-theme="dark"] main section#hero {
+  background: #171512 !important;
+}
+html[data-theme="dark"] main section#hero [class*="bg-white"],
+html[data-theme="dark"] main section#hero [class*="bg-[#F7F3E9]"],
+html[data-theme="dark"] main section#hero [class*="bg-[#F0E9DA]"],
+html[data-theme="dark"] main section#hero [class*="bg-[#FAF8F5]"],
+html[data-theme="dark"] main section:not(#hero) [class*="bg-white"],
+html[data-theme="dark"] main section:not(#hero) [class*="bg-[#FFFEFA]"],
+html[data-theme="dark"] main section:not(#hero) [class*="bg-[#FAF8F5]"] {
+  background-color: #24201B !important;
+  background-image: none !important;
+}
+html[data-theme="dark"] main h1,
+html[data-theme="dark"] main h2,
+html[data-theme="dark"] main h3,
+html[data-theme="dark"] main [class*="text-stone-900"],
+html[data-theme="dark"] main [class*="text-stone-800"],
+html[data-theme="dark"] main [class*="text-stone-700"],
+html[data-theme="dark"] main [class*="text-[#493020]"],
+html[data-theme="dark"] main [class*="text-[#30271F]"] {
+  color: #F5F1E8 !important;
+}
+html[data-theme="dark"] main [class*="text-stone-600"],
+html[data-theme="dark"] main [class*="text-stone-500"],
+html[data-theme="dark"] main [class*="text-stone-400"] {
+  color: #C8BDAA !important;
+}
+html[data-theme="dark"] main [class*="border-stone-"] {
+  border-color: #514638 !important;
+}
+html[data-theme="dark"] main input,
+html[data-theme="dark"] main select,
+html[data-theme="dark"] main textarea {
+  background-color: #302B24 !important;
+  color: #FFFFFF !important;
+  border-color: #655743 !important;
+}
+html[data-theme="dark"] main input::placeholder,
+html[data-theme="dark"] main textarea::placeholder {
+  color: #C8BDAA !important;
+}
+/* Mustard/yellow brand surfaces use dark lettering for clear contrast. */
+main [class*="bg-[#C69A35]"],
+main [class*="bg-[#F5A623]"],
+main [class*="bg-[#E0B64E]"] {
+  color: #30271F !important;
+}
