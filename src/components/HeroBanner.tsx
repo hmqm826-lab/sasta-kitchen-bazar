@@ -9,53 +9,53 @@ interface HeroBannerProps {
 
 const HERO_SLIDES = [
   {
-    image: 'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-3-hero-select-202509?.v=cmp4MmZ6OWxOeHNNTXh4SzlBNUpEb1RucE9zZTI5eEREaWZpY29lSld3eVVtLzE2Q0EySC9CZElXWmlJUStQNE1LWlMyVmEreEd6UVBWaXRHdkpLMWtkQmFNcVM4WVpKQThrRTVBS2pPMk9OcWQvRzhwTDdwUWJpcExEZHpzZVI&fmt=jpeg&hei=1200&qlt=90&traceId=1&wid=1200',
-    alt: 'Apple AirPods Pro 3 with MagSafe USB-C charging case',
-    eyebrow: 'Apple AirPods Pro 3',
+    image: 'https://www.apple.com/v/iphone-18-pro/e/images/overview/product-viewer/3d_viewer__hgotqf9hvvee_large.jpg',
+    alt: 'iPhone 18 Pro Max shown front and back without a pouch or case',
+    eyebrow: 'iPhone 18 Pro Max',
+    title: 'Pro. Without compromise.',
+    detail: 'A clean, uncovered view of the iPhone 18 Pro Max.',
+  },
+  {
+    image: 'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/42-cell-aluminum-rosegold-sport-band-lightblush-s10?.v=1724549376970&fmt=jpeg&hei=2000&qlt=95&wid=2000',
+    alt: 'Apple Watch in rose gold with light blush sport band',
+    eyebrow: 'Apple Watch',
+    title: 'A smarter everyday.',
+    detail: 'Apple Watch with a clean, premium finish.',
+  },
+  {
+    image: 'https://st-troy.mncdn.com/Content/media/ProductImg/original/mhwk4tua-airpods-max-2-gece-yarisi-639094209166146356.jpg',
+    alt: 'Apple AirPods Max over-ear headphones without a pouch',
+    eyebrow: 'AirPods Max',
+    title: 'Hear the difference.',
+    detail: 'Over-ear Apple headphones, shown on their own.',
+  },
+  {
+    image: 'https://istore.am/product_image/2487/1757939902_b3e47e53c727475095da.jpg',
+    alt: 'Apple AirPods Pro earbuds with open charging case',
+    eyebrow: 'Apple Earbuds',
     title: 'Small. Powerful. Beautiful.',
-    detail: 'A premium Apple wireless audio experience.',
+    detail: 'Wireless earbuds with their charging case.',
+  },
+  {
+    image: 'https://www.motabhaielectronics.com/cdn/shop/files/WebsiteProductCatalog2_6357497d-079f-4b2c-8bfc-37fd6cade68a_1600x.jpg?v=1695290575',
+    alt: 'Apple genuine 20W USB-C power adapter',
+    eyebrow: 'Genuine Apple Adapter',
+    title: 'Power, made simple.',
+    detail: 'Apple USB-C power adapter. Cable shown separately.',
   },
   {
     image: 'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MQKJ3?.v=eWhIbHZMN3dwcDZ4bXdld1BTZFBVamV5anh5cFo1c1prUGQ5ZHBXUzY4Mmk0MUtKM1cwZkI0WFZOa2NIRHpiRHJSd3NRNlBrUkNpQkIyQjhrbHZqb2c&fmt=jpeg&hei=1200&qlt=90&traceId=1&wid=1200',
-    alt: 'Apple USB-C to USB-C charge cable',
-    eyebrow: 'Apple USB-C cable',
+    alt: 'Apple USB-C charge cable displayed separately',
+    eyebrow: 'Apple USB-C Cable',
     title: 'The right connection.',
-    detail: 'Clean, simple USB-C cable design from Apple.',
-  },
-  {
-    image: 'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MK944?.v=SVoxY3dWR3VJZ21uVktWQnQ4b1ExRGV5anh5cFo1c1prUGQ5ZHBXUzY4Mm9Ta3FTNGU3WUJlRUoxOUlMR1cwK3pZNGQyN0RpNEk1WnZPMEZSMFJzR1E&fmt=jpeg&hei=1200&qlt=90&traceId=1&wid=1200',
-    alt: 'iPhone 18 Pro Max Glacier color with Apple case',
-    eyebrow: 'iPhone 18 Pro Max · Glacier',
-    title: 'A cool new finish.',
-    detail: 'Glacier color inspiration from Apple’s Pro range.',
-  },
-  {
-    image: 'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MK944_AV3?.v=UFhFR043TTJyaVpDNDkxMVhKYXV5LzlBK1hZY2I5TWY1ZkxmalFxL3FGY0YwVmtIbGRkS25RMVpBRlo0bk5DUTlYMEgyRmZkaUU5TEdlSzNROFFyRkE&fmt=jpeg&hei=1200&qlt=90&traceId=1&wid=1200',
-    alt: 'iPhone 18 Pro Max Black color with Apple case',
-    eyebrow: 'iPhone 18 Pro Max · Black',
-    title: 'Bold in black.',
-    detail: 'A timeless, understated dark finish.',
-  },
-  {
-    image: 'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MKV64_AV4?.v=ZmE4YWw4UEprL0xEZm1yeUg2ZTJJLzlBK1hZY2I5TWY1ZkxmalFxL3FGY0YwVmtIbGRkS25RMVpBRlo0bk5DUWF5bklEV2RxdHR0dStlcG90bjhoQXc&fmt=jpeg&hei=1200&qlt=90&traceId=1&wid=1200',
-    alt: 'iPhone 18 Pro Max Burgundy color with Apple case',
-    eyebrow: 'iPhone 18 Pro Max · Burgundy',
-    title: 'Make a statement.',
-    detail: 'A rich burgundy finish with a premium look.',
-  },
-  {
-    image: 'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MK944_AV2?.v=ZVkydXZwTi92WW1BbDBmUEEyeDQ4djlBK1hZY2I5TWY1ZkxmalFxL3FGY0YwVmtIbGRkS25RMVpBRlo0bk5DUUZxaEdWOXNpNW1tWnZjTTg3VjJLcVE&fmt=jpeg&hei=1200&qlt=90&traceId=1&wid=1200',
-    alt: 'iPhone 18 Pro Max Silver color with Apple case',
-    eyebrow: 'iPhone 18 Pro Max · Silver',
-    title: 'Pure, polished elegance.',
-    detail: 'A clean silver finish with a refined look.',
+    detail: 'A separate Apple USB-C charge cable.',
   },
   {
     image: 'https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-multiple-wallet--M82072_PM2_Front%20view.jpg',
-    alt: 'Louis Vuitton official Multiple Wallet for men in black monogram leather',
-    eyebrow: 'Louis Vuitton · Men’s wallet',
-    title: 'A classic monogram look.',
-    detail: 'Official LV wallet reference image for the men’s collection.',
+    alt: 'Black Louis Vuitton men’s wallet',
+    eyebrow: 'Men’s Wallet',
+    title: 'A classic everyday essential.',
+    detail: 'A sleek black wallet for men.',
   },
 ];
 
@@ -67,7 +67,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow }) => {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setActiveSlide((current) => (current + 1) % HERO_SLIDES.length);
-    }, 2000);
+    }, 3500);
     return () => window.clearInterval(timer);
   }, []);
 
@@ -108,10 +108,10 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow }) => {
         </div>
 
         <div className="relative mx-auto w-full max-w-xl lg:col-span-6 lg:max-w-none">
-          <div className="relative overflow-hidden rounded-[2rem] border border-[#D2D2D7] bg-[#1D1D1F] shadow-2xl shadow-black/15">
-            <img key={slide.image} src={slide.image} alt={slide.alt} className="aspect-[5/4] w-full object-cover transition-opacity duration-700 sm:aspect-[6/5] lg:aspect-[5/4]" fetchPriority={activeSlide === 0 ? 'high' : 'auto'} />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#08152F]/95 via-[#08152F]/15 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-5 text-white sm:p-7">
+          <div className="product-showcase-panel relative overflow-hidden rounded-[2rem] border shadow-2xl">
+            <img key={slide.image} src={slide.image} alt={slide.alt} className="product-showcase-image aspect-[5/4] w-full object-contain transition-opacity duration-700 sm:aspect-[6/5] lg:aspect-[5/4]" fetchPriority={activeSlide === 0 ? 'high' : 'auto'} />
+            <div className="product-showcase-shade absolute inset-0 bg-gradient-to-t from-[#24170f]/35 via-transparent to-transparent" />
+            <div className="product-showcase-caption absolute bottom-0 left-0 right-0 p-5 sm:p-7">
               <p className="mb-1 text-xs font-bold uppercase tracking-[0.18em] text-white/90">{slide.eyebrow}</p>
               <p className="font-heading text-2xl font-extrabold sm:text-3xl">{slide.title}</p>
               <p className="mt-2 text-xs text-white/90 sm:text-sm">{slide.detail}</p>
