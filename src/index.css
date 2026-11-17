@@ -590,3 +590,65 @@ main > section:not(#hero) article span {
 #why-choose-us article > span:first-child {
   background: #49331f !important;
 }
+
+
+/* Definitive requested layout: preserve the original hero/banner, make ONLY
+   the running product window fully light, and keep the lower section dark. */
+main #hero {
+  background: #F5F5F7 !important;
+  color: #1D1D1F !important;
+}
+main #hero > div,
+main #hero h1,
+main #hero h2,
+main #hero p { color: revert !important; }
+main #hero > div > div:first-child > span,
+main #hero > div > div:first-child > div span {
+  color: #1D1D1F !important;
+}
+main #hero > div > div:first-child h1,
+main #hero > div > div:first-child h2 { color: #1D1D1F !important; }
+main #hero > div > div:first-child p { color: #424245 !important; }
+main #hero > div > div:first-child a,
+main #hero > div > div:first-child button {
+  color: #fff !important;
+}
+#hero .product-showcase-panel {
+  background: #fff !important;
+  border: 1px solid #e2d6c5 !important;
+  box-shadow: 0 18px 48px rgba(35,24,15,.14) !important;
+}
+#hero .product-showcase-image {
+  background: #fff !important;
+  object-fit: contain !important;
+  padding: 1.5rem !important;
+}
+#hero .product-showcase-shade {
+  background: linear-gradient(to top, rgba(24,18,13,.78) 0%, rgba(24,18,13,.12) 30%, transparent 58%) !important;
+}
+#hero .product-showcase-caption,
+#hero .product-showcase-caption p {
+  color: #fff !important;
+  text-shadow: 0 1px 5px rgba(0,0,0,.65) !important;
+}
+#hero .product-showcase-panel .absolute.left-4 { display: none !important; }
+
+/* Lower content and footer: deep espresso with warm, high-contrast typography. */
+#why-choose-us,
+main > section:not(#hero) {
+  background: #17100b !important;
+  color: #fff2df !important;
+  border-color: #5b422b !important;
+}
+#why-choose-us h1,#why-choose-us h2,#why-choose-us h3,
+#why-choose-us p,#why-choose-us span,#why-choose-us li {
+  color: #fff2df !important;
+}
+#why-choose-us article {
+  background: #2b1d13 !important;
+  border: 1px solid #60482f !important;
+}
+#why-choose-us article > span:last-child > span:first-child { color: #ffe9c7 !important; }
+#why-choose-us article > span:last-child > span:last-child { color: #e5d2b5 !important; }
+footer { background: #0d0906 !important; color: #fff2df !important; }
+footer * { color: #f0e3cf !important; }
