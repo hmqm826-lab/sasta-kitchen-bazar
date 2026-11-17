@@ -309,3 +309,92 @@ html[data-theme="light"], html[data-theme="dark"] {
   --muted: #d2bda0;
   --line: #62482d;
 }
+
+
+/* Revised palette per request: brown upper header, gold product controls */
+header,
+header > div,
+header > div:first-child,
+header > div:nth-of-type(2),
+header nav,
+header nav.luxury-category-nav {
+  background: #3a271b !important;
+  color: #f7e5c3 !important;
+  border-color: #60452d !important;
+}
+header > div:first-child {
+  background: #2b1b12 !important;
+}
+header > div:first-child *,
+header > div:nth-of-type(2) *,
+header nav button,
+header nav a,
+header nav.luxury-category-nav button,
+header nav.luxury-category-nav a {
+  color: #f4dfb6 !important;
+}
+header a span,
+header nav button:hover,
+header nav a:hover { color: #e6bd70 !important; }
+header input {
+  background: #4a3424 !important;
+  color: #fff0d5 !important;
+  border: 1px solid #987344 !important;
+}
+header input::placeholder { color: #dfc79e !important; }
+header button {
+  border-color: #987344 !important;
+}
+/* Search, cart, refresh and theme controls: gold surfaces on brown header */
+header button[class*="bg-stone-"],
+header button[class*="bg-white"],
+header button[class*="bg-[#173D30]"] {
+  background: #d9b568 !important;
+  color: #2c1b10 !important;
+  border-color: #b58a45 !important;
+}
+header button[class*="bg-stone-"] *,
+header button[class*="bg-white"] *,
+header button[class*="bg-[#173D30]"] * {
+  color: #2c1b10 !important;
+}
+/* Admin Panel: dark-brown button body, gold lettering/icon */
+header button[title*="Admin Dashboard"] {
+  background: #2b1b12 !important;
+  color: #e8c477 !important;
+  border: 1px solid #d0a653 !important;
+}
+header button[title*="Admin Dashboard"] *,
+header button[title*="Admin Dashboard"] svg {
+  color: #e8c477 !important;
+}
+/* Search suggestion panel */
+header [class*="absolute"][class*="bg-white"] {
+  background: #2b1b12 !important;
+  border-color: #8e6b3e !important;
+}
+header [class*="absolute"][class*="bg-white"] * { color: #fff0d5 !important; }
+header [class*="absolute"][class*="bg-white"] [class*="bg-stone-50"] {
+  background: #493321 !important;
+}
+/* Product filter/navigation chips such as All Products, Best Sellers */
+#products-catalog button[class*="bg-white"],
+#products-catalog button[class*="bg-stone-100"],
+#products-catalog button[class*="bg-[#173D30]"],
+#products-catalog button[class*="bg-[#65452F]"] {
+  background: #d9b568 !important;
+  color: #2c1b10 !important;
+  border-color: #b58a45 !important;
+}
+#products-catalog button[class*="bg-white"] *,
+#products-catalog button[class*="bg-stone-100"] *,
+#products-catalog button[class*="bg-[#173D30]"] *,
+#products-catalog button[class*="bg-[#65452F]"] * {
+  color: #2c1b10 !important;
+}
+/* Keep product cards dark brown, with gold accents */
+#products-catalog article,
+#products-catalog [class*="rounded-2xl"][class*="border"] {
+  background: #2b1d14 !important;
+  border-color: #725331 !important;
+}
