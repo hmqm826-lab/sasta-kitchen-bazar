@@ -45,7 +45,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow }) => {
 
         <div className="relative mx-auto w-full max-w-xl lg:col-span-6 lg:max-w-none">
           <div className="relative overflow-hidden rounded-[2rem] border border-blue-100 bg-[#0D1B3A] shadow-2xl shadow-blue-950/20">
-            <img src="https://images.unsplash.com/photo-151170ゆ?auto=format&fit=crop&w=1200&q=85".replace('151170ゆ','1511707171634-5f897ff02aa9') alt="Modern smartphone and digital accessories" className="aspect-[5/4] w-full object-cover sm:aspect-[6/5] lg:aspect-[5/4]" fetchPriority="high" />
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=85" alt="Modern smartphone and digital accessories" className="aspect-[5/4] w-full object-cover sm:aspect-[6/5] lg:aspect-[5/4]" fetchPriority="high" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#08152F]/90 via-[#08152F]/10 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-5 text-white sm:p-7">
               <p className="mb-1 text-xs font-bold uppercase tracking-[0.18em] text-[#8DEBFF]">Technology for everyday life</p>
