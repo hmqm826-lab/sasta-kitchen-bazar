@@ -15,7 +15,7 @@ interface ProductGridProps {
 
 export const ProductGrid: React.FC<ProductGridProps> = ({
   sectionTitle = 'Our Best Selling Products',
-  sectionSubtitle = 'Quality tested kitchen tools and household organizers trusted by thousands of Pakistani families.',
+  sectionSubtitle = 'Explore electronics, mobile accessories, gadgets and everyday products. Cash on Delivery across Pakistan.',
 }) => {
   const {
     products,
