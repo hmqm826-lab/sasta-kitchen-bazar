@@ -53,7 +53,7 @@ export const SpecialOffers: React.FC<SpecialOffersProps> = ({ onGrabDeal }) => {
               Hot Deals & Special Discounts
             </h2>
             <p className="text-stone-300 text-xs sm:text-sm mt-1">
-              Top kitchen picks at slashed prices. Stock is strictly limited on flash deal items!
+              Discover featured digital accessories and gadgets selected for everyday convenience.
             </p>
           </div>
 
