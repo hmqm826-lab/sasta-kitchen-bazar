@@ -384,7 +384,7 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main Navigation Bar */}
-      <nav className="bg-[#FAF8F5] border-t border-stone-200 hidden lg:block">
+      <nav className="bg-[#FAF8F5] border-t border-stone-200 hidden lg:block luxury-category-nav">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between text-sm">
             {/* Left Nav Links */}
