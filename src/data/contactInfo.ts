@@ -1,20 +1,20 @@
 export const STORE_CONTACT = {
-  phone1: '0307-0008988',
-  phone1Raw: '03070008988',
-  phone1WhatsApp: '923070008988',
-  phone1Label: 'Helpline 1 (Sales & Orders)',
+  phone1: '0371-6053822',
+  phone1Raw: '03716053822',
+  phone1WhatsApp: '923716053822',
+  phone1Label: 'WhatsApp & Phone Support',
 
   phone2: '0371-6053822',
   phone2Raw: '03716053822',
   phone2WhatsApp: '923716053822',
-  phone2Label: 'Helpline 2 (Customer Support)',
+  phone2Label: 'WhatsApp & Phone Support',
 
-  email: 'support@sastakitchenbazar.pk',
+  email: 'support@hmdigitalstore.pk',
   hours: 'Mon - Sun: 09:00 - 22:00 (Pakistan Time)',
-  address: 'Shop #14, Kitchen Wholesale Plaza, Shah Alam Market, Lahore & Bolton Market, Karachi',
-  bankTitle: 'Sasta Kitchen Bazar',
-  jazzCashEasyPaisa: '0307-0008988 / 0371-6053822',
+  address: 'Pakistan',
+  bankTitle: 'HM Digital Store',
+  jazzCashEasyPaisa: '0371-6053822',
   meezanBank: '0102-0105891234',
 };
 
-export const WHATSAPP_WELCOME_MESSAGE = '🏠 سستا کچن بازار میں خوش آمدید! 🏠';
+export const WHATSAPP_WELCOME_MESSAGE = 'Assalam-o-Alaikum! HM Digital Store mein khush aamdeed.';
