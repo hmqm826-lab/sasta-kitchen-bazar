@@ -5,8 +5,8 @@ export const WhyChooseUs: React.FC = () => {
   const benefits = [
     {
       icon: <House className="h-6 w-6 text-[#65452F]" />,
-      title: 'Kitchen & Home Essentials',
-      description: 'Explore handy gadgets, cooking accessories, storage solutions and useful everyday home products.',
+      title: 'All Products',
+      description: 'Explore earbuds, headphones, phone chargers, power banks, wallets, mobile accessories and much more.',
     },
     {
       icon: <Banknote className="h-6 w-6 text-[#65452F]" />,
@@ -36,7 +36,7 @@ export const WhyChooseUs: React.FC = () => {
         <div className="mx-auto mb-9 max-w-2xl text-center sm:mb-12">
           <span className="mb-2 inline-flex rounded-full bg-[#F0E9DA] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#65452F]">A simpler way to shop</span>
           <h2 className="font-heading text-2xl font-black tracking-tight text-[#493020] sm:text-3xl md:text-4xl">
-            Shop Kitchen & Home Essentials at Sasta Kitchen Bazar
+            Shop All Products at HM Digital Store
           </h2>
           <p className="mt-2 text-xs leading-relaxed text-stone-500 sm:text-sm">
             Find useful everyday products and place your order with Cash on Delivery.
