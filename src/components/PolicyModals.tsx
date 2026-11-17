@@ -109,7 +109,7 @@ export const PolicyModals: React.FC<PolicyModalProps> = ({ type, onClose }) => {
                   </div>
                   <div className="flex items-center gap-2">
                     <a
-                      href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=Assalam-o-Alaikum%20Sasta%20Kitchen%20Bazar`}
+                      href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=Assalam-o-Alaikum%20HM%20Digital%20Store`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-lg inline-flex items-center gap-1 shadow-xs"
