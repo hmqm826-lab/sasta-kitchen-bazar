@@ -10,7 +10,7 @@
   --line: #D8E4F5;
   --brand-navy: #10234A;
   --brand-blue: #1558B0;
-  --brand-cyan: #00B8D9;
+  --brand-cyan: #00B8D9;\n  --brand-violet: #7652D6;
 }
 html, body, #root { min-height: 100%; }
 body {
@@ -66,7 +66,7 @@ html[data-theme="dark"] main h1, html[data-theme="dark"] main h2, html[data-them
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: var(--surface-soft); }
 ::-webkit-scrollbar-thumb { background: #2867B5; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--brand-cyan); }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-violet); }
 button, a { -webkit-tap-highlight-color: transparent; }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--brand-cyan); outline-offset: 2px; }
 button:disabled { cursor: not-allowed; }
