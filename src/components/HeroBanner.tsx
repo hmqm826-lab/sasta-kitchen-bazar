@@ -19,19 +19,19 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow, onOpenTerms }
         <div className="flex flex-col items-start text-left lg:col-span-6">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#65452F]/15 bg-white/80 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider text-[#65452F] shadow-sm sm:text-xs">
             <PackageCheck className="h-4 w-4 text-[#C69A35]" />
-            Everyday Kitchen & Home Essentials
+            Electronics, Gadgets & All Products
           </span>
 
           <h1 className="mb-5 font-heading text-5xl font-black leading-[1.02] tracking-[-0.045em] text-[#493020] sm:text-6xl lg:text-7xl drop-shadow-sm">
-            Sasta Kitchen <span className="text-[#C69A35]">Bazar</span>
+            HM Digital <span className="text-[#C69A35]">Store</span>
           </h1>
 
           <h2 className="mb-4 max-w-xl font-heading text-2xl font-extrabold leading-snug text-[#493020] sm:text-3xl">
-            Useful finds for your kitchen and home.
+            Smart gadgets and useful products for everyday life.
           </h2>
 
           <p className="mb-7 max-w-xl text-sm leading-relaxed text-stone-600 sm:text-base">
-            Explore practical kitchen gadgets, cooking accessories, storage solutions and everyday home essentials — with Cash on Delivery All Over Pakistan.
+            Explore earbuds, headphones, chargers, smartwatches, mobile accessories and much more — with Cash on Delivery across Pakistan.
           </p>
 
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
@@ -68,7 +68,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow, onOpenTerms }
             <div className="absolute bottom-0 left-0 right-0 p-5 text-white sm:p-7">
               <p className="mb-1 text-xs font-bold uppercase tracking-[0.18em] text-[#F4D18A]">Make space for smarter living</p>
               <p className="font-heading text-2xl font-extrabold sm:text-3xl">Simple tools. Easier everyday tasks.</p>
-              <p className="mt-2 text-xs text-white/85 sm:text-sm">Kitchen accessories, handy gadgets and home organization essentials.</p>
+              <p className="mt-2 text-xs text-white/85 sm:text-sm">Electronics, mobile accessories and everyday essentials.</p>
             </div>
           </div>
 
