@@ -74,11 +74,22 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [products, setProducts] = useState<Product[]>(() => {
     try {
       const saved = localStorage.getItem('skb_products_v1');
-      if (saved) return JSON.parse(saved).filter((p: Product) => {
-        if (/^skb-(0[1-9]|1[0-6])$/.test(p.id)) return false;
-        const productText = [p.name, p.description, p.image, ...(p.tags || [])].filter(Boolean).join(' ');
-        return !/iphone/i.test(productText) && !/purse|handbag|hand\s*bag/i.test(productText);
-      });
+      if (saved) {
+        const savedProducts = JSON.parse(saved) as Product[];
+        const iphoneProducts = savedProducts.filter((p) => /iphone/i.test([p.name, p.description, ...(p.tags || [])].filter(Boolean).join(' ')));
+        const preferredIphone = iphoneProducts.find((p) => /pro\s*max/i.test(p.name)) || iphoneProducts[0];
+        let keptIphone = false;
+        return savedProducts.filter((p) => {
+          if (/^skb-(0[1-9]|1[0-6])$/.test(p.id)) return false;
+          const productText = [p.name, p.description, ...(p.tags || [])].filter(Boolean).join(' ');
+          if (/purse|handbag|hand\s*bag/i.test(productText)) return false;
+          if (/iphone/i.test(productText)) {
+            if (keptIphone || !preferredIphone || p.id !== preferredIphone.id) return false;
+            keptIphone = true;
+          }
+          return true;
+        });
+      }
     } catch (e) {
       console.error(e);
     }
