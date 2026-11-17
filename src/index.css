@@ -10,7 +10,8 @@
   --line: #DED5F5;
   --brand-navy: #30205F;
   --brand-blue: #7046C8;
-  --brand-cyan: #35B8D5;\n  --brand-violet: #7652D6;
+  --brand-cyan: #35B8D5; 
+  --brand-violet: #7652D6;
 }
 html, body, #root { min-height: 100%; }
 body {
