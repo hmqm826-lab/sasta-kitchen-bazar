@@ -181,17 +181,17 @@ export const Header: React.FC<HeaderProps> = ({
               <div className="flex flex-col min-w-0">
                 <div className="flex items-center gap-x-0.5 sm:gap-1 whitespace-nowrap leading-none">
                   <span className="text-[12px] sm:text-[27px] lg:text-[30px] font-black tracking-[-0.045em] text-[#173D30] font-heading drop-shadow-sm">
-                    SASTA
+                    HM
                   </span>
                   <span className="text-[12px] sm:text-[27px] lg:text-[30px] font-black tracking-[-0.045em] text-[#F5A623] font-heading drop-shadow-sm">
-                    KITCHEN
+                    DIGITAL
                   </span>
                   <span className="text-[12px] sm:text-[27px] lg:text-[30px] font-black tracking-[-0.045em] text-[#292929] font-heading drop-shadow-sm">
-                    BAZAR
+                    STORE
                   </span>
                 </div>
                 <span className="text-[8px] sm:text-[11px] font-semibold text-[#173D30]/80 tracking-wide sm:tracking-wider uppercase mt-0.5 sm:-mt-1">
-                  Har Ghar Ki Zaroorat!
+                  Electronics & All Products
                 </span>
               </div>
             </a>
@@ -202,7 +202,7 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="relative">
               <input
                 type="text"
-                placeholder="Search kitchen gadgets, choppers, spice racks, organizers..."
+                placeholder="Search earbuds, headphones, chargers, smartwatches and more..."
                 value={searchInput}
                 onChange={(e) => setSearchInput(e.target.value)}
                 onFocus={() => setIsSearchFocused(true)}
@@ -345,7 +345,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="relative">
             <input
               type="text"
-              placeholder="Search products, gadgets, essentials..."
+              placeholder="Search all products, electronics and accessories..."
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
               className="w-full pl-10 pr-20 py-2 bg-stone-50 border border-stone-300 rounded-full text-xs text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-[#173D30]"
@@ -396,7 +396,7 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
 
               <button
-                onClick={() => handleCategoryClick('Kitchen Accessories')}
+                onClick={() => handleCategoryClick('Mobile Accessories')}
                 className={`px-4 py-3 font-medium transition-colors ${
                   activeCategory === 'Kitchen Accessories'
                     ? 'text-[#173D30] border-b-2 border-[#173D30] font-bold bg-white/60'
@@ -407,7 +407,7 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
 
               <button
-                onClick={() => handleCategoryClick('Kitchen Gadgets')}
+                onClick={() => handleCategoryClick('Earbuds & Headphones')}
                 className={`px-4 py-3 font-medium transition-colors ${
                   activeCategory === 'Kitchen Gadgets'
                     ? 'text-[#173D30] border-b-2 border-[#173D30] font-bold bg-white/60'
@@ -418,9 +418,9 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
 
               <button
-                onClick={() => handleCategoryClick('Kitchen Storage & Organizers')}
+                onClick={() => handleCategoryClick('Chargers & Cables')}
                 className={`px-4 py-3 font-medium transition-colors ${
-                  activeCategory === 'Kitchen Storage & Organizers'
+                  activeCategory === 'Kitchen Smart Watches'
                     ? 'text-[#173D30] border-b-2 border-[#173D30] font-bold bg-white/60'
                     : 'text-stone-700 hover:text-[#173D30]'
                 }`}
@@ -429,7 +429,7 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
 
               <button
-                onClick={() => handleCategoryClick('Home Essentials')}
+                onClick={() => handleCategoryClick('All Products')}
                 className={`px-4 py-3 font-medium transition-colors ${
                   activeCategory === 'Home Essentials'
                     ? 'text-[#173D30] border-b-2 border-[#173D30] font-bold bg-white/60'
