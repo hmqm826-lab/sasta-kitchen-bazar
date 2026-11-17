@@ -164,3 +164,148 @@ html[data-theme="dark"] header nav.luxury-category-nav button span,
 html[data-theme="dark"] header nav.luxury-category-nav a {
   color:#fff7e9 !important;
 }
+
+
+/* HM Digital Store: consistent gold header + dark espresso storefront */
+:root {
+  --page-bg: #160f0a;
+  --surface: #2a1d14;
+  --surface-soft: #352419;
+  --ink: #fff3df;
+  --muted: #d2bda0;
+  --line: #62482d;
+}
+html, body, #root { background: #160f0a !important; color: #fff3df !important; }
+body { background: #160f0a !important; color: #fff3df !important; }
+
+/* Gold upper header: includes logo, search, cart and theme/admin controls */
+header {
+  background: #d6ad58 !important;
+  color: #2b1b0e !important;
+  border-bottom: 2px solid #9a7135 !important;
+  box-shadow: 0 5px 20px rgba(0,0,0,.24) !important;
+}
+header > div:first-child,
+header > div:nth-of-type(2),
+header nav {
+  background: #d6ad58 !important;
+  color: #2b1b0e !important;
+  border-color: #b78b43 !important;
+}
+header > div:first-child *,
+header > div:nth-of-type(2) *,
+header nav button,
+header nav a {
+  color: #2b1b0e !important;
+}
+header input {
+  background: #fff8e9 !important;
+  color: #2b1b0e !important;
+  border: 1px solid #8c642d !important;
+}
+header input::placeholder { color: #725a3a !important; opacity: 1 !important; }
+header button {
+  border-color: #8c642d !important;
+}
+header button[class*="bg-stone-"],
+header button[class*="bg-white"] {
+  background: #3a2717 !important;
+  color: #ffe5ad !important;
+}
+header button[class*="bg-stone-"] svg,
+header button[class*="bg-white"] svg { color: #f0c875 !important; }
+header button:hover { filter: brightness(1.08); }
+header a:hover, header nav button:hover { color: #704715 !important; }
+header nav.luxury-category-nav,
+header nav.luxury-category-nav button,
+header nav.luxury-category-nav button span,
+header nav.luxury-category-nav a { color: #2b1b0e !important; }
+header nav.luxury-category-nav button[class*="border-b-2"] {
+  color: #2b1b0e !important;
+  border-bottom-color: #704715 !important;
+  background: rgba(255,255,255,.24) !important;
+}
+
+/* Search suggestions stay readable against the gold header */
+header [class*="absolute"][class*="bg-white"] {
+  background: #2a1d14 !important;
+  border-color: #8c642d !important;
+  color: #fff3df !important;
+}
+header [class*="absolute"][class*="bg-white"] * { color: #fff3df !important; }
+header [class*="absolute"][class*="bg-white"] [class*="bg-stone-50"] {
+  background: #3a291b !important;
+}
+header [class*="absolute"][class*="bg-white"] img { border-color: #70512f !important; }
+
+/* Entire product/search/display area below the header stays dark brown */
+main, main section, #products-catalog, footer {
+  background: #160f0a !important;
+  color: #fff3df !important;
+}
+main h1, main h2, main h3, main h4,
+main p, main label, main span, main li { color: #fff0d8; }
+main [class*="bg-white"],
+main [class*="bg-stone-50"],
+main [class*="bg-stone-100"],
+main [class*="bg-stone-200"],
+main [class*="bg-[#FAF8F5]"] {
+  background: #2a1d14 !important;
+  color: #fff3df !important;
+}
+main article, main [class*="rounded-2xl"][class*="border"] {
+  background-color: #2a1d14 !important;
+  border-color: #62482d !important;
+  color: #fff3df !important;
+}
+main [class*="text-stone-900"],
+main [class*="text-stone-800"],
+main [class*="text-stone-700"],
+main [class*="text-stone-600"],
+main [class*="text-[#173D30]"],
+main [class*="text-[#292929]"] { color: #fff0d8 !important; }
+main [class*="text-stone-500"],
+main [class*="text-stone-400"] { color: #d2bda0 !important; }
+main input, main select, main textarea {
+  background: #3a291b !important;
+  color: #fff3df !important;
+  border-color: #70512f !important;
+}
+main input::placeholder, main textarea::placeholder { color: #c9b18f !important; }
+main option { background: #2a1d14; color: #fff3df; }
+
+/* Gold purchase actions with dark, high-contrast labels */
+main button[class*="bg-[#173D30]"],
+main button[class*="bg-[#65452F]"],
+main button[class*="bg-stone-100"],
+main button[class*="bg-white"] {
+  background: #d6ad58 !important;
+  color: #2b1b0e !important;
+  border-color: #b78b43 !important;
+}
+main button[class*="bg-[#173D30]"] *,
+main button[class*="bg-[#65452F]"] *,
+main button[class*="bg-stone-100"] * { color: #2b1b0e !important; }
+main button[class*="bg-[#C69A35]"] {
+  background: #e0bd70 !important;
+  color: #2b1b0e !important;
+}
+main button:hover { filter: brightness(1.08); }
+footer { background: #100a06 !important; color: #f5e6cc !important; }
+footer * { color: #f0dfc1; }
+button:focus-visible, a:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #f0c875 !important;
+  outline-offset: 2px;
+}
+
+/* Manual Light/Dark/Auto controls retain their function; store canvas remains espresso */
+html[data-theme="light"], html[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #160f0a;
+  --surface: #2a1d14;
+  --surface-soft: #352419;
+  --ink: #fff3df;
+  --muted: #d2bda0;
+  --line: #62482d;
+}
