@@ -546,3 +546,47 @@ main > section:not(#hero) article p,
 main > section:not(#hero) article span {
   color: #e8d4b4 !important;
 }
+
+
+/* Final HM Digital Store visual pass: brighten only the moving product window.
+   The main hero/banner copy and its colours remain untouched. */
+#hero .product-showcase-panel {
+  background: #f2eadc !important;
+  border-color: #d5c2a4 !important;
+}
+#hero .product-showcase-image {
+  background: #f2eadc !important;
+  object-fit: contain !important;
+  padding: 1.25rem;
+}
+#hero .product-showcase-shade {
+  background: linear-gradient(to top, rgba(35,24,15,.72) 0%, rgba(35,24,15,.16) 38%, transparent 70%) !important;
+}
+#hero .product-showcase-caption {
+  color: #fff8ec !important;
+  text-shadow: 0 1px 5px rgba(0,0,0,.6);
+}
+#hero .product-showcase-caption p { color: #fff8ec !important; }
+
+/* Darken the full section directly below the hero, with warm readable cards. */
+#why-choose-us {
+  background: #1b120c !important;
+  border-color: #5b422b !important;
+  color: #fff2df !important;
+}
+#why-choose-us h2,
+#why-choose-us p,
+#why-choose-us span { color: #fff2df !important; }
+#why-choose-us article {
+  background: #2b1d13 !important;
+  border-color: #60482f !important;
+}
+#why-choose-us article > span:last-child > span:first-child {
+  color: #ffe9c7 !important;
+}
+#why-choose-us article > span:last-child > span:last-child {
+  color: #dfc9a8 !important;
+}
+#why-choose-us article > span:first-child {
+  background: #49331f !important;
+}
