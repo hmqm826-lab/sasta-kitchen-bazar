@@ -25,6 +25,8 @@ interface HeaderProps {
   onScrollToSection: (sectionId: string) => void;
   theme: 'light' | 'dark';
   onToggleTheme: () => void;
+  onUseAutoTheme: () => void;
+  autoTheme: boolean;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -33,6 +35,8 @@ export const Header: React.FC<HeaderProps> = ({
   onScrollToSection,
   theme,
   onToggleTheme,
+  onUseAutoTheme,
+  autoTheme,
 }) => {
   const {
     cart,
@@ -274,6 +278,17 @@ export const Header: React.FC<HeaderProps> = ({
             >
               {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
               <span className="hidden sm:inline">{theme === 'dark' ? 'Light' : 'Dark'}</span>
+            </button>
+            <button
+              type="button"
+              onClick={onUseAutoTheme}
+              className={`inline-flex items-center justify-center gap-1 rounded-xl border px-2 py-2 text-xs font-semibold transition sm:px-3 ${autoTheme ? 'border-cyan-400 bg-cyan-50 text-[#1558B0]' : 'border-stone-200 bg-stone-100 text-stone-700 hover:bg-stone-200'}`}
+              title="Automatically switch to light in the morning and dark at night"
+              aria-label="Use automatic day and night theme"
+              aria-pressed={autoTheme}
+            >
+              <Sparkles className="h-4 w-4" />
+              <span className="hidden sm:inline">Auto</span>
             </button>
             <button
               type="button"
