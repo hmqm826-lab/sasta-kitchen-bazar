@@ -11,7 +11,7 @@ export const WhyChooseUs: React.FC = () => {
     { icon: <ShieldCheck className="h-6 w-6 text-[#1685E8]" />, title: 'Helpful Shopping Experience', description: 'Find everyday tech essentials in one convenient online store.' },
   ];
   return (
-    <section className="border-b border-blue-100 bg-white py-12 sm:py-16">
+    <section id="why-choose-us" className="border-b py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mx-auto mb-9 max-w-2xl text-center sm:mb-12">
           <span className="mb-2 inline-flex rounded-full bg-blue-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#1558B0]">Why shop with us</span>
