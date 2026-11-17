@@ -27,7 +27,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow, onOpenTerms }
           </h1>
 
           <h2 className="mb-4 max-w-xl font-heading text-2xl font-extrabold leading-snug text-[#493020] sm:text-3xl">
-            Smart gadgets and useful products for everyday life.
+            Digital gadgets and useful products for everyday life.
           </h2>
 
           <p className="mb-7 max-w-xl text-sm leading-relaxed text-stone-600 sm:text-base">
@@ -60,14 +60,14 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow, onOpenTerms }
           <div className="relative overflow-hidden rounded-[1.75rem] border-4 border-white bg-white shadow-2xl shadow-[#493020]/10">
             <img
               src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85"
-              alt="A bright, organized modern kitchen"
+              alt="Digital gadgets and everyday products"
               className="aspect-[5/4] w-full object-cover sm:aspect-[6/5] lg:aspect-[5/4]"
               fetchPriority="high"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#24180F]/75 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-5 text-white sm:p-7">
               <p className="mb-1 text-xs font-bold uppercase tracking-[0.18em] text-[#F4D18A]">Make space for smarter living</p>
-              <p className="font-heading text-2xl font-extrabold sm:text-3xl">Simple tools. Easier everyday tasks.</p>
+              <p className="font-heading text-2xl font-extrabold sm:text-3xl">Smart devices. Easier everyday life.</p>
               <p className="mt-2 text-xs text-white/85 sm:text-sm">Electronics, mobile accessories and everyday essentials.</p>
             </div>
           </div>
@@ -99,10 +99,10 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow, onOpenTerms }
           type="button"
           onClick={onShopNow}
           className="group flex w-full items-center gap-3 rounded-2xl border border-stone-200/80 bg-white/85 p-4 text-left shadow-sm transition hover:-translate-y-1 hover:border-[#65452F]/40 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C69A35]"
-          aria-label="Browse kitchen and home products"
+          aria-label="Browse all products"
         >
           <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#F0E9DA] text-[#65452F] transition group-hover:bg-[#E7D8BC]"><ShoppingBag className="h-5 w-5" /></span>
-          <span><span className="block text-sm font-extrabold text-stone-800">Kitchen & Home</span><span className="text-xs text-stone-500">Tap to browse products</span></span>
+          <span><span className="block text-sm font-extrabold text-stone-800" >All Products</span><span className="text-xs text-stone-500">Tap to browse products</span></span>
           <ArrowRight className="ml-auto h-4 w-4 flex-shrink-0 text-[#C69A35] transition group-hover:translate-x-1" />
         </button>
         <a
