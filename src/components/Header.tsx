@@ -139,15 +139,7 @@ export const Header: React.FC<HeaderProps> = ({
               >
                 {STORE_CONTACT.phone1}
               </a>
-              <span className="text-stone-500">|</span>
-              <a
-                href={`https://wa.me/${STORE_CONTACT.phone2WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#F5A623] transition-colors font-bold text-white underline decoration-[#F5A623]/40"
-              >
-                {STORE_CONTACT.phone2}
-              </a>
+
             </div>
             <span className="text-stone-500 hidden sm:inline">|</span>
           </div>
@@ -536,26 +528,15 @@ export const Header: React.FC<HeaderProps> = ({
             >
               Contact Support
             </button>
-            <div className="grid grid-cols-2 gap-2">
-              <a
-                href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="py-2.5 px-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] rounded-xl flex items-center justify-center gap-1.5 shadow"
-              >
-                <PhoneCall className="w-3.5 h-3.5" />
-                <span>{STORE_CONTACT.phone1}</span>
-              </a>
-              <a
-                href={`https://wa.me/${STORE_CONTACT.phone2WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="py-2.5 px-2 bg-[#173D30] hover:bg-[#235846] text-white font-bold text-[11px] rounded-xl flex items-center justify-center gap-1.5 shadow"
-              >
-                <PhoneCall className="w-3.5 h-3.5 text-[#F5A623]" />
-                <span>{STORE_CONTACT.phone2}</span>
-              </a>
-            </div>
+            <a
+              href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-2.5 px-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] rounded-xl flex items-center justify-center gap-1.5 shadow"
+            >
+              <PhoneCall className="w-3.5 h-3.5" />
+              <span>{STORE_CONTACT.phone1}</span>
+            </a>
           </div>
         </div>
       )}
