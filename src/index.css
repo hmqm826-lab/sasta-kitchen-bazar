@@ -80,3 +80,51 @@ button, a { -webkit-tap-highlight-color: transparent; }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid #0071E3; outline-offset: 2px; }
 button:disabled { cursor: not-allowed; }
 img { max-width: 100%; }
+
+
+/* HM Digital Store: luxury black, espresso and champagne-gold theme.
+   Keep the existing store logo and wording intact; style the storefront around it. */
+:root {
+  --page-bg: #f5f0e7;
+  --surface: #fffaf1;
+  --surface-soft: #eee3d2;
+  --ink: #281b14;
+  --muted: #786553;
+  --line: #d7c4a8;
+  --brand-navy: #24170f;
+  --brand-blue: #b58a45;
+  --brand-cyan: #e0bd79;
+}
+html[data-theme="dark"] {
+  --page-bg: #120d09;
+  --surface: #21170f;
+  --surface-soft: #302216;
+  --ink: #f6ead7;
+  --muted: #c2a987;
+  --line: #59432d;
+}
+body { background:var(--page-bg) !important; color:var(--ink) !important; }
+header { background:#24170f !important; color:#f7ead4 !important; border-bottom:1px solid #9a743f !important; }
+header > div:first-child { background:#120d09 !important; color:#e4c17f !important; border-bottom:1px solid rgba(224,189,121,.35) !important; }
+header > div:nth-of-type(2), header nav { background:#24170f !important; color:#f7ead4 !important; }
+header nav { border-color:#59432d !important; }
+header nav button, header nav a,
+header > div:nth-of-type(2) [class*="text-stone-"],
+header > div:nth-of-type(2) [class*="text-[#173D30]"],
+header > div:nth-of-type(2) [class*="text-[#292929]"] { color:#f4e5cc !important; }
+header > div:nth-of-type(2) input { background:#382719 !important; color:#fff5e5 !important; border-color:#80613a !important; }
+header [class*="bg-[#173D30]"], header [class*="bg-[#235846]"] { background:#9a7139 !important; }
+header [class*="text-[#F5A623]"], header [class*="text-[#E0B64E]"] { color:#e5c17c !important; }
+main, main section, #products-catalog { background-color:var(--page-bg) !important; color:var(--ink) !important; }
+main [class*="bg-white"], main [class*="bg-stone-50"], main [class*="bg-[#FAF8F5]"] { background-color:var(--surface) !important; }
+main [class*="text-[#173D30]"], main [class*="text-[#1D1D1F]"] { color:#9b713b !important; }
+main [class*="bg-[#173D30]"], main [class*="bg-[#0071E3]"], main [class*="bg-[#235846]"] { background-color:#76502b !important; }
+main [class*="border-stone-"], main [class*="border-[#D2D2D7]"] { border-color:var(--line) !important; }
+html[data-theme="dark"] header { background:#160f0a !important; }
+html[data-theme="dark"] header > div:first-child { background:#0d0906 !important; }
+html[data-theme="dark"] header > div:nth-of-type(2), html[data-theme="dark"] header nav { background:#1c130d !important; }
+html[data-theme="dark"] main, html[data-theme="dark"] main section, html[data-theme="dark"] #products-catalog { background:#120d09 !important; color:#f6ead7 !important; }
+html[data-theme="dark"] main [class*="bg-white"], html[data-theme="dark"] main [class*="bg-stone-50"], html[data-theme="dark"] main [class*="bg-[#FAF8F5]"] { background:#21170f !important; }
+html[data-theme="dark"] main [class*="text-stone-900"], html[data-theme="dark"] main [class*="text-stone-800"], html[data-theme="dark"] main [class*="text-stone-700"] { color:#f6ead7 !important; }
+html[data-theme="dark"] main [class*="text-stone-500"], html[data-theme="dark"] main [class*="text-stone-400"] { color:#c2a987 !important; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline-color:#d7b36e !important; }
