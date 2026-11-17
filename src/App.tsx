@@ -60,6 +60,11 @@ function StoreApp() {
     return () => window.clearInterval(interval);
   }, [themePreference]);
 
+  const useAutoTheme = () => {
+    setThemePreference('auto');
+    window.localStorage.setItem('skb-theme-preference', 'auto');
+  };
+
   const toggleTheme = () => {
     const nextTheme = activeTheme === 'dark' ? 'light' : 'dark';
     setThemePreference(nextTheme);
@@ -78,6 +83,8 @@ function StoreApp() {
       <Header
         theme={activeTheme}
         onToggleTheme={toggleTheme}
+        onUseAutoTheme={useAutoTheme}
+        autoTheme={themePreference === 'auto'}
         onOpenWishlist={() => setPolicyType('wishlist')}
         onOpenContact={() => setPolicyType('contact')}
         onScrollToSection={scrollToSection}
