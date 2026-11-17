@@ -506,3 +506,43 @@ main > section:not(#hero):not(#products-catalog) [class*="rounded-2xl"] {
   background: #302116 !important;
   border-color: #684b30 !important;
 }
+
+
+/* HM Digital Store requested refinement: keep the top hero banner intact,
+   lighten only its rotating product-display panel, and darken the lower section. */
+#hero .relative.overflow-hidden.rounded-\[2rem\] {
+  background: #eee7dc !important;
+  border-color: #d2c1a8 !important;
+}
+#hero .relative.overflow-hidden.rounded-\[2rem\] > .absolute.inset-0.bg-gradient-to-t {
+  background-image: linear-gradient(to top, rgba(39, 27, 18, .48) 0%, rgba(39, 27, 18, .10) 48%, transparent 76%) !important;
+}
+#hero .relative.overflow-hidden.rounded-\[2rem\] > .absolute.bottom-0 {
+  color: #fffaf1 !important;
+}
+#hero .relative.overflow-hidden.rounded-\[2rem\] > .absolute.bottom-0 p {
+  color: #fffaf1 !important;
+  text-shadow: 0 1px 5px rgba(0,0,0,.55);
+}
+
+/* The section below the hero uses a deep brown surface with readable warm text. */
+main > section:not(#hero) {
+  background: #1b120c !important;
+  color: #fff2dc !important;
+  border-color: #59412b !important;
+}
+main > section:not(#hero) h1,
+main > section:not(#hero) h2,
+main > section:not(#hero) h3,
+main > section:not(#hero) p,
+main > section:not(#hero) span {
+  color: #fff2dc !important;
+}
+main > section:not(#hero) article {
+  background: #2b1d13 !important;
+  border-color: #60482f !important;
+}
+main > section:not(#hero) article p,
+main > section:not(#hero) article span {
+  color: #e8d4b4 !important;
+}
