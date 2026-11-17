@@ -15,7 +15,8 @@ import {
   Store,
   ChevronDown,
   Sun,
-  Moon
+  Moon,
+  RefreshCw
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -263,7 +264,7 @@ export const Header: React.FC<HeaderProps> = ({
                   </div>
                 ) : (
                   <div className="p-6 text-center text-stone-500 text-sm">
-                    No products found for "{searchInput}". Try searching "chopper", "rack", or "mop".
+                    No products found for "{searchInput}". Try searching "earbuds", "charger", or "power bank".
                   </div>
                 )}
               </div>
@@ -281,6 +282,16 @@ export const Header: React.FC<HeaderProps> = ({
             >
               {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
               <span className="hidden sm:inline">{theme === 'dark' ? 'Light' : 'Dark'}</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => window.location.reload()}
+              className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-stone-200 bg-stone-100 px-2.5 py-2 text-xs font-semibold text-stone-700 transition hover:bg-stone-200 sm:px-3"
+              title="Refresh website"
+              aria-label="Refresh website"
+            >
+              <RefreshCw className="h-4 w-4" />
+              <span className="hidden sm:inline">Refresh</span>
             </button>
             {/* Wishlist Button */}
             <button
@@ -398,45 +409,45 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 onClick={() => handleCategoryClick('Mobile Accessories')}
                 className={`px-4 py-3 font-medium transition-colors ${
-                  activeCategory === 'Kitchen Accessories'
+                  activeCategory === 'Mobile Accessories'
                     ? 'text-[#173D30] border-b-2 border-[#173D30] font-bold bg-white/60'
                     : 'text-stone-700 hover:text-[#173D30]'
                 }`}
               >
-                Kitchen Accessories
+                All Products
               </button>
 
               <button
                 onClick={() => handleCategoryClick('Earbuds & Headphones')}
                 className={`px-4 py-3 font-medium transition-colors ${
-                  activeCategory === 'Kitchen Gadgets'
+                  activeCategory === 'Earbuds'
                     ? 'text-[#173D30] border-b-2 border-[#173D30] font-bold bg-white/60'
                     : 'text-stone-700 hover:text-[#173D30]'
                 }`}
               >
-                Kitchen Gadgets
+                Earbuds & Headphones
               </button>
 
               <button
                 onClick={() => handleCategoryClick('Chargers & Cables')}
                 className={`px-4 py-3 font-medium transition-colors ${
-                  activeCategory === 'Kitchen Smart Watches'
+                  activeCategory === 'Chargers & Cables'
                     ? 'text-[#173D30] border-b-2 border-[#173D30] font-bold bg-white/60'
                     : 'text-stone-700 hover:text-[#173D30]'
                 }`}
               >
-                Storage & Organizers
+                Phone Chargers
               </button>
 
               <button
                 onClick={() => handleCategoryClick('All Products')}
                 className={`px-4 py-3 font-medium transition-colors ${
-                  activeCategory === 'Home Essentials'
+                  activeCategory === 'All Products'
                     ? 'text-[#173D30] border-b-2 border-[#173D30] font-bold bg-white/60'
                     : 'text-stone-700 hover:text-[#173D30]'
                 }`}
               >
-                Home Essentials
+                All Products
               </button>
 
               <button
