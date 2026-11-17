@@ -117,7 +117,7 @@ export const CheckoutModal: React.FC = () => {
       .join('\n');
 
     const msg = encodeURIComponent(
-      `Assalam-o-Alaikum Sasta Kitchen Bazar!\n\n` +
+      `Assalam-o-Alaikum HM Digital Store!\n\n` +
       `I want to confirm my order via Cash on Delivery:\n\n` +
       `👤 Customer Name: ${formData.name}\n` +
       `📞 WhatsApp / Phone: ${formData.phone}\n` +
