@@ -24,12 +24,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicy, onScrollToSection 
             <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="inline-flex max-w-full items-center gap-2.5">
               <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#E0B64E] text-[#30271F] shadow-md"><Store className="h-6 w-6" /></span>
               <span className="min-w-0">
-                <span className="block font-heading text-base font-black leading-tight tracking-tight sm:text-xl">SASTA KITCHEN BAZAR</span>
-                <span className="mt-0.5 block text-[9px] font-semibold uppercase tracking-wider text-[#E0B64E] sm:text-[10px]">Har Ghar Ki Zaroorat</span>
+                <span className="block font-heading text-base font-black leading-tight tracking-tight sm:text-xl">HM DIGITAL STORE</span>
+                <span className="mt-0.5 block text-[9px] font-semibold uppercase tracking-wider text-[#E0B64E] sm:text-[10px]">Electronics & All Products</span>
               </span>
             </a>
             <p className="max-w-sm text-xs leading-relaxed text-stone-300 sm:text-sm">
-              Explore useful kitchen gadgets, cooking accessories, storage solutions and everyday home essentials. Cash on Delivery is available All Over Pakistan.
+              Explore earbuds, headphones, chargers, smartwatches, mobile accessories and everyday products. Cash on Delivery is available All Over Pakistan.
             </p>
             <div className="flex flex-col gap-3 text-xs text-stone-200">
               <div className="flex items-start gap-2">
@@ -99,7 +99,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicy, onScrollToSection 
         </div>
 
         <div className="flex flex-col items-center justify-between gap-3 pt-7 text-center text-[11px] text-stone-400 sm:flex-row sm:text-left">
-          <p>© {new Date().getFullYear()} Sasta Kitchen Bazar. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} HM Digital Store. All rights reserved.</p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button onClick={() => onOpenPolicy('privacy')} className="transition hover:text-white">Privacy</button>
             <button onClick={() => onOpenPolicy('terms')} className="transition hover:text-white">Terms</button>
