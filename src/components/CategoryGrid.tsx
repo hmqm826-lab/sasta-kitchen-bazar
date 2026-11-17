@@ -64,10 +64,10 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategorySelected }
               Browse Collections
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-[#173D30] tracking-tight font-heading">
-              Shop by Categories
+              Explore All Products
             </h2>
             <p className="text-xs sm:text-sm text-stone-500 mt-1">
-              Discover smart kitchen gadgets and everyday home essentials organized for you.
+              Explore earbuds, headphones, phone chargers, power banks, wallets and all digital accessories.
             </p>
           </div>
 
