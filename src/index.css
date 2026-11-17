@@ -652,3 +652,87 @@ main > section:not(#hero) {
 #why-choose-us article > span:last-child > span:last-child { color: #e5d2b5 !important; }
 footer { background: #0d0906 !important; color: #fff2df !important; }
 footer * { color: #f0e3cf !important; }
+
+
+/* User-approved palette refinement: peach upper hero, deep dark lower content.
+   Preserve the hero/banner content and images; change only the surrounding surfaces
+   and set contrasting text colours for clarity. */
+#hero {
+  background: #F2D8C9 !important;
+  color: #302016 !important;
+}
+#hero > div.pointer-events-none {
+  opacity: .18 !important;
+}
+#hero > div.relative,
+#hero > div.relative > div:first-child {
+  color: #302016 !important;
+}
+#hero > div.relative h1,
+#hero > div.relative h2,
+#hero > div.relative p,
+#hero > div.relative > div:first-child > span {
+  color: #302016 !important;
+}
+#hero > div.relative > div:first-child > span {
+  background: #FBECE3 !important;
+  border-color: #D6B6A2 !important;
+}
+#hero > div.relative > div:first-child p {
+  color: #594033 !important;
+}
+#hero .product-showcase-panel {
+  background: #FBECE3 !important;
+  border-color: #D6B6A2 !important;
+}
+#hero .product-showcase-image {
+  background: #FBECE3 !important;
+}
+#hero .product-showcase-caption,
+#hero .product-showcase-caption p {
+  color: #FFF8EF !important;
+}
+
+/* All lower sections: near-black espresso with golden, readable typography. */
+main > section:not(#hero),
+#products-catalog,
+#why-choose-us {
+  background: #120D09 !important;
+  color: #E8C77E !important;
+  border-color: #59432D !important;
+}
+main > section:not(#hero) h1,
+main > section:not(#hero) h2,
+main > section:not(#hero) h3,
+main > section:not(#hero) p,
+main > section:not(#hero) span,
+main > section:not(#hero) li,
+main > section:not(#hero) label,
+#products-catalog h1,
+#products-catalog h2,
+#products-catalog h3,
+#products-catalog p,
+#products-catalog span,
+#products-catalog label,
+#why-choose-us h2,
+#why-choose-us p,
+#why-choose-us span {
+  color: #E8C77E !important;
+}
+main > section:not(#hero) article,
+#products-catalog article,
+#why-choose-us article {
+  background: #21170F !important;
+  border-color: #6A5035 !important;
+}
+main > section:not(#hero) article p,
+main > section:not(#hero) article span,
+#products-catalog article p,
+#products-catalog article span {
+  color: #F4E6CD !important;
+}
+footer {
+  background: #0B0806 !important;
+  color: #E8C77E !important;
+}
+footer * { color: #E8C77E !important; }
