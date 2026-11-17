@@ -29,7 +29,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPolicy, onScrollToSection 
               </span>
             </a>
             <p className="max-w-sm text-xs leading-relaxed text-stone-300 sm:text-sm">
-              Explore earbuds, headphones, chargers, smartwatches, mobile accessories and everyday products. Cash on Delivery is available All Over Pakistan.
+              Explore earbuds, headphones, chargers, smartwatches, mobile accessories and everyday products. Cash on Delivery All Over Pakistan.
             </p>
             <div className="flex flex-col gap-3 text-xs text-stone-200">
               <div className="flex items-start gap-2">
