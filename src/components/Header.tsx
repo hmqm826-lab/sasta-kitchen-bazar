@@ -124,7 +124,7 @@ export const Header: React.FC<HeaderProps> = ({
               🇵🇰 Pakistan COD
             </span>
             <span className="text-stone-100 hidden md:inline">
-              Cash on Delivery across Pakistan
+              Cash on Delivery All Over Pakistan
             </span>
             <span className="text-stone-100 md:hidden">
               Cash on Delivery All Over Pakistan!
