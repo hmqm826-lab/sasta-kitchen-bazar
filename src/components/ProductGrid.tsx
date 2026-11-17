@@ -32,7 +32,8 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
 
   // Filter and sort products
   const filteredProducts = useMemo(() => {
-    return products.filter((p) => {\n      // Hide pouch/carry-case listings; the iPhone itself remains eligible for display.\n      if (/pouch|case|cover/i.test([p.name, p.description, p.image, ...(p.tags || [])].filter(Boolean).join(' '))) return false;
+    return products.filter((p) => {\n      // Hide pouch/carry-case listings; the iPhone itself remains eligible for display.\n      const productText = [p.name, p.description, p.image, ...(p.tags || [])].filter(Boolean).join(' ');
+      if (/iphone\\s*(17|18)/i.test(productText) && /pouch|case|cover/i.test(productText)) return false;
       // Category filter
       if (activeCategory !== 'all' && p.category !== activeCategory) {
         return false;
