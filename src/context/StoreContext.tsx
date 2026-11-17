@@ -74,7 +74,11 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [products, setProducts] = useState<Product[]>(() => {
     try {
       const saved = localStorage.getItem('skb_products_v1');
-      if (saved) return JSON.parse(saved).filter((p: Product) => !/^skb-(0[1-9]|1[0-6])$/.test(p.id));
+      if (saved) return JSON.parse(saved).filter((p: Product) => {
+        if (/^skb-(0[1-9]|1[0-6])$/.test(p.id)) return false;
+        const productText = [p.name, p.description, p.image, ...(p.tags || [])].filter(Boolean).join(' ');
+        return !/iphone/i.test(productText) && !/purse|handbag|hand\s*bag/i.test(productText);
+      });
     } catch (e) {
       console.error(e);
     }
