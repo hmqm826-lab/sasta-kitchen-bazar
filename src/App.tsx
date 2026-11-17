@@ -7,7 +7,6 @@ import React, { useEffect, useState } from 'react';
 import { StoreProvider } from './context/StoreContext';
 import { Header } from './components/Header';
 import { HeroBanner } from './components/HeroBanner';
-import { ProductGrid } from './components/ProductGrid';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { Footer } from './components/Footer';
 import { ProductModal } from './components/ProductModal';
@@ -89,12 +88,6 @@ function StoreApp() {
           onShopNow={() => scrollToSection('products-catalog')}
           onOpenTerms={() => setPolicyType('terms')}
         />
-        <div id="best-sellers">
-          <ProductGrid
-            sectionTitle="Explore Kitchen & Home Essentials"
-            sectionSubtitle="Browse useful kitchen gadgets, accessories, storage solutions and everyday home essentials."
-          />
-        </div>
         <WhyChooseUs />
       </main>
 
