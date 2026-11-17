@@ -30,12 +30,14 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc'>('featured');
   const [inStockOnly, setInStockOnly] = useState<boolean>(false);
 
-  // Filter and sort products
+  // Filter and sort products; keep only one iPhone listing (prefer Pro Max).
   const filteredProducts = useMemo(() => {
+    const iphoneProducts = products.filter((p) => /iphone/i.test([p.name, p.description, ...(p.tags || [])].filter(Boolean).join(' ')));
+    const preferredIphone = iphoneProducts.find((p) => /pro\s*max/i.test(p.name)) || iphoneProducts[0];
     return products.filter((p) => {
-      // Remove all iPhone and purse/handbag listings.
-      const productText = [p.name, p.description, p.image, ...(p.tags || [])].filter(Boolean).join(' ');
-      if (/iphone/i.test(productText) || /purse|handbag|hand\s*bag/i.test(productText)) return false;
+      const productText = [p.name, p.description, ...(p.tags || [])].filter(Boolean).join(' ');
+      if (/purse|handbag|hand\s*bag/i.test(productText)) return false;
+      if (/iphone/i.test(productText) && (!preferredIphone || p.id !== preferredIphone.id)) return false;
       // Category filter
       if (activeCategory !== 'all' && p.category !== activeCategory) {
         return false;
