@@ -48,7 +48,7 @@ export const AdminDashboard: React.FC = () => {
   const [productFormData, setProductFormData] = useState({
     name: '',
     urduName: '',
-    category: 'Kitchen Gadgets',
+    category: 'Earbuds',
     originalPrice: 1999,
     price: 1299,
     discountPercentage: 35,
@@ -112,7 +112,7 @@ export const AdminDashboard: React.FC = () => {
       rating: 4.8,
       reviewCount: 20,
       image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=700&q=80',
-      description: 'Durable household kitchen essential engineered for convenience and efficiency.',
+      description: 'Useful digital product designed for everyday convenience.',
       highlights: 'Heavy duty construction\nDishwasher safe\n100% genuine quality',
       stockCount: 40,
       inStock: true,
@@ -219,7 +219,7 @@ export const AdminDashboard: React.FC = () => {
     const cleanPhone = phone.replace(/[^0-9]/g, '');
     const intlPhone = cleanPhone.startsWith('0') ? '92' + cleanPhone.slice(1) : cleanPhone;
     const msg = encodeURIComponent(
-      `Assalam-o-Alaikum ${name}! Sasta Kitchen Bazar se call/message kar rahay hain aapke order #${orderId} ke hawalay se. Kya aap available hain?`
+      `Assalam-o-Alaikum ${name}! HM Digital Store se call/message kar rahay hain aapke order #${orderId} ke hawalay se. Kya aap available hain?`
     );
     window.open(`https://wa.me/${intlPhone}?text=${msg}`, '_blank');
   };
@@ -239,7 +239,7 @@ export const AdminDashboard: React.FC = () => {
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-lg sm:text-xl font-black font-heading">
-                  Sasta Kitchen Bazar Store Manager
+                  HM Digital Store Manager
                 </h2>
                 <span className="bg-emerald-700 text-emerald-100 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">
                   Admin Portal
@@ -697,7 +697,7 @@ export const AdminDashboard: React.FC = () => {
             <div className="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-stone-200 max-h-[85vh] overflow-y-auto">
               <div className="flex items-center justify-between pb-3 border-b border-stone-200 mb-4">
                 <h3 className="font-black text-[#173D30] text-base font-heading">
-                  {editingProductId ? 'Edit Product Details' : 'Add New Kitchen Product'}
+                  {editingProductId ? 'Edit Product Details' : 'Add New Product'}
                 </h3>
                 <button
                   onClick={() => setIsEditingProduct(false)}
