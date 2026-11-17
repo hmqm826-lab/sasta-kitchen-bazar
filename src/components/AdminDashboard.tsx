@@ -105,7 +105,7 @@ export const AdminDashboard: React.FC = () => {
     setProductFormData({
       name: '',
       urduName: '',
-      category: 'Kitchen Gadgets',
+      category: 'Earbuds',
       originalPrice: 1999,
       price: 1299,
       discountPercentage: 35,
