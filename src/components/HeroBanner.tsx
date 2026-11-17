@@ -53,7 +53,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow }) => {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setActiveSlide((current) => (current + 1) % HERO_SLIDES.length);
-    }, 1000);
+    }, 2000);
     return () => window.clearInterval(timer);
   }, []);
 
