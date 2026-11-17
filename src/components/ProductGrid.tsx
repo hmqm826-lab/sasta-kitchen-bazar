@@ -15,7 +15,7 @@ interface ProductGridProps {
 
 export const ProductGrid: React.FC<ProductGridProps> = ({
   sectionTitle = 'Our Best Selling Products',
-  sectionSubtitle = 'Explore electronics, mobile accessories, gadgets and everyday products. Cash on Delivery across Pakistan.',
+  sectionSubtitle = 'Explore electronics, mobile accessories, gadgets and everyday products. Cash on Delivery All Over Pakistan.',
 }) => {
   const {
     products,
@@ -32,7 +32,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
 
   // Filter and sort products
   const filteredProducts = useMemo(() => {
-    return products.filter((p) => {
+    return products.filter((p) => {\n      // Hide pouch/carry-case listings; the iPhone itself remains eligible for display.\n      if (/pouch/i.test(p.name) || /pouch/i.test(p.description)) return false;
       // Category filter
       if (activeCategory !== 'all' && p.category !== activeCategory) {
         return false;
