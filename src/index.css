@@ -457,3 +457,52 @@ footer a[href*="wa.me"] {
   color: #e4bd70 !important;
 }
 footer [class*="bg-white/10"] { background: #2a1a10 !important; }
+
+
+/* Requested final layout: keep hero/banner unchanged; lighter product display, darker lower sections */
+#products-catalog {
+  background: #4a3627 !important;
+  color: #fff0d8 !important;
+}
+#products-catalog h1,
+#products-catalog h2,
+#products-catalog h3,
+#products-catalog p,
+#products-catalog label,
+#products-catalog span { color: #fff0d8 !important; }
+#products-catalog article,
+#products-catalog [class*="rounded-2xl"][class*="border"],
+#products-catalog [class*="bg-white"],
+#products-catalog [class*="bg-stone-50"],
+#products-catalog [class*="bg-stone-100"] {
+  background: #604832 !important;
+  border-color: #8a6a47 !important;
+  color: #fff4e4 !important;
+}
+#products-catalog select,
+#products-catalog option {
+  background: #f2e3ca !important;
+  color: #302014 !important;
+  border-color: #b18a5d !important;
+}
+#products-catalog button {
+  text-shadow: none !important;
+}
+main > section:not(#hero):not(#products-catalog) {
+  background: #1b120c !important;
+  color: #fff0d8 !important;
+  border-color: #513821 !important;
+}
+main > section:not(#hero):not(#products-catalog) h1,
+main > section:not(#hero):not(#products-catalog) h2,
+main > section:not(#hero):not(#products-catalog) h3,
+main > section:not(#hero):not(#products-catalog) p,
+main > section:not(#hero):not(#products-catalog) span,
+main > section:not(#hero):not(#products-catalog) li {
+  color: #fff0d8 !important;
+}
+main > section:not(#hero):not(#products-catalog) article,
+main > section:not(#hero):not(#products-catalog) [class*="rounded-2xl"] {
+  background: #302116 !important;
+  border-color: #684b30 !important;
+}
