@@ -736,3 +736,89 @@ footer {
   color: #E8C77E !important;
 }
 footer * { color: #E8C77E !important; }
+
+
+/* Final requested HM Digital Store palette: light peach hero, deep dark lower area.
+   Keep all product slides and product images unchanged. */
+main #hero {
+  background: #F4E3D7 !important;
+  color: #3A281D !important;
+}
+main #hero > div.relative,
+main #hero > div.relative > div:first-child {
+  color: #3A281D !important;
+}
+main #hero > div.relative h1,
+main #hero > div.relative h2,
+main #hero > div.relative p,
+main #hero > div.relative > div:first-child > span {
+  color: #3A281D !important;
+}
+main #hero > div.relative > div:first-child p {
+  color: #604737 !important;
+}
+main #hero > div.relative > div:first-child > span {
+  background: #FFF5ED !important;
+  border-color: #D8BBA8 !important;
+  color: #5A3B2B !important;
+}
+main #hero > div.relative a,
+main #hero > div.relative button {
+  color: #3A281D;
+}
+#hero .product-showcase-panel,
+#hero .product-showcase-image {
+  background: #FFF8F1 !important;
+  border-color: #DCC7B7 !important;
+}
+#hero .product-showcase-shade {
+  background: linear-gradient(to top, rgba(35,24,15,.76) 0%, rgba(35,24,15,.14) 34%, transparent 62%) !important;
+}
+#hero .product-showcase-caption,
+#hero .product-showcase-caption p {
+  color: #FFF8EF !important;
+}
+
+/* Everything below the hero stays deep dark; use peach typography for contrast. */
+main > section:not(#hero),
+#products-catalog,
+#why-choose-us {
+  background: #100C0A !important;
+  color: #F4DCCB !important;
+  border-color: #493326 !important;
+}
+main > section:not(#hero) h1,
+main > section:not(#hero) h2,
+main > section:not(#hero) h3,
+main > section:not(#hero) p,
+main > section:not(#hero) span,
+main > section:not(#hero) li,
+main > section:not(#hero) label,
+#products-catalog h1,
+#products-catalog h2,
+#products-catalog h3,
+#products-catalog p,
+#products-catalog span,
+#products-catalog label,
+#why-choose-us h2,
+#why-choose-us p,
+#why-choose-us span {
+  color: #F4DCCB !important;
+}
+main > section:not(#hero) article,
+#products-catalog article,
+#why-choose-us article {
+  background: #211711 !important;
+  border-color: #5A4030 !important;
+}
+main > section:not(#hero) article p,
+main > section:not(#hero) article span,
+#products-catalog article p,
+#products-catalog article span {
+  color: #E8CDBA !important;
+}
+footer {
+  background: #090706 !important;
+  color: #F4DCCB !important;
+}
+footer * { color: #F4DCCB !important; }
