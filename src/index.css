@@ -140,3 +140,27 @@ html[data-theme="dark"] main input::placeholder,html[data-theme="dark"] main tex
 html[data-theme="dark"] footer { background:#0d0906 !important; color:#fff0da !important; }
 html[data-theme="dark"] footer p,html[data-theme="dark"] footer li,html[data-theme="dark"] footer span,html[data-theme="dark"] footer h1,html[data-theme="dark"] footer h2,html[data-theme="dark"] footer h3,html[data-theme="dark"] footer a { color:#f0e3cf !important; }
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible { outline:2px solid #d7b36e !important; outline-offset:2px; }
+
+
+/* Keep every category/navigation label readable on the dark espresso header */
+header nav.luxury-category-nav,
+header nav.luxury-category-nav button,
+header nav.luxury-category-nav button span,
+header nav.luxury-category-nav a {
+  color:#fff7e9 !important;
+}
+header nav.luxury-category-nav button:hover,
+header nav.luxury-category-nav a:hover {
+  color:#f1c879 !important;
+}
+header nav.luxury-category-nav button[class*="border-b-2"] {
+  color:#f1c879 !important;
+  border-bottom-color:#d5ad68 !important;
+  background:rgba(255,255,255,.08) !important;
+}
+html[data-theme="dark"] header nav.luxury-category-nav,
+html[data-theme="dark"] header nav.luxury-category-nav button,
+html[data-theme="dark"] header nav.luxury-category-nav button span,
+html[data-theme="dark"] header nav.luxury-category-nav a {
+  color:#fff7e9 !important;
+}
