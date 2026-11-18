@@ -39,16 +39,16 @@ const HERO_SLIDES = [
   {
     image: 'https://www.motabhaielectronics.com/cdn/shop/files/WebsiteProductCatalog2_6357497d-079f-4b2c-8bfc-37fd6cade68a_1600x.jpg?v=1695290575',
     alt: 'Apple genuine 20W USB-C power adapter',
-    eyebrow: 'Genuine Apple Adapter',
-    title: 'Power, made simple.',
-    detail: 'Apple USB-C power adapter. Cable shown separately.',
+    eyebrow: 'Genuine Apple USB-C Charger',
+    title: 'Genuine charging power.',
+    detail: 'Apple USB-C power adapter for compatible devices.',
   },
   {
     image: 'https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MQKJ3?.v=eWhIbHZMN3dwcDZ4bXdld1BTZFBVamV5anh5cFo1c1prUGQ5ZHBXUzY4Mmk0MUtKM1cwZkI0WFZOa2NIRHpiRHJSd3NRNlBrUkNpQkIyQjhrbHZqb2c&fmt=jpeg&hei=1200&qlt=90&traceId=1&wid=1200',
     alt: 'Apple USB-C charge cable displayed separately',
-    eyebrow: 'Apple USB-C Cable',
-    title: 'The right connection.',
-    detail: 'A separate Apple USB-C charge cable.',
+    eyebrow: 'Genuine Apple Data Cable',
+    title: 'A genuine Apple connection.'
+    detail: 'Apple USB-C charge cable for compatible devices.',
   },
   {
     image: 'https://us.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-multiple-wallet--M82072_PM2_Front%20view.jpg',
@@ -82,16 +82,16 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow }) => {
         <div className="flex flex-col items-start text-left lg:col-span-6">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#D2D2D7] bg-white px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider text-[#1D1D1F] shadow-sm sm:text-xs">
             <PackageCheck className="h-4 w-4 text-[#0071E3]" />
-            Digital Accessories & Smart Gadgets
+            iPhone 18 Pro Max & Genuine Apple Accessories
           </span>
           <h1 className="mb-5 font-heading text-5xl font-black leading-[1.02] tracking-[-0.045em] text-[#1D1D1F] sm:text-6xl lg:text-7xl">
             HM <span className="bg-gradient-to-r from-[#1D1D1F] to-[#6E6E73] bg-clip-text text-transparent">Digital Store</span>
           </h1>
           <h2 className="mb-4 max-w-xl font-heading text-2xl font-extrabold leading-snug text-[#1D1D1F] sm:text-3xl">
-            Upgrade your everyday with smarter accessories.
+            Explore iPhone 18 Pro Max and Apple essentials.
           </h2>
           <p className="mb-7 max-w-xl text-sm leading-relaxed text-[#6E6E73] sm:text-base">
-            Discover earbuds, headphones, ladies’ and men’s watches, couple watches, chargers, cables, power banks and mobile accessories — with Cash on Delivery all over Pakistan.
+            Explore iPhone 18 Pro Max, genuine Apple USB-C chargers and data cables, AirPods, Apple Watch, headphones and HS power banks — with Cash on Delivery all over Pakistan.
           </p>
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <button onClick={onShopNow} className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#0071E3] px-7 py-3.5 text-sm font-extrabold text-white shadow-lg shadow-black/10 transition hover:-translate-y-0.5 sm:w-auto">
