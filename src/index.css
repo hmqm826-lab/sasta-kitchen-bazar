@@ -822,3 +822,24 @@ footer {
   color: #F4DCCB !important;
 }
 footer * { color: #F4DCCB !important; }
+
+
+/* HM Digital Store: match the supplied black-and-gold banner */
+:root { --page-bg:#100800; --surface:#1b1006; --surface-soft:#2b1908; --ink:#fff1c9; --muted:#d9c18d; --line:#9d741e; --brand-navy:#100800; --brand-blue:#dcae31; --brand-cyan:#f7d66b; }
+body,#root { background:#100800 !important; color:#fff1c9 !important; }
+header,header > div:nth-of-type(2),header nav { background:#100800 !important; color:#fff1c9 !important; border-color:#a77b20 !important; }
+header > div:first-child { background:#090500 !important; color:#f7d66b !important; }
+header input { background:#fffaf0 !important; color:#251507 !important; border-color:#e1b84e !important; }
+main,#products-catalog { background:#100800 !important; color:#fff1c9 !important; }
+main #hero { background:radial-gradient(ellipse at 78% 48%,#583500 0%,#211000 43%,#090500 100%) !important; color:#fff1c9 !important; }
+main #hero h1,main #hero h2,main #hero p { color:#fff1c9 !important; }
+main #hero > div.relative > div:first-child > span { background:#211306 !important; border-color:#d8a82f !important; color:#ffdf78 !important; }
+main #hero a,main #hero button { background:linear-gradient(110deg,#ffe17a,#d69b1c) !important; border-color:#f4ce59 !important; color:#1b0e04 !important; }
+main #hero .product-showcase-panel { background:#120900 !important; border-color:#d8a82f !important; box-shadow:0 0 38px #c28b2938 !important; }
+main #hero .product-showcase-image { background:#120900 !important; }
+main #hero .product-showcase-caption { color:#fff1c9 !important; }
+main > section:not(#hero),#why-choose-us { background:#170d05 !important; color:#fff1c9 !important; border-color:#8f681c !important; }
+main > section:not(#hero) h1,main > section:not(#hero) h2,main > section:not(#hero) h3,main > section:not(#hero) p,main > section:not(#hero) span,main > section:not(#hero) label { color:#fff1c9 !important; }
+main > section:not(#hero) article,#products-catalog article { background:#211306 !important; border-color:#8f681c !important; }
+footer { background:#090500 !important; color:#f7e7bd !important; border-top:1px solid #a77b20 !important; }
+footer * { color:#f7e7bd !important; }
