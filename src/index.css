@@ -1403,12 +1403,14 @@ main #hero h1 span {
   overflow: visible !important;
   padding-top: 2px;
   color: #fff0d3 !important;
-  -webkit-text-stroke: .55px #d8a94e;
+  -webkit-text-stroke: .85px #e7b84f;
+  paint-order: stroke fill;
   text-shadow:
-    0 0 2px #fff2c8,
-    0 0 6px rgba(255, 199, 77, .95),
-    0 0 13px rgba(255, 166, 35, .68),
-    0 0 23px rgba(255, 166, 35, .38);
+    0 0 2px #fff8dc,
+    0 0 7px rgba(255, 218, 112, 1),
+    0 0 14px rgba(255, 176, 48, .88),
+    0 0 26px rgba(255, 151, 25, .58);
+  filter: drop-shadow(0 0 5px rgba(255, 190, 65, .42));
 }
 .hm-brand-crown {
   color: #ffd66e !important;
@@ -1421,6 +1423,5 @@ main #hero h1 span {
     drop-shadow(0 0 10px rgba(255, 166, 35, .9));
 }
 @media (max-width: 640px) {
-  .hm-brand-title { font-size: 1.05rem !important; }
-  .hm-brand-crown { left: 16px !important; }
+  .hm-brand-title { font-size: 1.25rem !important; letter-spacing: .035em !important; }
 }
