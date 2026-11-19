@@ -84,7 +84,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onShopNow }) => {
             <PackageCheck className="h-4 w-4 text-[#f5c64a]" />
             iPhone 18 Pro Max & Genuine Apple Accessories
           </span>
-          <h1 className="mb-5 font-heading text-5xl font-black leading-[1.02] tracking-[-0.045em] text-[#1D1D1F] sm:text-6xl lg:text-7xl">
+          <h1 className="mb-5 font-heading text-6xl font-black leading-[1.02] tracking-[-0.045em] text-[#1D1D1F] sm:text-7xl lg:text-8xl">
             HM <span className="bg-gradient-to-r from-[#ffd45c] to-[#b77b13] bg-clip-text text-transparent">Digital Store</span>
           </h1>
           <h2 className="mb-4 max-w-xl font-heading text-2xl font-extrabold leading-snug text-[#1D1D1F] sm:text-3xl">
