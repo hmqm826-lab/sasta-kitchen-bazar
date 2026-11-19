@@ -1395,3 +1395,32 @@ main #hero h1 span {
     to { filter: drop-shadow(0 0 9px rgba(213,166,77,.62)); }
   }
 }
+
+
+/* HM monogram crown + illuminated gold outline for the full top brand name */
+.hm-brand-title {
+  display: inline-block !important;
+  overflow: visible !important;
+  padding-top: 2px;
+  color: #fff0d3 !important;
+  -webkit-text-stroke: .55px #d8a94e;
+  text-shadow:
+    0 0 2px #fff2c8,
+    0 0 6px rgba(255, 199, 77, .95),
+    0 0 13px rgba(255, 166, 35, .68),
+    0 0 23px rgba(255, 166, 35, .38);
+}
+.hm-brand-crown {
+  color: #ffd66e !important;
+  fill: #d69b28 !important;
+  stroke: #fff0b4 !important;
+  stroke-width: 1.8px !important;
+  filter:
+    drop-shadow(0 0 2px #fff4c5)
+    drop-shadow(0 0 5px #ffc34d)
+    drop-shadow(0 0 10px rgba(255, 166, 35, .9));
+}
+@media (max-width: 640px) {
+  .hm-brand-title { font-size: 1.05rem !important; }
+  .hm-brand-crown { left: 16px !important; }
+}
