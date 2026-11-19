@@ -100,7 +100,7 @@ export const Header: React.FC<HeaderProps> = ({
             <Store className="h-6 w-6" />
           </button>
           <button onClick={() => onScrollToSection('hero')} className="min-w-0 text-left">
-            <span className="hm-brand-title block whitespace-nowrap text-xl font-black leading-tight tracking-wide text-[#fff0d3] sm:text-3xl"><span className="hm-brand-initials relative inline-block">HM<Crown aria-hidden="true" className="hm-brand-crown absolute -top-4 left-1/2 h-4 w-4 -translate-x-1/2 sm:-top-5 sm:h-5 sm:w-5" /></span>{' '}DIGITAL STORE</span>
+            <span className="hm-brand-title block whitespace-nowrap text-xl font-black leading-tight tracking-wide text-[#fff0d3] sm:text-3xl"><span className="hm-brand-initials relative inline-block">HM<Crown aria-hidden="true" className="hm-brand-crown absolute -top-5 left-1/2 h-5 w-5 -translate-x-1/2 sm:-top-6 sm:h-6 sm:w-6" /></span>{' '}DIGITAL STORE</span>
             <span className="block text-[9px] font-bold tracking-wider text-[#e7c995] sm:text-[11px]">ELECTRONICS &amp; ALL PRODUCTS</span>
           </button>
         </div>
