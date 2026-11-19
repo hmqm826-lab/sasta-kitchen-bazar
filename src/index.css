@@ -843,3 +843,170 @@ main > section:not(#hero) h1,main > section:not(#hero) h2,main > section:not(#he
 main > section:not(#hero) article,#products-catalog article { background:#211306 !important; border-color:#8f681c !important; }
 footer { background:#090500 !important; color:#f7e7bd !important; border-top:1px solid #a77b20 !important; }
 footer * { color:#f7e7bd !important; }
+
+
+/* HM DIGITAL STORE — premium espresso & champagne-gold finish */
+:root {
+  --lux-bg: #120b07;
+  --lux-panel: #21150e;
+  --lux-card: #2b1b11;
+  --lux-gold: #e3bd69;
+  --lux-gold-light: #f5dfaa;
+  --lux-cream: #fff1d5;
+  --lux-muted: #d8c29d;
+}
+html, body, #root { background: var(--lux-bg) !important; }
+body { color: var(--lux-cream) !important; }
+
+/* Branded header: rich chocolate, champagne details, clean spacing */
+header {
+  background: linear-gradient(180deg, #3a281b 0%, #2a1b12 100%) !important;
+  border-bottom: 1px solid rgba(227,189,105,.55) !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,.28) !important;
+}
+header > div:first-child,
+header > div:nth-of-type(2),
+header nav,
+header nav.luxury-category-nav {
+  background: transparent !important;
+}
+header > div:first-child { background: #21140d !important; }
+header > div:first-child *,
+header > div:nth-of-type(2) *,
+header nav button, header nav a { color: var(--lux-cream) !important; }
+header input {
+  background: #fff8eb !important;
+  color: #2a190e !important;
+  border: 1px solid var(--lux-gold) !important;
+  border-radius: 999px !important;
+}
+header button {
+  border-radius: 14px !important;
+  transition: transform .2s ease, filter .2s ease, box-shadow .2s ease !important;
+}
+header button:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(0,0,0,.2); }
+header nav { border-top: 1px solid rgba(227,189,105,.2) !important; }
+header nav button:hover, header nav a:hover { color: var(--lux-gold-light) !important; }
+
+/* Hero: rich boutique backdrop with warm gold highlights */
+main #hero {
+  background:
+    radial-gradient(ellipse at 82% 35%, rgba(153,103,47,.32) 0%, transparent 42%),
+    linear-gradient(135deg, #493222 0%, #302014 52%, #1a100a 100%) !important;
+  color: var(--lux-cream) !important;
+}
+main #hero h1, main #hero h2, main #hero p { color: var(--lux-cream) !important; }
+main #hero h1 {
+  letter-spacing: -.045em !important;
+  text-shadow: 0 3px 22px rgba(0,0,0,.18);
+}
+main #hero > div.relative > div:first-child > span {
+  background: rgba(227,189,105,.13) !important;
+  color: var(--lux-gold-light) !important;
+  border: 1px solid rgba(227,189,105,.48) !important;
+  border-radius: 999px !important;
+}
+main #hero a, main #hero button {
+  background: linear-gradient(135deg, #f4d991 0%, #d3a64d 100%) !important;
+  color: #28170a !important;
+  border: 1px solid #f5dfaa !important;
+  border-radius: 999px !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,.22) !important;
+  font-weight: 800 !important;
+}
+main #hero a:hover, main #hero button:hover { filter: brightness(1.08); transform: translateY(-2px); }
+
+/* Product display: elegant warm-white stage so device photos remain clear */
+#hero .product-showcase-panel,
+#hero .product-showcase-image {
+  background: linear-gradient(145deg, #fffdf9, #eee5d8) !important;
+  border: 1px solid rgba(227,189,105,.75) !important;
+}
+#hero .product-showcase-panel {
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  box-shadow: 0 24px 65px rgba(0,0,0,.34), 0 0 0 5px rgba(227,189,105,.07) !important;
+}
+
+/* Lower sections and product tiles */
+main > section:not(#hero), #products-catalog, #why-choose-us {
+  background: #130c08 !important;
+  color: var(--lux-cream) !important;
+}
+main > section:not(#hero) h1,
+main > section:not(#hero) h2,
+main > section:not(#hero) h3,
+main > section:not(#hero) p,
+main > section:not(#hero) span,
+main > section:not(#hero) label,
+#products-catalog h1, #products-catalog h2, #products-catalog h3,
+#products-catalog p, #products-catalog span, #products-catalog label {
+  color: var(--lux-cream) !important;
+}
+main > section:not(#hero) article,
+#products-catalog article,
+#why-choose-us article {
+  background: linear-gradient(145deg, #302014 0%, #21150e 100%) !important;
+  border: 1px solid rgba(227,189,105,.27) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,.18) !important;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease !important;
+}
+main > section:not(#hero) article:hover,
+#products-catalog article:hover,
+#why-choose-us article:hover {
+  transform: translateY(-4px);
+  border-color: rgba(227,189,105,.7) !important;
+  box-shadow: 0 18px 38px rgba(0,0,0,.3) !important;
+}
+#products-catalog button {
+  border-radius: 999px !important;
+}
+#products-catalog button[class*="bg-white"],
+#products-catalog button[class*="bg-stone-100"],
+#products-catalog button[class*="bg-[#173D30]"],
+#products-catalog button[class*="bg-[#65452F]"] {
+  background: linear-gradient(135deg, #f4d991, #d3a64d) !important;
+  color: #28170a !important;
+  border-color: #e3bd69 !important;
+}
+
+/* Warm gold action buttons without touching product imagery */
+main button[class*="bg-[#173D30]"],
+main button[class*="bg-[#65452F]"],
+main button[class*="bg-[#C69A35]"] {
+  background: linear-gradient(135deg, #f4d991, #d3a64d) !important;
+  color: #28170a !important;
+  border-color: #e3bd69 !important;
+}
+main button[class*="bg-[#173D30]"] *,
+main button[class*="bg-[#65452F]"] *,
+main button[class*="bg-[#C69A35]"] * { color: #28170a !important; }
+
+footer {
+  background: linear-gradient(180deg, #1b1009, #0b0603) !important;
+  border-top: 1px solid rgba(227,189,105,.45) !important;
+}
+footer * { color: #f4e4c5 !important; }
+
+/* Floating WhatsApp actions: keep familiar green, add a polished pill shape */
+.fixed.bottom-5.left-5 a {
+  border-radius: 999px !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,.32) !important;
+  border: 1px solid rgba(255,255,255,.22) !important;
+  font-weight: 800 !important;
+}
+
+/* Consistent focus and reduced-motion support */
+button:focus-visible, a:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--lux-gold-light) !important;
+  outline-offset: 3px !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+@media (max-width: 640px) {
+  main #hero h1 { font-size: clamp(2.6rem, 12vw, 4.5rem) !important; }
+  #hero .product-showcase-panel { border-radius: 20px !important; }
+}
