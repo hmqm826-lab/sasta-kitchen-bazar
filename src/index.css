@@ -1010,3 +1010,187 @@ select:focus-visible, textarea:focus-visible {
   main #hero h1 { font-size: clamp(2.6rem, 12vw, 4.5rem) !important; }
   #hero .product-showcase-panel { border-radius: 20px !important; }
 }
+
+
+/* HM Digital Store — refined Parisian luxury direction.
+   Keep the existing brown top/header exactly in its brown family;
+   replace the chocolate-heavy storefront below it with ivory, black and soft gold. */
+:root {
+  --page-bg: #f5f1e9;
+  --surface: #ffffff;
+  --surface-soft: #eee8dd;
+  --ink: #171512;
+  --muted: #6f685e;
+  --line: #ded6c9;
+}
+html, body, #root {
+  background: #f5f1e9 !important;
+  color: #171512 !important;
+}
+body { font-family: "Helvetica Neue", Arial, sans-serif !important; }
+
+/* Preserve the brown brand header and its navigation. */
+header {
+  background: #3a281b !important;
+  color: #f8edda !important;
+  border-bottom: 1px solid #8d704b !important;
+}
+header > div:first-child { background: #24170f !important; }
+header > div:nth-of-type(2), header nav { background: #3a281b !important; }
+header > div:first-child *, header > div:nth-of-type(2) *,
+header nav button, header nav a { color: #f8edda !important; }
+header input {
+  background: #fffaf2 !important;
+  color: #211a13 !important;
+  border-color: #c7a66c !important;
+}
+header button[class*="bg-stone-"], header button[class*="bg-white"] {
+  background: #f6efe3 !important;
+  color: #352416 !important;
+}
+
+/* Luxury storefront canvas: warm ivory, not chocolate or pure white. */
+main, main section, #products-catalog, #why-choose-us {
+  background: #f5f1e9 !important;
+  color: #171512 !important;
+}
+main #hero {
+  background: #f5f1e9 !important;
+  color: #171512 !important;
+  border-bottom: 1px solid #e5ded2 !important;
+}
+main #hero h1, main #hero h2, main #hero h3,
+main #hero p, main #hero li {
+  color: #171512 !important;
+}
+main #hero p { color: #5d554b !important; }
+main #hero > div.relative > div:first-child > span {
+  background: #e9dfcf !important;
+  color: #604a2e !important;
+  border: 1px solid #d6c5a8 !important;
+}
+main #hero a, main #hero button {
+  background: #211d18 !important;
+  color: #fffaf2 !important;
+  border: 1px solid #211d18 !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+}
+#hero .product-showcase-panel,
+#hero .product-showcase-image {
+  background: #ffffff !important;
+  border: 1px solid #e4ded4 !important;
+  border-radius: 2px !important;
+  box-shadow: 0 16px 40px rgba(39,31,20,.10) !important;
+}
+#hero .product-showcase-image { object-fit: contain !important; }
+#hero .product-showcase-shade {
+  background: linear-gradient(to top, rgba(0,0,0,.62), transparent 68%) !important;
+}
+
+/* Catalog and all lower content use elegant black typography on ivory. */
+main > section:not(#hero), #products-catalog, #why-choose-us {
+  background: #f5f1e9 !important;
+  color: #171512 !important;
+  border-color: #ded6c9 !important;
+}
+main > section:not(#hero) h1,
+main > section:not(#hero) h2,
+main > section:not(#hero) h3,
+main > section:not(#hero) p,
+main > section:not(#hero) span,
+main > section:not(#hero) li,
+main > section:not(#hero) label,
+#products-catalog h1, #products-catalog h2, #products-catalog h3,
+#products-catalog p, #products-catalog span, #products-catalog label,
+#why-choose-us h2, #why-choose-us p, #why-choose-us span {
+  color: #171512 !important;
+}
+main > section:not(#hero) article,
+#products-catalog article,
+#why-choose-us article,
+main > section:not(#hero) [class*="rounded-2xl"][class*="border"] {
+  background: #fffdf9 !important;
+  border: 1px solid #e4ddd1 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 8px 24px rgba(42,32,20,.055) !important;
+}
+main > section:not(#hero) article p,
+main > section:not(#hero) article span,
+#products-catalog article p, #products-catalog article span {
+  color: #5d554b !important;
+}
+#products-catalog select, #products-catalog input,
+main input, main select, main textarea {
+  background: #fffdf9 !important;
+  color: #171512 !important;
+  border: 1px solid #d8cfc0 !important;
+}
+#products-catalog button[class*="bg-white"],
+#products-catalog button[class*="bg-stone-100"],
+#products-catalog button[class*="bg-[#173D30]"],
+#products-catalog button[class*="bg-[#65452F]"],
+main button[class*="bg-[#173D30]"],
+main button[class*="bg-[#65452F]"] {
+  background: #211d18 !important;
+  color: #fffaf2 !important;
+  border: 1px solid #211d18 !important;
+}
+#products-catalog button[class*="bg-white"] *,
+#products-catalog button[class*="bg-stone-100"] *,
+#products-catalog button[class*="bg-[#173D30]"] *,
+#products-catalog button[class*="bg-[#65452F]"] * { color: #fffaf2 !important; }
+
+/* Small champagne-gold details instead of loud gold blocks. */
+main [class*="text-[#F5A623]"], main [class*="text-[#C69A35]"],
+main [class*="text-[#E0B64E]"] { color: #9a743e !important; }
+main [class*="border-[#F5A623]"], main [class*="border-[#C69A35]"] {
+  border-color: #c7a66c !important;
+}
+footer {
+  background: #211d18 !important;
+  color: #f8f1e7 !important;
+  border-top: 1px solid #9c8058 !important;
+}
+footer * { color: #eee3d2 !important; }
+button:focus-visible, a:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #b59660 !important;
+  outline-offset: 3px !important;
+}
+
+/* Manual dark mode remains available, with a coordinated night version. */
+html[data-theme="dark"] body, html[data-theme="dark"] #root,
+html[data-theme="dark"] main, html[data-theme="dark"] main section,
+html[data-theme="dark"] #products-catalog, html[data-theme="dark"] #why-choose-us {
+  background: #171512 !important;
+  color: #f5efe5 !important;
+}
+html[data-theme="dark"] main #hero,
+html[data-theme="dark"] main > section:not(#hero),
+html[data-theme="dark"] #products-catalog,
+html[data-theme="dark"] #why-choose-us {
+  background: #171512 !important;
+  color: #f5efe5 !important;
+}
+html[data-theme="dark"] main #hero h1,
+html[data-theme="dark"] main #hero h2,
+html[data-theme="dark"] main #hero p,
+html[data-theme="dark"] main > section:not(#hero) h1,
+html[data-theme="dark"] main > section:not(#hero) h2,
+html[data-theme="dark"] main > section:not(#hero) h3,
+html[data-theme="dark"] main > section:not(#hero) p,
+html[data-theme="dark"] main > section:not(#hero) span,
+html[data-theme="dark"] #products-catalog h2,
+html[data-theme="dark"] #products-catalog p { color: #f5efe5 !important; }
+html[data-theme="dark"] main > section:not(#hero) article,
+html[data-theme="dark"] #products-catalog article,
+html[data-theme="dark"] #why-choose-us article {
+  background: #24211c !important;
+  border-color: #514637 !important;
+}
+html[data-theme="dark"] footer { background: #0e0d0b !important; }
+@media (max-width: 640px) {
+  main #hero h1 { letter-spacing: -.035em !important; }
+  main > section:not(#hero) article, #products-catalog article { border-radius: 3px !important; }
+}
