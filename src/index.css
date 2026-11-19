@@ -1351,3 +1351,47 @@ html[data-theme="dark"] #why-choose-us article {
   background: #382719 !important;
   border-color: #8a663c !important;
 }
+
+
+/* Illuminated lettering: fine gold outline and soft warm glow on brand/banner words */
+header button span:first-child,
+header .brand-name,
+main #hero h1,
+main #hero h1 span,
+main #hero h2,
+#hero .product-showcase-caption p {
+  -webkit-text-stroke: 0.65px #bd8d3f;
+  text-shadow:
+    0 0 1px rgba(255, 239, 196, .95),
+    0 1px 0 rgba(117, 72, 29, .24),
+    0 0 7px rgba(213, 166, 77, .38),
+    0 0 16px rgba(213, 166, 77, .20);
+}
+main #hero h1 {
+  text-shadow:
+    0 1px 0 #fff0d8,
+    0 2px 0 rgba(122, 76, 34, .22),
+    0 0 9px rgba(213, 166, 77, .48),
+    0 0 22px rgba(213, 166, 77, .25);
+}
+main #hero h1 span {
+  -webkit-text-stroke: 0.8px #9c6a25;
+  filter: drop-shadow(0 0 5px rgba(213, 166, 77, .42));
+}
+#hero .product-showcase-caption p:first-child {
+  letter-spacing: .2em;
+  -webkit-text-stroke: .35px #e2bd77;
+}
+#hero .product-showcase-caption p:nth-child(2) {
+  -webkit-text-stroke: .55px #e2bd77;
+  text-shadow: 0 0 8px rgba(245, 218, 159, .45), 0 2px 12px rgba(0,0,0,.4);
+}
+@media (prefers-reduced-motion: no-preference) {
+  main #hero h1 span {
+    animation: hm-gold-glow 3.2s ease-in-out infinite alternate;
+  }
+  @keyframes hm-gold-glow {
+    from { filter: drop-shadow(0 0 3px rgba(213,166,77,.28)); }
+    to { filter: drop-shadow(0 0 9px rgba(213,166,77,.62)); }
+  }
+}
