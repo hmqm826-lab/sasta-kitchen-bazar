@@ -1194,3 +1194,160 @@ html[data-theme="dark"] footer { background: #0e0d0b !important; }
   main #hero h1 { letter-spacing: -.035em !important; }
   main > section:not(#hero) article, #products-catalog article { border-radius: 3px !important; }
 }
+
+
+/* HM DIGITAL STORE — requested peach, warm-brown and gold palette */
+:root {
+  --hm-peach: #f6ddca;
+  --hm-peach-light: #fff0e4;
+  --hm-brown: #59351f;
+  --hm-brown-deep: #382012;
+  --hm-gold: #d5a64d;
+  --hm-gold-light: #f1d28c;
+}
+
+/* Keep the top brand/header brown; add a refined gold edge only. */
+header {
+  background: #3a281b !important;
+  color: #f7e7c9 !important;
+  border-bottom: 2px solid #c99b4a !important;
+}
+header > div:first-child { background: #24170f !important; }
+header > div:nth-of-type(2), header nav { background: #3a281b !important; }
+header > div:first-child *, header > div:nth-of-type(2) *,
+header nav button, header nav a { color: #f7e7c9 !important; }
+
+/* Peach hero and content backgrounds, with brown typography. */
+html, body, #root, main, main section, #products-catalog, #why-choose-us {
+  background: var(--hm-peach) !important;
+  color: var(--hm-brown) !important;
+}
+main #hero {
+  background:
+    radial-gradient(ellipse at 78% 42%, rgba(213,166,77,.23), transparent 42%),
+    linear-gradient(135deg, #ffe9d8 0%, #f6ddca 58%, #efd0b7 100%) !important;
+  color: var(--hm-brown) !important;
+  border-bottom: 1px solid #dfbd99 !important;
+}
+main #hero h1, main #hero h2, main #hero h3,
+main #hero p, main #hero li {
+  color: var(--hm-brown) !important;
+}
+main #hero p { color: #704b32 !important; }
+main #hero > div.relative > div:first-child > span {
+  background: linear-gradient(135deg, #e8c17b, #f5dca8) !important;
+  color: #4b2b16 !important;
+  border: 1px solid #c99b4a !important;
+}
+#hero .product-showcase-panel,
+#hero .product-showcase-image {
+  background: linear-gradient(145deg, #fffaf5, #f4e4d7) !important;
+  border: 1px solid #d5a64d !important;
+  border-radius: 18px !important;
+  box-shadow: 0 18px 42px rgba(77,45,23,.16), 0 0 0 4px rgba(213,166,77,.12) !important;
+}
+
+/* Headings, descriptions and product details use warm brown ink. */
+main > section:not(#hero), #products-catalog, #why-choose-us {
+  background: var(--hm-peach) !important;
+  color: var(--hm-brown) !important;
+}
+main > section:not(#hero) h1,
+main > section:not(#hero) h2,
+main > section:not(#hero) h3,
+main > section:not(#hero) p,
+main > section:not(#hero) span,
+main > section:not(#hero) label,
+main > section:not(#hero) li,
+#products-catalog h1, #products-catalog h2, #products-catalog h3,
+#products-catalog p, #products-catalog span, #products-catalog label,
+#why-choose-us h2, #why-choose-us p, #why-choose-us span {
+  color: var(--hm-brown) !important;
+}
+main > section:not(#hero) article,
+#products-catalog article,
+#why-choose-us article,
+main > section:not(#hero) [class*="rounded-2xl"][class*="border"] {
+  background: linear-gradient(145deg, #fff2e8, #f9e6d8) !important;
+  border: 1px solid #dfbd99 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 9px 24px rgba(77,45,23,.09) !important;
+}
+main > section:not(#hero) article p,
+main > section:not(#hero) article span,
+#products-catalog article p, #products-catalog article span {
+  color: #765237 !important;
+}
+
+/* Gold controls with brown text; subtle gold-brown finishing. */
+main #hero a, main #hero button,
+#products-catalog button[class*="bg-white"],
+#products-catalog button[class*="bg-stone-100"],
+#products-catalog button[class*="bg-[#173D30]"],
+#products-catalog button[class*="bg-[#65452F]"],
+main button[class*="bg-[#173D30]"],
+main button[class*="bg-[#65452F]"] {
+  background: linear-gradient(135deg, #f3d58f 0%, #d6a64c 100%) !important;
+  color: #4b2b16 !important;
+  border: 1px solid #b98532 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 5px 13px rgba(89,53,31,.12) !important;
+  font-weight: 800 !important;
+}
+main #hero a *, main #hero button *,
+#products-catalog button[class*="bg-white"] *,
+#products-catalog button[class*="bg-stone-100"] *,
+#products-catalog button[class*="bg-[#173D30]"] *,
+#products-catalog button[class*="bg-[#65452F]"] * {
+  color: #4b2b16 !important;
+}
+main input, main select, main textarea,
+#products-catalog input, #products-catalog select {
+  background: #fff8f1 !important;
+  color: #59351f !important;
+  border: 1px solid #d5b38b !important;
+}
+footer {
+  background: linear-gradient(135deg, #3a281b, #24170f) !important;
+  color: #f7e7c9 !important;
+  border-top: 2px solid #c99b4a !important;
+}
+footer * { color: #f7e7c9 !important; }
+button:focus-visible, a:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #c99b4a !important;
+  outline-offset: 3px !important;
+}
+
+/* Retain the brown header in night mode; use a deeper peach-brown night canvas. */
+html[data-theme="dark"] body, html[data-theme="dark"] #root,
+html[data-theme="dark"] main, html[data-theme="dark"] main section,
+html[data-theme="dark"] #products-catalog, html[data-theme="dark"] #why-choose-us {
+  background: #24170f !important;
+  color: #f7e7c9 !important;
+}
+html[data-theme="dark"] main #hero,
+html[data-theme="dark"] main > section:not(#hero),
+html[data-theme="dark"] #products-catalog,
+html[data-theme="dark"] #why-choose-us {
+  background: #24170f !important;
+  color: #f7e7c9 !important;
+}
+html[data-theme="dark"] main #hero h1,
+html[data-theme="dark"] main #hero h2,
+html[data-theme="dark"] main #hero p,
+html[data-theme="dark"] main > section:not(#hero) h1,
+html[data-theme="dark"] main > section:not(#hero) h2,
+html[data-theme="dark"] main > section:not(#hero) h3,
+html[data-theme="dark"] main > section:not(#hero) p,
+html[data-theme="dark"] main > section:not(#hero) span,
+html[data-theme="dark"] #products-catalog h2,
+html[data-theme="dark"] #products-catalog p {
+  color: #f7e7c9 !important;
+}
+html[data-theme="dark"] main > section:not(#hero) article,
+html[data-theme="dark"] #products-catalog article,
+html[data-theme="dark"] #why-choose-us article {
+  background: #382719 !important;
+  border-color: #8a663c !important;
+}
