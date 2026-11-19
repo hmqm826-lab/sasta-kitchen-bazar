@@ -4,7 +4,7 @@ import { STORE_CONTACT, WHATSAPP_WELCOME_MESSAGE } from '../data/contactInfo';
 import { supabase, ADMIN_EMAIL } from '../lib/supabase';
 import {
   Search, ShoppingCart, Heart, Menu, X, PhoneCall, Sparkles,
-  LayoutDashboard, Store, Sun, Moon, RefreshCw
+  LayoutDashboard, Store, Sun, Moon, RefreshCw, Crown
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -100,7 +100,7 @@ export const Header: React.FC<HeaderProps> = ({
             <Store className="h-6 w-6" />
           </button>
           <button onClick={() => onScrollToSection('hero')} className="min-w-0 text-left">
-            <span className="block truncate text-lg font-black leading-tight tracking-tight text-[#fff0d3] sm:text-2xl">HM DIGITAL STORE</span>
+            <span className="hm-brand-title relative block truncate text-lg font-black leading-tight tracking-tight text-[#fff0d3] sm:text-2xl">HM DIGITAL STORE<Crown aria-hidden="true" className="hm-brand-crown absolute -top-4 left-[17px] h-4 w-4 sm:-top-5 sm:left-[25px] sm:h-5 sm:w-5" /></span>
             <span className="block text-[9px] font-bold tracking-wider text-[#e7c995] sm:text-[11px]">ELECTRONICS &amp; ALL PRODUCTS</span>
           </button>
         </div>
