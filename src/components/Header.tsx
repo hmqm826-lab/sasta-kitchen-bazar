@@ -1,22 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useStore } from '../context/StoreContext';
 import { STORE_CONTACT, WHATSAPP_WELCOME_MESSAGE } from '../data/contactInfo';
 import { supabase, ADMIN_EMAIL } from '../lib/supabase';
 import {
-  Search,
-  ShoppingCart,
-  Heart,
-  Menu,
-  X,
-  PhoneCall,
-  ShieldCheck,
-  Sparkles,
-  LayoutDashboard,
-  Store,
-  ChevronDown,
-  Sun,
-  Moon,
-  RefreshCw
+  Search, ShoppingCart, Heart, Menu, X, PhoneCall, Sparkles,
+  LayoutDashboard, Store, Sun, Moon, RefreshCw
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -30,26 +18,12 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({
-  onOpenWishlist,
-  onOpenContact,
-  onScrollToSection,
-  theme,
-  onToggleTheme,
-  onUseAutoTheme,
-  autoTheme,
+  onOpenWishlist, onOpenContact, onScrollToSection,
+  theme, onToggleTheme, onUseAutoTheme, autoTheme,
 }) => {
   const {
-    cart,
-    wishlist,
-    setIsCartOpen,
-    isAdminOpen,
-    setIsAdminOpen,
-    products,
-    categories,
-    activeCategory,
-    setActiveCategory,
-    openProductModal,
-    cartTotal,
+    cart, wishlist, setIsCartOpen, setIsAdminOpen, products,
+    categories, activeCategory, setActiveCategory, openProductModal, cartTotal,
   } = useStore();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -58,14 +32,13 @@ export const Header: React.FC<HeaderProps> = ({
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
 
-  // Show the Admin Panel button only to the signed-in admin account
   useEffect(() => {
     let active = true;
-    const openAdminLoginFromPrivateLink = () => {
+    const openPrivateAdminLink = () => {
       if (window.location.hash === '#admin') setIsAdminOpen(true);
     };
-    openAdminLoginFromPrivateLink();
-    window.addEventListener('hashchange', openAdminLoginFromPrivateLink);
+    openPrivateAdminLink();
+    window.addEventListener('hashchange', openPrivateAdminLink);
     supabase.auth.getSession().then(({ data }) => {
       if (active) setIsAuthorizedAdmin(data.session?.user.email?.toLowerCase() === ADMIN_EMAIL);
     });
@@ -74,189 +47,149 @@ export const Header: React.FC<HeaderProps> = ({
     });
     return () => {
       active = false;
-      window.removeEventListener('hashchange', openAdminLoginFromPrivateLink);
+      window.removeEventListener('hashchange', openPrivateAdminLink);
       listener.subscription.unsubscribe();
     };
   }, [setIsAdminOpen]);
 
-  // Close search suggestions on click outside
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        searchContainerRef.current &&
-        !searchContainerRef.current.contains(event.target as Node)
-      ) {
+    const closeOutside = (event: MouseEvent) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(event.target as Node)) {
         setIsSearchFocused(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', closeOutside);
+    return () => document.removeEventListener('mousedown', closeOutside);
   }, []);
 
   const totalCartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-
-  // Filtered products for search autocomplete
   const searchSuggestions = searchInput.trim()
-    ? products
-        .filter(
-          (p) =>
-            p.name.toLowerCase().includes(searchInput.toLowerCase()) ||
-            p.category.toLowerCase().includes(searchInput.toLowerCase()) ||
-            (p.urduName && p.urduName.includes(searchInput)) ||
-            p.tags.some((t) => t.toLowerCase().includes(searchInput.toLowerCase()))
-        )
-        .slice(0, 5)
+    ? products.filter((p) =>
+        p.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+        p.category.toLowerCase().includes(searchInput.toLowerCase()) ||
+        (p.urduName && p.urduName.includes(searchInput)) ||
+        p.tags.some((tag) => tag.toLowerCase().includes(searchInput.toLowerCase()))
+      ).slice(0, 5)
     : [];
 
-  const handleCategoryClick = (catId: string) => {
-    setActiveCategory(catId);
+  const chooseCategory = (category: string) => {
+    setActiveCategory(category);
     onScrollToSection('products-catalog');
     setMobileMenuOpen(false);
   };
+  const chooseProduct = (product: typeof products[number]) => {
+    openProductModal(product);
+    setSearchInput('');
+    setIsSearchFocused(false);
+  };
+  const refreshPage = () => window.location.reload();
 
   return (
-    <header className="sticky top-0 z-40 bg-white shadow-sm border-b border-stone-200">
-      {/* Top Notification Announcement Bar */}
-      <div className="bg-[#173D30] text-white text-xs py-2 px-4 transition-colors">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-4 font-medium">
-          <div className="flex items-center gap-2 text-center sm:text-left">
-            <span className="inline-flex items-center gap-1 bg-[#F5A623] text-[#173D30] font-bold px-2 py-0.5 rounded text-[11px] uppercase tracking-wider">
-              🇵🇰 Pakistan COD
-            </span>
-            <span className="text-stone-100 hidden md:inline">
-              Cash on Delivery All Over Pakistan
-            </span>
-            <span className="text-stone-100 md:hidden">
-              Cash on Delivery All Over Pakistan!
-            </span>
-          </div>
+    <header className="sticky top-0 z-40 border-b border-[#8b693e] bg-[#3b281b] text-[#fff0d3] shadow-lg">
+      <div className="bg-[#24170f] px-3 py-1.5 text-center text-[11px] font-bold tracking-wide text-[#f4dba8]">
+        🇵🇰 CASH ON DELIVERY ALL OVER PAKISTAN
+      </div>
 
-          <div className="flex items-center gap-3 text-[11px] text-stone-200">
-            <div className="flex items-center gap-1.5 font-medium">
-              <PhoneCall className="w-3.5 h-3.5 text-[#F5A623]" />
-              <span className="text-stone-300">Helpline:</span>
-              <a
-                href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#F5A623] transition-colors font-bold text-white underline decoration-[#F5A623]/40"
-              >
-                {STORE_CONTACT.phone1}
-              </a>
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-3 py-3 sm:px-5">
+        <div className="flex min-w-0 items-center gap-2">
+          <button
+            onClick={() => onScrollToSection('hero')}
+            aria-label="Go to home"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#9b713c] text-[#fff0d3] shadow-md"
+          >
+            <Store className="h-6 w-6" />
+          </button>
+          <button onClick={() => onScrollToSection('hero')} className="min-w-0 text-left">
+            <span className="block truncate text-lg font-black leading-tight tracking-tight text-[#fff0d3] sm:text-2xl">HM DIGITAL STORE</span>
+            <span className="block text-[9px] font-bold tracking-wider text-[#e7c995] sm:text-[11px]">ELECTRONICS &amp; ALL PRODUCTS</span>
+          </button>
+        </div>
 
+        <div ref={searchContainerRef} className="relative order-3 w-full sm:order-none sm:w-auto sm:flex-1 sm:max-w-md">
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+              setIsSearchFocused(false);
+              onScrollToSection('products-catalog');
+            }}
+            className="flex h-10 overflow-hidden rounded-full border border-[#d8b66f] bg-[#fffaf0] shadow-inner"
+          >
+            <input
+              value={searchInput}
+              onChange={(event) => setSearchInput(event.target.value)}
+              onFocus={() => setIsSearchFocused(true)}
+              placeholder="Search earbuds, headphones, phones..."
+              className="min-w-0 flex-1 bg-transparent px-4 text-sm text-[#352315] outline-none placeholder:text-[#a78c65]"
+            />
+            <button type="submit" className="m-0.5 rounded-full bg-[#d8b66f] px-4 text-xs font-extrabold text-[#2d1d10] hover:bg-[#edcf8b]">Search</button>
+          </form>
+          {isSearchFocused && searchSuggestions.length > 0 && (
+            <div className="absolute left-0 right-0 top-12 z-50 overflow-hidden rounded-xl border border-[#c7a76a] bg-[#fffaf0] text-[#352315] shadow-2xl">
+              {searchSuggestions.map((product) => (
+                <button key={product.id} onClick={() => chooseProduct(product)} className="block w-full border-b border-[#eadcc4] px-4 py-3 text-left text-sm hover:bg-[#f4ead7]">
+                  <span className="block font-bold">{product.name}</span>
+                  <span className="text-xs text-[#806846]">{product.category}</span>
+                </button>
+              ))}
             </div>
-            <span className="text-stone-500 hidden sm:inline">|</span>
-          </div>
+          )}
+        </div>
+
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <button onClick={onToggleTheme} className="flex h-9 items-center gap-1 rounded-xl border border-[#b89459] bg-[#fff8eb] px-2.5 text-xs font-bold text-[#3a281b] hover:bg-[#f1dfbd]">
+            {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            <span className="hidden sm:inline">{theme === 'dark' ? 'Light' : 'Dark'}</span>
+          </button>
+          <button onClick={onUseAutoTheme} className={`hidden h-9 items-center gap-1 rounded-xl border px-2.5 text-xs font-bold sm:flex ${autoTheme ? 'border-[#f0d69c] bg-[#d8b66f] text-[#2d1d10]' : 'border-[#b89459] bg-[#fff8eb] text-[#3a281b]'}`}>
+            <Sparkles className="h-4 w-4" /> Auto
+          </button>
+          <button onClick={refreshPage} aria-label="Refresh page" className="flex h-9 items-center gap-1 rounded-xl border border-[#b89459] bg-[#fff8eb] px-2.5 text-xs font-bold text-[#3a281b] hover:bg-[#f1dfbd]">
+            <RefreshCw className="h-4 w-4" /><span className="hidden sm:inline">Refresh</span>
+          </button>
+          <button onClick={onOpenWishlist} aria-label="Wishlist" className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-[#fff8eb] text-[#3a281b] hover:bg-[#f1dfbd]">
+            <Heart className="h-5 w-5" />
+            {wishlist.length > 0 && <span className="absolute -right-1 -top-1 rounded-full bg-[#d8b66f] px-1.5 text-[10px] font-bold text-[#2d1d10]">{wishlist.length}</span>}
+          </button>
+          <button onClick={() => setIsCartOpen(true)} className="flex h-9 items-center gap-1 rounded-xl bg-[#fff8eb] px-2.5 text-[#3a281b] hover:bg-[#f1dfbd]">
+            <ShoppingCart className="h-5 w-5" />
+            <span className="hidden text-left sm:block"><span className="block text-[10px] font-bold">MY CART</span><span className="block text-[9px]">Rs. {cartTotal}</span></span>
+            {totalCartCount > 0 && <span className="rounded-full bg-[#d8b66f] px-1.5 text-[10px] font-black">{totalCartCount}</span>}
+          </button>
+          {isAuthorizedAdmin && (
+            <button onClick={() => setIsAdminOpen(true)} className="hidden h-9 items-center gap-1 rounded-xl border border-[#e0bd79] bg-[#fff8eb] px-3 text-xs font-bold text-[#5a3c20] sm:flex">
+              <LayoutDashboard className="h-4 w-4" /> Admin Panel
+            </button>
+          )}
+          <button onClick={() => setMobileMenuOpen((open) => !open)} aria-label="Toggle menu" className="flex h-9 w-9 items-center justify-center rounded-xl border border-[#b89459] text-[#fff0d3] lg:hidden">
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
 
-      {/* Main Header */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3">
-        <div className="flex items-center justify-between gap-2 sm:gap-6">
-          {/* Logo & Mobile Menu Button */}
-          <div className="flex items-center gap-1.5 sm:gap-3 min-w-0">
-            
-
-              
-
-              
-
-              <button
-                onClick={() => onScrollToSection('best-sellers')}
-                className="px-4 py-3 font-medium text-stone-700 hover:text-[#173D30] transition-colors flex items-center gap-1"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-[#F5A623]" /> Best Sellers
-              </button>
-
-            </div>
-
-            {/* Right Contact Link */}
-            <div className="flex items-center gap-3">
-              <button
-                onClick={onOpenContact}
-                className="text-xs font-semibold text-stone-600 hover:text-[#173D30] transition py-3"
-              >
-                Contact Us
-              </button>
-            </div>
-          </div>
+      <nav className="hidden border-t border-[#8b693e]/60 bg-[#2d1e14] lg:block">
+        <div className="mx-auto flex max-w-7xl items-center gap-1 overflow-x-auto px-3 sm:px-5">
+          <button onClick={() => { setActiveCategory('all'); onScrollToSection('hero'); }} className="px-4 py-3 text-sm font-bold text-[#f5dcae] hover:bg-[#5a402b]">Home</button>
+          <button onClick={() => chooseCategory('all')} className="px-4 py-3 text-sm font-bold text-[#f5dcae] hover:bg-[#5a402b]">Shop All</button>
+          {categories.map((category) => (
+            <button key={category.id} onClick={() => chooseCategory(category.name)} className={`whitespace-nowrap px-3 py-3 text-sm hover:bg-[#5a402b] ${activeCategory === category.name ? 'font-extrabold text-[#f2cf83]' : 'text-[#f5e8d0]'}`}>
+              {category.name}
+            </button>
+          ))}
+          <button onClick={() => onScrollToSection('best-sellers')} className="whitespace-nowrap px-3 py-3 text-sm font-semibold text-[#f2cf83] hover:bg-[#5a402b]"><Sparkles className="mr-1 inline h-4 w-4" />Best Sellers</button>
+          <button onClick={onOpenContact} className="ml-auto whitespace-nowrap px-3 py-3 text-xs font-bold text-[#f5e8d0] hover:text-[#f2cf83]">Contact Us</button>
         </div>
       </nav>
 
-      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-stone-200 px-5 py-4 animate-in slide-in-from-top-4">
-          <div className="flex flex-col gap-1 pb-4 border-b border-stone-200">
-            <button
-              onClick={() => {
-                setActiveCategory('all');
-                onScrollToSection('hero');
-                setMobileMenuOpen(false);
-              }}
-              className="text-left py-2.5 px-3 rounded-lg font-semibold text-stone-800 hover:bg-stone-100"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => {
-                setActiveCategory('all');
-                onScrollToSection('products-catalog');
-                setMobileMenuOpen(false);
-              }}
-              className="text-left py-2.5 px-3 rounded-lg font-semibold text-stone-800 hover:bg-stone-100"
-            >
-              Shop All Products
-            </button>
-            <button
-              onClick={() => {
-                onScrollToSection('best-sellers');
-                setMobileMenuOpen(false);
-              }}
-              className="text-left py-2.5 px-3 rounded-lg font-semibold text-stone-800 hover:bg-stone-100 flex items-center gap-2"
-            >
-              <Sparkles className="w-4 h-4 text-[#F5A623]" /> Best Sellers
-            </button>
-          </div>
-
-          <p className="text-xs font-bold text-stone-400 uppercase tracking-wider mt-4 mb-2 px-3">
-            Browse Categories
-          </p>
-          <div className="grid grid-cols-2 gap-1.5">
-            {categories.filter((cat) => cat.name === 'Earbuds').map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => handleCategoryClick(cat.name)}
-                className={`text-left text-xs p-2.5 rounded-lg border transition ${
-                  activeCategory === cat.name
-                    ? 'bg-emerald-50 text-[#173D30] font-bold border-emerald-300'
-                    : 'bg-stone-50 text-stone-700 border-stone-100 hover:bg-stone-100'
-                }`}
-              >
-                {cat.name}
-              </button>
-            ))}
-          </div>
-
-          <div className="mt-4 pt-4 border-t border-stone-200 flex flex-col gap-2">
-            <button
-              onClick={() => {
-                onOpenContact();
-                setMobileMenuOpen(false);
-              }}
-              className="w-full text-center py-2.5 bg-stone-100 text-stone-800 font-semibold text-xs rounded-xl"
-            >
-              Contact Support
-            </button>
-            <a
-              href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full py-2.5 px-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] rounded-xl flex items-center justify-center gap-1.5 shadow"
-            >
-              <PhoneCall className="w-3.5 h-3.5" />
-              <span>{STORE_CONTACT.phone1}</span>
-            </a>
-          </div>
+        <div className="border-t border-[#8b693e] bg-[#2d1e14] px-4 py-3 text-[#fff0d3] lg:hidden">
+          <button onClick={() => { setActiveCategory('all'); onScrollToSection('hero'); setMobileMenuOpen(false); }} className="block w-full rounded-lg px-3 py-2 text-left font-semibold hover:bg-[#5a402b]">Home</button>
+          <button onClick={() => chooseCategory('all')} className="block w-full rounded-lg px-3 py-2 text-left font-semibold hover:bg-[#5a402b]">Shop All Products</button>
+          {categories.map((category) => (
+            <button key={category.id} onClick={() => chooseCategory(category.name)} className="block w-full rounded-lg px-3 py-2 text-left hover:bg-[#5a402b]">{category.name}</button>
+          ))}
+          <button onClick={() => { onScrollToSection('best-sellers'); setMobileMenuOpen(false); }} className="block w-full rounded-lg px-3 py-2 text-left font-semibold text-[#f2cf83]"><Sparkles className="mr-2 inline h-4 w-4" />Best Sellers</button>
+          <button onClick={() => { onOpenContact(); setMobileMenuOpen(false); }} className="block w-full rounded-lg px-3 py-2 text-left font-semibold hover:bg-[#5a402b]">Contact Us</button>
+          <a href={`https://wa.me/${STORE_CONTACT.phone1WhatsApp}?text=${encodeURIComponent(WHATSAPP_WELCOME_MESSAGE)}`} target="_blank" rel="noopener noreferrer" className="mt-2 flex items-center justify-center gap-2 rounded-full bg-[#128c7e] px-4 py-2.5 font-bold text-white"><PhoneCall className="h-4 w-4" />WhatsApp Sales</a>
         </div>
       )}
     </header>
